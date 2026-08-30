@@ -1,0 +1,78 @@
+{
+ "id": "SC-07",
+ "branch": "variance",
+ "meta": {
+  "run_at": "2026-08-26T15:27:20",
+  "ardupilot_commit": "c2b898a",
+  "model": "claude-sonnet-5",
+  "graph_sha": "10ecea2caed3",
+  "gates_sha": "98100a56d5b2",
+  "runtime_sha": "377c646ee24d",
+  "script_sha": "6d69b5fb6fb9"
+ },
+ "chain": [
+  [
+   "gnssLost",
+   81579
+  ],
+  [
+   "fsLand",
+   85729
+  ],
+  [
+   "ekfVarExceeded",
+   85729
+  ],
+  [
+   "navBranch",
+   85729
+  ],
+  [
+   "cmdAccepted",
+   88427
+  ],
+  [
+   "landed",
+   105429
+  ],
+  [
+   "flightEnd",
+   105779
+  ]
+ ],
+ "chain_seq": [
+  "gnssLost",
+  "fsLand",
+  "navBranch",
+  "cmdAccepted",
+  "flightEnd"
+ ],
+ "chain_present": true,
+ "chain_ordered": true,
+ "link_alive": true,
+ "hb_gap_max_s": 1.0,
+ "acks": [
+  {
+   "cmd": "DO_SET_MODE(ALT_HOLD)",
+   "ack": "ACCEPTED",
+   "mode_after": "ALT_HOLD",
+   "sim_ms": 86879
+  }
+ ],
+ "t_land_ms": 85729,
+ "t_disarm_ms": null,
+ "t_onground_ms": 105429,
+ "terminated_in_air": null,
+ "window_s": 19.7,
+ "impact_mps": 2.486824,
+ "alt_at_disarm": null,
+ "outcome": "recover",
+ "expected_outcome": "recover",
+ "outcome_match": true,
+ "chain_reproduced": true,
+ "failures": [],
+ "ok": true,
+ "outcome_reclassified": "recover",
+ "baseline_window_s": 57.55,
+ "outcome_match_reclassified": true
+}

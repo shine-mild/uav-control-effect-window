@@ -1,0 +1,29 @@
+[
+ {
+  "method": "T 템플릿",
+  "n": 10,
+  "schema": 10,
+  "vocab": 10,
+  "executable": 10,
+  "precondition": 10,
+  "unique_ids": true
+ },
+ {
+  "method": "L 언어모델(게이트 전)",
+  "n": 10,
+  "schema": 10,
+  "vocab": 10,
+  "executable": 5,
+  "precondition": 8,
+  "unique_ids": false
+ },
+ {
+  "method": "P 언어모델+게이트",
+  "n": 10,
+  "schema": 5,
+  "vocab": 5,
+  "executable": 5,
+  "precondition": 5,
+  "unique_ids": false
+ }
+]

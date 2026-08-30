@@ -1,0 +1,63 @@
+{
+ "id": "BASELINE",
+ "branch": "variance",
+ "meta": {
+  "run_at": "2026-08-26T15:25:52",
+  "ardupilot_commit": "c2b898a",
+  "model": "claude-sonnet-5",
+  "graph_sha": "10ecea2caed3",
+  "gates_sha": "98100a56d5b2",
+  "runtime_sha": "377c646ee24d",
+  "script_sha": "c199ac23f3ec"
+ },
+ "chain": [
+  [
+   "gnssLost",
+   81399
+  ],
+  [
+   "fsLand",
+   85499
+  ],
+  [
+   "ekfVarExceeded",
+   85499
+  ],
+  [
+   "navBranch",
+   85499
+  ],
+  [
+   "landed",
+   143049
+  ],
+  [
+   "flightEnd",
+   143499
+  ]
+ ],
+ "chain_seq": [
+  "gnssLost",
+  "fsLand",
+  "navBranch",
+  "flightEnd"
+ ],
+ "chain_present": false,
+ "chain_ordered": false,
+ "link_alive": true,
+ "hb_gap_max_s": 1.0,
+ "acks": [],
+ "t_land_ms": 85499,
+ "t_disarm_ms": null,
+ "t_onground_ms": 143049,
+ "terminated_in_air": null,
+ "window_s": 57.55,
+ "impact_mps": 0.646668,
+ "alt_at_disarm": null,
+ "outcome": "extend",
+ "expected_outcome": null,
+ "outcome_match": false,
+ "chain_reproduced": false,
+ "failures": [],
+ "ok": true
+}

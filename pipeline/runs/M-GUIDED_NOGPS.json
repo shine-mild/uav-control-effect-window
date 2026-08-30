@@ -1,0 +1,68 @@
+{
+ "id": "M-GUIDED_NOGPS",
+ "branch": "variance",
+ "meta": {
+  "run_at": "2026-08-26T15:51:03",
+  "ardupilot_commit": "c2b898a",
+  "model": "claude-sonnet-5",
+  "graph_sha": "10ecea2caed3",
+  "gates_sha": "98100a56d5b2",
+  "runtime_sha": "377c646ee24d",
+  "script_sha": null
+ },
+ "chain": [
+  [
+   "gnssLost",
+   81599
+  ],
+  [
+   "fsLand",
+   85699
+  ],
+  [
+   "ekfVarExceeded",
+   85699
+  ],
+  [
+   "navBranch",
+   85699
+  ],
+  [
+   "cmdAccepted",
+   87449
+  ]
+ ],
+ "chain_seq": [
+  "gnssLost",
+  "fsLand",
+  "navBranch",
+  "cmdAccepted"
+ ],
+ "chain_present": false,
+ "chain_ordered": false,
+ "link_alive": true,
+ "hb_gap_max_s": 1.0,
+ "acks": [
+  {
+   "cmd": "DO_SET_MODE(GUIDED_NOGPS)",
+   "ack": "ACCEPTED",
+   "mode_after": "GUIDED_NOGPS",
+   "sim_ms": 85899
+  }
+ ],
+ "t_land_ms": 85699,
+ "t_disarm_ms": null,
+ "t_onground_ms": null,
+ "terminated_in_air": null,
+ "window_s": null,
+ "impact_mps": null,
+ "alt_at_disarm": null,
+ "outcome": null,
+ "expected_outcome": "recover",
+ "outcome_match": false,
+ "chain_reproduced": false,
+ "failures": [
+  "비행 종료 미관측 (160s)"
+ ],
+ "ok": false
+}

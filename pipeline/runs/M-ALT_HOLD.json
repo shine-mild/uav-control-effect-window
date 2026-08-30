@@ -1,0 +1,75 @@
+{
+ "id": "M-ALT_HOLD",
+ "branch": "variance",
+ "meta": {
+  "run_at": "2026-08-26T15:47:51",
+  "ardupilot_commit": "c2b898a",
+  "model": "claude-sonnet-5",
+  "graph_sha": "10ecea2caed3",
+  "gates_sha": "98100a56d5b2",
+  "runtime_sha": "377c646ee24d",
+  "script_sha": null
+ },
+ "chain": [
+  [
+   "gnssLost",
+   81599
+  ],
+  [
+   "fsLand",
+   85699
+  ],
+  [
+   "ekfVarExceeded",
+   85699
+  ],
+  [
+   "navBranch",
+   85699
+  ],
+  [
+   "cmdAccepted",
+   87449
+  ],
+  [
+   "landed",
+   104449
+  ],
+  [
+   "flightEnd",
+   104649
+  ]
+ ],
+ "chain_seq": [
+  "gnssLost",
+  "fsLand",
+  "navBranch",
+  "cmdAccepted",
+  "flightEnd"
+ ],
+ "chain_present": true,
+ "chain_ordered": true,
+ "link_alive": true,
+ "hb_gap_max_s": 1.0,
+ "acks": [
+  {
+   "cmd": "DO_SET_MODE(ALT_HOLD)",
+   "ack": "ACCEPTED",
+   "mode_after": "ALT_HOLD",
+   "sim_ms": 85899
+  }
+ ],
+ "t_land_ms": 85699,
+ "t_disarm_ms": null,
+ "t_onground_ms": 104449,
+ "terminated_in_air": null,
+ "window_s": 18.75,
+ "impact_mps": 2.505064,
+ "alt_at_disarm": null,
+ "outcome": "recover",
+ "expected_outcome": "recover",
+ "outcome_match": true,
+ "chain_reproduced": true,
+ "failures": [],
+ "ok": true
+}

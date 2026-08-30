@@ -1,0 +1,216 @@
+{
+ "cond": "C1",
+ "probe": "BASELINE",
+ "t_inject_ms": 83922,
+ "t_land_ms": 92172,
+ "t_ground_ms": 140522,
+ "delay_to_land_s": 8.25,
+ "inject_window_s": 48.35,
+ "t_cmd_ms": 92172,
+ "descent_after_cmd_s": 48.35,
+ "impact_speed_mps": 0.49868,
+ "events": [
+  {
+   "sim_ms": 0,
+   "stage": "STATUSTEXT",
+   "detail": "Barometer 1 calibration complete"
+  },
+  {
+   "sim_ms": 0,
+   "stage": "STATUSTEXT",
+   "detail": "Barometer 2 calibration complete"
+  },
+  {
+   "sim_ms": 2441,
+   "stage": "STATUSTEXT",
+   "detail": "ArduPilot Ready"
+  },
+  {
+   "sim_ms": 2722,
+   "stage": "STATUSTEXT",
+   "detail": "RC7: SaveWaypoint LOW"
+  },
+  {
+   "sim_ms": 4421,
+   "stage": "STATUSTEXT",
+   "detail": "EKF3 IMU0 initialised"
+  },
+  {
+   "sim_ms": 4421,
+   "stage": "STATUSTEXT",
+   "detail": "EKF3 IMU1 initialised"
+  },
+  {
+   "sim_ms": 4421,
+   "stage": "STATUSTEXT",
+   "detail": "AHRS: EKF3 active"
+  },
+  {
+   "sim_ms": 5771,
+   "stage": "STATUSTEXT",
+   "detail": "EKF3 IMU1 tilt alignment complete"
+  },
+  {
+   "sim_ms": 5771,
+   "stage": "STATUSTEXT",
+   "detail": "EKF3 IMU0 tilt alignment complete"
+  },
+  {
+   "sim_ms": 5871,
+   "stage": "STATUSTEXT",
+   "detail": "EKF3 IMU1 MAG0 initial yaw alignment complete"
+  },
+  {
+   "sim_ms": 5871,
+   "stage": "STATUSTEXT",
+   "detail": "EKF3 IMU0 MAG0 initial yaw alignment complete"
+  },
+  {
+   "sim_ms": 9771,
+   "stage": "STATUSTEXT",
+   "detail": "GPS 1: probing for u-blox at 230400 baud"
+  },
+  {
+   "sim_ms": 9771,
+   "stage": "STATUSTEXT",
+   "detail": "GPS 1: detected u-blox"
+  },
+  {
+   "sim_ms": 13771,
+   "stage": "준비",
+   "detail": "fix=3 sats=10"
+  },
+  {
+   "sim_ms": 13821,
+   "stage": "모드전환",
+   "detail": "STABILIZE -> GUIDED"
+  },
+  {
+   "sim_ms": 15422,
+   "stage": "STATUSTEXT",
+   "detail": "PreArm: AHRS: waiting for home"
+  },
+  {
+   "sim_ms": 18921,
+   "stage": "시동시도",
+   "detail": "ack=FAILED"
+  },
+  {
+   "sim_ms": 18921,
+   "stage": "STATUSTEXT",
+   "detail": "Arm: AHRS: waiting for home"
+  },
+  {
+   "sim_ms": 19972,
+   "stage": "STATUSTEXT",
+   "detail": "EKF3 IMU1 origin set"
+  },
+  {
+   "sim_ms": 20021,
+   "stage": "STATUSTEXT",
+   "detail": "Field Elevation Set: 0m"
+  },
+  {
+   "sim_ms": 20171,
+   "stage": "STATUSTEXT",
+   "detail": "EKF3 IMU0 origin set"
+  },
+  {
+   "sim_ms": 41371,
+   "stage": "STATUSTEXT",
+   "detail": "EKF3 IMU0 is using GPS"
+  },
+  {
+   "sim_ms": 41571,
+   "stage": "STATUSTEXT",
+   "detail": "EKF3 IMU1 is using GPS"
+  },
+  {
+   "sim_ms": 44021,
+   "stage": "시동시도",
+   "detail": "ack=ACCEPTED"
+  },
+  {
+   "sim_ms": 44021,
+   "stage": "STATUSTEXT",
+   "detail": "Arming motors"
+  },
+  {
+   "sim_ms": 49072,
+   "stage": "이륙",
+   "detail": "목표 40.0 m"
+  },
+  {
+   "sim_ms": 52472,
+   "stage": "STATUSTEXT",
+   "detail": "EKF3 IMU1 MAG0 in-flight yaw alignment complete"
+  },
+  {
+   "sim_ms": 52472,
+   "stage": "STATUSTEXT",
+   "detail": "EKF3 IMU0 MAG0 in-flight yaw alignment complete"
+  },
+  {
+   "sim_ms": 66821,
+   "stage": "순항",
+   "detail": "alt=38.5 m mode=GUIDED"
+  },
+  {
+   "sim_ms": 83922,
+   "stage": "0_교란주입",
+   "detail": "C1"
+  },
+  {
+   "sim_ms": 91921,
+   "stage": "모드전환",
+   "detail": "GUIDED -> LAND"
+  },
+  {
+   "sim_ms": 91921,
+   "stage": "STATUSTEXT",
+   "detail": "EKF variance: position lost"
+  },
+  {
+   "sim_ms": 91921,
+   "stage": "STATUSTEXT",
+   "detail": "EKF Failsafe: changed to Land Mode"
+  },
+  {
+   "sim_ms": 92172,
+   "stage": "1_창_시작",
+   "detail": "LAND 진입, alt=40.0 m"
+  },
+  {
+   "sim_ms": 98972,
+   "stage": "STATUSTEXT",
+   "detail": "EKF3 IMU1 stopped aiding"
+  },
+  {
+   "sim_ms": 98972,
+   "stage": "STATUSTEXT",
+   "detail": "EKF3 IMU0 stopped aiding"
+  },
+  {
+   "sim_ms": 106171,
+   "stage": "STATUSTEXT",
+   "detail": "SmartRTL deactivated: bad position"
+  },
+  {
+   "sim_ms": 137621,
+   "stage": "STATUSTEXT",
+   "detail": "SIM Hit ground at 0.498680 m/s"
+  },
+  {
+   "sim_ms": 139771,
+   "stage": "STATUSTEXT",
+   "detail": "Disarming motors"
+  },
+  {
+   "sim_ms": 140522,
+   "stage": "2_창_종료",
+   "detail": "시동꺼짐 alt=-0.0 m"
+  }
+ ],
+ "ack": null,
+ "ok": true
+}

@@ -1,0 +1,70 @@
+{
+ "id": "R-LOITER-05",
+ "branch": "variance",
+ "meta": {
+  "run_at": "2026-08-29T19:11:48",
+  "ardupilot_commit": "c2b898a",
+  "model": "claude-sonnet-5",
+  "graph_sha": "542cb883df76",
+  "gates_sha": "98100a56d5b2",
+  "runtime_sha": "1b1d927432a4",
+  "script_sha": null
+ },
+ "chain": [
+  [
+   "gnssLost",
+   81799
+  ],
+  [
+   "fsLand",
+   86099
+  ],
+  [
+   "ekfVarExceeded",
+   86099
+  ],
+  [
+   "navBranch",
+   86099
+  ],
+  [
+   "landed",
+   135049
+  ],
+  [
+   "flightEnd",
+   135499
+  ]
+ ],
+ "chain_seq": [
+  "gnssLost",
+  "fsLand",
+  "navBranch",
+  "flightEnd"
+ ],
+ "chain_present": false,
+ "chain_ordered": false,
+ "link_alive": true,
+ "hb_gap_max_s": 1.0,
+ "acks": [
+  {
+   "cmd": "DO_SET_MODE(LOITER)",
+   "ack": "FAILED",
+   "mode_after": "LAND",
+   "sim_ms": 86299
+  }
+ ],
+ "t_land_ms": 86099,
+ "t_disarm_ms": null,
+ "t_onground_ms": 135049,
+ "terminated_in_air": null,
+ "window_s": 48.95,
+ "impact_mps": 0.494648,
+ "alt_at_disarm": null,
+ "outcome": "extend",
+ "expected_outcome": null,
+ "outcome_match": false,
+ "chain_reproduced": false,
+ "failures": [],
+ "ok": true
+}

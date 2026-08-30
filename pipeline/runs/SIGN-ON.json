@@ -1,0 +1,71 @@
+{
+ "id": "SIGN-ON",
+ "branch": "variance",
+ "meta": {
+  "run_at": "2026-08-27T09:12:58",
+  "ardupilot_commit": "c2b898a",
+  "model": "claude-sonnet-5",
+  "graph_sha": "10ecea2caed3",
+  "gates_sha": "98100a56d5b2",
+  "runtime_sha": "a6c8ec19ed10",
+  "script_sha": null
+ },
+ "chain": [
+  [
+   "gnssLost",
+   81579
+  ],
+  [
+   "fsLand",
+   85729
+  ],
+  [
+   "ekfVarExceeded",
+   85729
+  ],
+  [
+   "navBranch",
+   85729
+  ]
+ ],
+ "chain_seq": [
+  "gnssLost",
+  "fsLand",
+  "navBranch"
+ ],
+ "chain_present": false,
+ "chain_ordered": false,
+ "link_alive": true,
+ "hb_gap_max_s": 1.0,
+ "acks": [],
+ "t_land_ms": 85729,
+ "t_disarm_ms": null,
+ "t_onground_ms": null,
+ "terminated_in_air": null,
+ "window_s": null,
+ "impact_mps": null,
+ "alt_at_disarm": null,
+ "outcome": null,
+ "expected_outcome": null,
+ "outcome_match": true,
+ "chain_reproduced": false,
+ "failures": [
+  "비행 종료 미관측 (120s)"
+ ],
+ "ok": false,
+ "signing_experiment": {
+  "condition": "ON",
+  "signing": "활성 (정상 GCS 만 키 보유)",
+  "attacker_channel": "tcp:5763",
+  "attacker_source_system": 99,
+  "attacker_signed": false,
+  "attacker_channel_ok": true,
+  "window_entered": true,
+  "command": "MAV_CMD_DO_SET_MODE(ALT_HOLD)",
+  "ack": "ACCEPTED",
+  "ack_delay_s": 0.01,
+  "mode_after": "LAND",
+  "accepted": true,
+  "effective": false
+ }
+}

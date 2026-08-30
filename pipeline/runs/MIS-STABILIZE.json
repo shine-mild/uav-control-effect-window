@@ -1,0 +1,94 @@
+{
+ "id": "MIS-STABILIZE",
+ "branch": "variance",
+ "meta": {
+  "run_at": "2026-08-27T14:35:57",
+  "ardupilot_commit": "c2b898a",
+  "model": "claude-sonnet-5",
+  "graph_sha": "10ecea2caed3",
+  "gates_sha": "98100a56d5b2",
+  "runtime_sha": "a6c8ec19ed10",
+  "script_sha": null
+ },
+ "chain": [
+  [
+   "gnssLost",
+   104429
+  ],
+  [
+   "fsLand",
+   109329
+  ],
+  [
+   "ekfVarExceeded",
+   109329
+  ],
+  [
+   "navBranch",
+   109329
+  ],
+  [
+   "cmdAccepted",
+   111079
+  ],
+  [
+   "motorsDisarmed",
+   124979
+  ],
+  [
+   "flightEnd",
+   125129
+  ]
+ ],
+ "chain_seq": [
+  "gnssLost",
+  "fsLand",
+  "navBranch",
+  "cmdAccepted",
+  "flightEnd"
+ ],
+ "chain_present": true,
+ "chain_ordered": true,
+ "link_alive": true,
+ "hb_gap_max_s": 1.0,
+ "acks": [
+  {
+   "cmd": "DO_SET_MODE(STABILIZE)",
+   "ack": "ACCEPTED",
+   "mode_after": "STABILIZE",
+   "sim_ms": 109529
+  }
+ ],
+ "t_land_ms": 109329,
+ "t_disarm_ms": 124979,
+ "t_onground_ms": null,
+ "terminated_in_air": false,
+ "window_s": 15.65,
+ "impact_mps": 16.11256,
+ "alt_at_disarm": 3.908,
+ "outcome": "destroy",
+ "expected_outcome": null,
+ "outcome_match": false,
+ "chain_reproduced": true,
+ "failures": [],
+ "ok": true,
+ "mission_experiment": {
+  "command": "STABILIZE",
+  "groundspeed_at_jam": 9.96,
+  "truth_at_jam": [
+   34.7619387,
+   127.6621999
+  ],
+  "truth_at_end": [
+   34.762614,
+   127.6622676
+  ],
+  "displacement_from_jam_m": 75.34,
+  "alt_at_observation_end": 3.9,
+  "_note": "종전 alt_at_jam 은 코드 결함으로 교란 시점이 아니라 관측 종료 시점의 고도를 담고 있었다. 값을 보존한 채 이름만 정정하였다. 교란 시점 고도는 이 배치에서 기록되지 않았으며, 스크립트는 고도 37 m 이상에서만 교란을 주입한다."
+ },
+ "air_alt_threshold_m": 10.0,
+ "outcome_reclassified": "destroy",
+ "baseline_window_s": 48.65,
+ "baseline_source": "MIS-BASELINE (같은 배치)"
+}

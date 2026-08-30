@@ -1,0 +1,88 @@
+{
+ "id": "MIS-LOITER-01",
+ "branch": "variance",
+ "meta": {
+  "run_at": "2026-08-27T14:43:06",
+  "ardupilot_commit": "c2b898a",
+  "model": "claude-sonnet-5",
+  "graph_sha": "10ecea2caed3",
+  "gates_sha": "98100a56d5b2",
+  "runtime_sha": "1b1d927432a4",
+  "script_sha": null
+ },
+ "chain": [
+  [
+   "gnssLost",
+   104434
+  ],
+  [
+   "fsLand",
+   109332
+  ],
+  [
+   "ekfVarExceeded",
+   109332
+  ],
+  [
+   "navBranch",
+   109332
+  ],
+  [
+   "landed",
+   156782
+  ],
+  [
+   "flightEnd",
+   156782
+  ]
+ ],
+ "chain_seq": [
+  "gnssLost",
+  "fsLand",
+  "navBranch",
+  "flightEnd"
+ ],
+ "chain_present": false,
+ "chain_ordered": false,
+ "link_alive": true,
+ "hb_gap_max_s": 1.0,
+ "acks": [
+  {
+   "cmd": "DO_SET_MODE(LOITER)",
+   "ack": "FAILED",
+   "mode_after": "LAND",
+   "sim_ms": 109634
+  }
+ ],
+ "t_land_ms": 109332,
+ "t_disarm_ms": null,
+ "t_onground_ms": 156782,
+ "terminated_in_air": null,
+ "window_s": 47.45,
+ "impact_mps": null,
+ "alt_at_disarm": null,
+ "outcome": "recover",
+ "expected_outcome": null,
+ "outcome_match": false,
+ "chain_reproduced": false,
+ "failures": [],
+ "ok": true,
+ "mission_experiment": {
+  "command": "LOITER",
+  "groundspeed_at_jam": 9.96,
+  "truth_at_jam": [
+   34.7619435,
+   127.6621998
+  ],
+  "truth_at_end": [
+   34.7627078,
+   127.6622518
+  ],
+  "displacement_from_jam_m": 85.12,
+  "alt_at_observation_end": 4.1,
+  "_note": "종전 alt_at_jam 은 코드 결함으로 교란 시점이 아니라 관측 종료 시점의 고도를 담고 있었다. 값을 보존한 채 이름만 정정하였다. 교란 시점 고도는 이 배치에서 기록되지 않았으며, 스크립트는 고도 37 m 이상에서만 교란을 주입한다."
+ },
+ "outcome_reclassified": "recover",
+ "baseline_window_s": 48.65,
+ "baseline_source": "MIS-BASELINE (같은 배치)"
+}

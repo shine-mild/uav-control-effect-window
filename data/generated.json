@@ -1,0 +1,497 @@
+[
+ {
+  "path_id": "SC-01",
+  "gates_passed": 2,
+  "reasons": [
+   "[G3 실행가능] 7행: 변환 불가한 문법 — 'wait ekfPosLost==true'",
+   "[G3 실행가능] 8행: 변환 불가한 문법 — 'wait mode==LAND'",
+   "[G3 실행가능] 9행: 변환 불가한 문법 — 'wait descentWindow<48.35'"
+  ],
+  "scenario": {
+   "id": "EX-0016.03",
+   "path": "EX-0016.03 -> gnssArtifact -> navDegraded(posLost) -> fsLand -> injectWindow -> cmdInject -> effect",
+   "precondition": [
+    "linkAlive",
+    "mode==GUIDED",
+    "grounded==false",
+    "gnssLost==false"
+   ],
+   "steps": [
+    "set FS_EKF_ACTION=1",
+    "set SIM_GPS1_ENABLE=1",
+    "observe HEARTBEAT.system_status",
+    "set SIM_GPS1_ENABLE=0",
+    "observe GPS_RAW_INT.fix_type",
+    "observe STATUSTEXT",
+    "wait ekfPosLost==true",
+    "wait mode==LAND",
+    "wait descentWindow<48.35",
+    "send MAV_CMD_DO_SET_MODE(STABILIZE)",
+    "observe COMMAND_ACK.result",
+    "observe HEARTBEAT.custom_mode",
+    "observe GLOBAL_POSITION_INT.relative_alt"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT.text",
+    "HEARTBEAT.system_status",
+    "HEARTBEAT.custom_mode",
+    "COMMAND_ACK.result",
+    "GLOBAL_POSITION_INT.relative_alt",
+    "GLOBAL_POSITION_INT.vz"
+   ],
+   "success": "gnssLost && ekfPosLost && fsLand && injectWindow && cmdAccepted && mode==STABILIZE && posIndependent && effect",
+   "abort": [
+    "gnssLost==false before mode==LAND (GPS 재획득으로 navDegraded 미발생)",
+    "cmdAccepted==false (COMMAND_ACK.result != ACCEPTED)",
+    "descentWindow>=48.35 (주입창 초과, injectWindow 무효)",
+    "linkAlive==false (텔레메트리 유실로 검증 불가)"
+   ]
+  },
+  "expected_outcome": "destroy",
+  "command": "MAV_CMD_DO_SET_MODE(STABILIZE)",
+  "branch": "posLost",
+  "injection": "SIM_GPS1_ENABLE=0"
+ },
+ {
+  "path_id": "SC-02",
+  "gates_passed": 2,
+  "reasons": [
+   "[G3 실행가능] 10행: MAV_CMD_DO_SET_MODE 에 모드 인자가 없어 변환 불가"
+  ],
+  "scenario": {
+   "id": "EX-0016.03",
+   "path": "EX-0016.03 -> gnssArtifact -> navDegraded(posLost) -> fsLand -> injectWindow -> cmdInject -> effect",
+   "precondition": [
+    "linkAlive",
+    "mode=AUTO or GUIDED",
+    "grounded=false"
+   ],
+   "steps": [
+    "set SIM_GPS1_ENABLE=0",
+    "observe GPS_RAW_INT.fix_type",
+    "observe STATUSTEXT",
+    "wait gnssLost",
+    "observe GLOBAL_POSITION_INT.lat",
+    "wait ekfPosLost",
+    "observe HEARTBEAT.system_status",
+    "wait fsLand",
+    "observe HEARTBEAT.custom_mode",
+    "send MAV_CMD_DO_SET_MODE",
+    "observe COMMAND_ACK.result",
+    "observe HEARTBEAT.custom_mode"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT.text",
+    "GLOBAL_POSITION_INT.lat",
+    "HEARTBEAT.system_status",
+    "HEARTBEAT.custom_mode",
+    "COMMAND_ACK.result"
+   ],
+   "success": "navDegraded ∧ fsLand ∧ injectWindow ∧ cmdInject ∧ cmdAccepted ∧ posIndependent ∧ mode=ALT_HOLD ∧ effect",
+   "abort": [
+    "gnssLost=false (GPS 신호 회복으로 posLost 미달성)",
+    "ekfVarExceeded=false ∧ fsLand=false 상태로 injectWindow 진입 전 48.35초 경과",
+    "cmdAccepted=false (COMMAND_ACK != ACCEPTED)"
+   ]
+  },
+  "expected_outcome": "recover",
+  "command": "MAV_CMD_DO_SET_MODE(ALT_HOLD)",
+  "branch": "posLost",
+  "injection": "SIM_GPS1_ENABLE=0"
+ },
+ {
+  "path_id": "SC-03",
+  "gates_passed": 2,
+  "reasons": [
+   "[G3 실행가능] 12행: MAV_CMD_DO_SET_MODE 에 모드 인자가 없어 변환 불가"
+  ],
+  "scenario": {
+   "id": "EX-0016.03-GNSS-CMDINJECT",
+   "path": "EX-0016.03 -> gnssArtifact -> navDegraded(posLost) -> fsLand -> injectWindow -> cmdInject -> effect",
+   "precondition": [
+    "linkAlive",
+    "mode==GUIDED",
+    "grounded==false",
+    "noSigning"
+   ],
+   "steps": [
+    "set SIM_GPS1_ENABLE=0",
+    "observe GPS_RAW_INT.fix_type",
+    "wait gnssLost",
+    "observe STATUSTEXT",
+    "wait ekfPosLost",
+    "observe GLOBAL_POSITION_INT.lat",
+    "wait navDegraded",
+    "observe HEARTBEAT.system_status",
+    "wait fsLand",
+    "observe STATUSTEXT.text",
+    "wait injectWindow",
+    "send MAV_CMD_DO_SET_MODE",
+    "observe COMMAND_ACK.result",
+    "wait cmdAccepted",
+    "observe HEARTBEAT.custom_mode",
+    "observe GLOBAL_POSITION_INT.relative_alt"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT.text",
+    "GLOBAL_POSITION_INT.lat",
+    "GLOBAL_POSITION_INT.relative_alt",
+    "HEARTBEAT.system_status",
+    "HEARTBEAT.custom_mode",
+    "COMMAND_ACK.result"
+   ],
+   "success": "cmdAccepted && mode==GUIDED_NOGPS && posIndependent && effect",
+   "abort": [
+    "ekfVarExceeded==false 상태로 wait 초과 시 injectWindow 무효 -> abort",
+    "grounded==true 도달 시 outcome 확정, cmdInject 중단",
+    "linkAlive==false 시 즉시 abort"
+   ]
+  },
+  "expected_outcome": "extend",
+  "command": "MAV_CMD_DO_SET_MODE(GUIDED_NOGPS)",
+  "branch": "posLost",
+  "injection": "SIM_GPS1_ENABLE=0"
+ },
+ {
+  "path_id": "SC-04",
+  "gates_passed": 2,
+  "reasons": [
+   "[G3 실행가능] 7행: 변환 불가한 문법 — 'observe mode'"
+  ],
+  "scenario": {
+   "id": "PT-EX-0016.03",
+   "path": "EX-0016.03 -> gnssArtifact -> navDegraded(posLost) -> fsLand -> injectWindow -> cmdInject -> effect",
+   "precondition": [
+    "linkAlive",
+    "mode=AUTO",
+    "grounded=false",
+    "noSigning"
+   ],
+   "steps": [
+    "set SIM_GPS1_ENABLE=0",
+    "observe GPS_RAW_INT.fix_type",
+    "wait ekfPosLost",
+    "observe STATUSTEXT.text",
+    "observe HEARTBEAT.system_status",
+    "wait fsLand",
+    "observe mode",
+    "wait injectWindow",
+    "send MAV_CMD_DO_FLIGHTTERMINATION",
+    "observe COMMAND_ACK.result"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT.text",
+    "HEARTBEAT.system_status",
+    "GLOBAL_POSITION_INT.relative_alt",
+    "COMMAND_ACK.result"
+   ],
+   "success": "gnssLost ∧ ekfPosLost ∧ navDegraded ∧ fsLand ∧ cmdAccepted ∧ effect ∧ outcome(impactSpeed>0)",
+   "abort": [
+    "linkAlive=false",
+    "elapsed>48.35s (injectWindow closed before cmdAccepted)",
+    "cmdAccepted=false"
+   ]
+  },
+  "expected_outcome": "destroy",
+  "command": "MAV_CMD_DO_FLIGHTTERMINATION",
+  "branch": "posLost",
+  "injection": "SIM_GPS1_ENABLE=0"
+ },
+ {
+  "path_id": "SC-05",
+  "gates_passed": 2,
+  "reasons": [
+   "[G3 실행가능] 2행: 변환 불가한 문법 — 'wait !grounded'"
+  ],
+  "scenario": {
+   "id": "PEN-EX-0016.03",
+   "path": "EX-0016.03 -> gnssArtifact -> navDegraded(posLost) -> fsLand -> injectWindow -> cmdInject -> effect",
+   "precondition": [
+    "linkAlive",
+    "!grounded",
+    "mode=AUTO",
+    "noSigning"
+   ],
+   "steps": [
+    "wait linkAlive",
+    "wait !grounded",
+    "set SIM_GPS1_ENABLE=0",
+    "observe GPS_RAW_INT.fix_type",
+    "wait gnssLost",
+    "observe STATUSTEXT",
+    "observe GLOBAL_POSITION_INT",
+    "wait ekfPosLost",
+    "observe HEARTBEAT.system_status",
+    "wait mode",
+    "wait fsLand",
+    "observe COMMAND_ACK",
+    "wait injectWindow",
+    "send MAV_CMD_COMPONENT_ARM_DISARM",
+    "observe COMMAND_ACK.result",
+    "observe GLOBAL_POSITION_INT"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT.text",
+    "HEARTBEAT.system_status",
+    "GLOBAL_POSITION_INT.relative_alt",
+    "COMMAND_ACK.result",
+    "GLOBAL_POSITION_INT.vz"
+   ],
+   "success": "cmdAccepted ∧ effect(mode=LAND ∧ ekfPosLost ∧ !grounded) → outcome(impactSpeed>threshold)",
+   "abort": [
+    "!injectWindow within 48.35s of set SIM_GPS1_ENABLE=0",
+    "!linkAlive",
+    "!ekfPosLost after set (gnssArtifact 미유발)",
+    "!fsLand (mode≠LAND, failsafe 미진입)",
+    "grounded prior to send MAV_CMD_COMPONENT_ARM_DISARM"
+   ]
+  },
+  "expected_outcome": "destroy",
+  "command": "MAV_CMD_COMPONENT_ARM_DISARM",
+  "branch": "posLost",
+  "injection": "SIM_GPS1_ENABLE=0"
+ },
+ {
+  "path_id": "SC-06",
+  "gates_passed": 3,
+  "reasons": [],
+  "scenario": {
+   "id": "EX-0016.03-gnssArtifact-cmdInject-stabilize",
+   "path": "EX-0016.03 -> gnssArtifact -> navDegraded(variance) -> fsLand -> injectWindow -> cmdInject -> effect",
+   "precondition": [
+    "linkAlive",
+    "noSigning",
+    "mode in {AUTO, LOITER, GUIDED}",
+    "SIM_GPS1_ENABLE=1"
+   ],
+   "steps": [
+    "set FS_EKF_ACTION=1",
+    "set EK3_OPTIONS=0",
+    "set SIM_GPS1_JAM=1",
+    "observe GPS_RAW_INT.fix_type",
+    "observe STATUSTEXT",
+    "wait ekfVarExceeded",
+    "observe HEARTBEAT.system_status",
+    "wait fsLand",
+    "send MAV_CMD_DO_SET_MODE(STABILIZE)",
+    "observe COMMAND_ACK",
+    "observe HEARTBEAT.custom_mode",
+    "observe GLOBAL_POSITION_INT"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT.text",
+    "HEARTBEAT.system_status",
+    "HEARTBEAT.custom_mode",
+    "COMMAND_ACK.result",
+    "GLOBAL_POSITION_INT.relative_alt"
+   ],
+   "success": "gnssLost && ekfVarExceeded && fsLand && injectWindow && cmdAccepted && mode==STABILIZE && posIndependent && effect",
+   "abort": [
+    "elapsed > 48.35s (injectWindow closed before cmdAccepted)",
+    "!linkAlive (link lost before cmdInject)",
+    "!ekfVarExceeded before fsLand confirmed (jam insufficient, navDegraded not reached)",
+    "mode != STABILIZE after COMMAND_ACK (cmdInject rejected, outcome=fail)"
+   ]
+  },
+  "expected_outcome": "destroy",
+  "command": "MAV_CMD_DO_SET_MODE(STABILIZE)",
+  "branch": "variance",
+  "injection": "SIM_GPS1_JAM=1"
+ },
+ {
+  "path_id": "SC-07",
+  "gates_passed": 3,
+  "reasons": [],
+  "scenario": {
+   "id": "EX-0016.03",
+   "path": "EX-0016.03 -> gnssArtifact -> navDegraded(variance) -> fsLand -> injectWindow -> cmdInject -> effect",
+   "precondition": [
+    "linkAlive",
+    "mode != LAND",
+    "EK3_OPTIONS=0",
+    "FS_EKF_ACTION=1"
+   ],
+   "steps": [
+    "set SIM_GPS1_ENABLE=1",
+    "set FS_EKF_ACTION=1",
+    "set SIM_GPS1_JAM=1",
+    "observe GPS_RAW_INT.fix_type",
+    "observe STATUSTEXT.text",
+    "wait ekfVarExceeded",
+    "observe HEARTBEAT.system_status",
+    "wait fsLand",
+    "wait injectWindow",
+    "send MAV_CMD_DO_SET_MODE(ALT_HOLD)",
+    "observe COMMAND_ACK.result",
+    "observe HEARTBEAT.custom_mode"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT.text",
+    "HEARTBEAT.system_status",
+    "HEARTBEAT.custom_mode",
+    "COMMAND_ACK.result",
+    "GLOBAL_POSITION_INT.lat"
+   ],
+   "success": "cmdAccepted && mode==ALT_HOLD && posIndependent && effect",
+   "abort": [
+    "!linkAlive",
+    "grounded",
+    "impactSpeed exceeds safe threshold",
+    "elapsed(injectWindow) > 48.35s without cmdAccepted",
+    "!ekfVarExceeded before injectWindow opens"
+   ]
+  },
+  "expected_outcome": "recover",
+  "command": "MAV_CMD_DO_SET_MODE(ALT_HOLD)",
+  "branch": "variance",
+  "injection": "SIM_GPS1_JAM=1"
+ },
+ {
+  "path_id": "SC-08",
+  "gates_passed": 3,
+  "reasons": [],
+  "scenario": {
+   "id": "EX-0016.03",
+   "path": "EX-0016.03 -> gnssArtifact -> navDegraded(variance) -> fsLand -> injectWindow -> cmdInject -> effect",
+   "precondition": [
+    "linkAlive",
+    "mode == GUIDED",
+    "gnssLost == false",
+    "SIM_GPS1_ENABLE=1 (기본 SITL GPS 활성 상태)"
+   ],
+   "steps": [
+    "set SIM_GPS1_JAM=1",
+    "observe GPS_RAW_INT.fix_type",
+    "wait gnssLost",
+    "observe STATUSTEXT",
+    "wait ekfVarExceeded",
+    "observe EKF_STATUS_REPORT.flags",
+    "wait navDegraded",
+    "observe HEARTBEAT.custom_mode",
+    "wait fsLand",
+    "observe COMMAND_ACK.result",
+    "wait injectWindow",
+    "send MAV_CMD_DO_SET_MODE(GUIDED_NOGPS)",
+    "observe COMMAND_ACK.result",
+    "observe HEARTBEAT.custom_mode"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT.text",
+    "HEARTBEAT.custom_mode",
+    "COMMAND_ACK.result",
+    "GLOBAL_POSITION_INT.relative_alt"
+   ],
+   "success": "cmdAccepted ∧ posIndependent ∧ mode==GUIDED_NOGPS ∧ effect",
+   "abort": [
+    "grounded == true (fsLand이 착지까지 진행되어 injectWindow 종료)",
+    "linkAlive == false",
+    "cmdAccepted == false",
+    "injectWindow 경과시간 > 48.35s",
+    "ekfPosLost == true ∧ noSigning == false (예상 외 안전장치 개입)"
+   ]
+  },
+  "expected_outcome": "extend",
+  "command": "MAV_CMD_DO_SET_MODE(GUIDED_NOGPS)",
+  "branch": "variance",
+  "injection": "SIM_GPS1_JAM=1"
+ },
+ {
+  "path_id": "SC-09",
+  "gates_passed": 3,
+  "reasons": [],
+  "scenario": {
+   "id": "SIM-EX-0016.03",
+   "path": "EX-0016.03 -> gnssArtifact -> navDegraded(variance) -> fsLand -> injectWindow -> cmdInject -> effect",
+   "precondition": [
+    "linkAlive",
+    "mode=AUTO",
+    "posIndependent(MAV_CMD_DO_FLIGHTTERMINATION)",
+    "noSigning"
+   ],
+   "steps": [
+    "set SIM_GPS1_JAM=1",
+    "observe GPS_RAW_INT.fix_type",
+    "observe STATUSTEXT",
+    "wait ekfVarExceeded",
+    "observe HEARTBEAT.system_status",
+    "wait fsLand",
+    "wait injectWindow",
+    "send MAV_CMD_DO_FLIGHTTERMINATION",
+    "observe COMMAND_ACK.result"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT.text",
+    "HEARTBEAT.system_status",
+    "COMMAND_ACK.result",
+    "GLOBAL_POSITION_INT.relative_alt"
+   ],
+   "success": "navDegraded ∧ fsLand ∧ injectWindow ∧ cmdInject ∧ cmdAccepted ∧ effect ∧ grounded",
+   "abort": [
+    "injectWindow 시작 후 48.35초 경과 시까지 COMMAND_ACK 미수신이면 즉시 중단",
+    "ekfVarExceeded 이전에 linkAlive=false로 전환되면 중단",
+    "fsLand 도달 전 mode가 RTL/QLAND 등 예상 외 값으로 전환되면 경로 재평가 후 중단"
+   ]
+  },
+  "expected_outcome": "destroy",
+  "command": "MAV_CMD_DO_FLIGHTTERMINATION",
+  "branch": "variance",
+  "injection": "SIM_GPS1_JAM=1"
+ },
+ {
+  "path_id": "SC-10",
+  "gates_passed": 3,
+  "reasons": [],
+  "scenario": {
+   "id": "EX-0016.03",
+   "path": "EX-0016.03 -> gnssArtifact -> navDegraded(variance) -> fsLand -> injectWindow -> cmdInject -> effect",
+   "precondition": [
+    "set FS_EKF_ACTION=2",
+    "set SIM_GPS1_ENABLE=1",
+    "mode==GUIDED",
+    "linkAlive"
+   ],
+   "steps": [
+    "set SIM_GPS1_JAM=1",
+    "observe GPS_RAW_INT.fix_type",
+    "wait gnssLost",
+    "observe GLOBAL_POSITION_INT.hdg",
+    "observe STATUSTEXT.text",
+    "wait ekfVarExceeded",
+    "observe HEARTBEAT.system_status",
+    "wait fsLand",
+    "observe HEARTBEAT.mode",
+    "send MAV_CMD_COMPONENT_ARM_DISARM",
+    "observe COMMAND_ACK.result",
+    "observe HEARTBEAT.system_status"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "GLOBAL_POSITION_INT.hdg",
+    "STATUSTEXT.text",
+    "HEARTBEAT.system_status",
+    "HEARTBEAT.mode",
+    "COMMAND_ACK.result"
+   ],
+   "success": "cmdAccepted && effect(grounded) within injectWindow(<=48.35s from gnssArtifact)",
+   "abort": [
+    "!ekfPosLost && !ekfVarExceeded (교란 실패, navDegraded 미달성)",
+    "!fsLand (FS_EKF_ACTION 미발동으로 injectWindow 진입 실패)",
+    "!linkAlive (링크 손실로 cmdInject 불가)",
+    "impactSpeed 임계치 초과 (통제 불능 착지, 시나리오 중단)"
+   ]
+  },
+  "expected_outcome": "destroy",
+  "command": "MAV_CMD_COMPONENT_ARM_DISARM",
+  "branch": "variance",
+  "injection": "SIM_GPS1_JAM=1"
+ }
+]

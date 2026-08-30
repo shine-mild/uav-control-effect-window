@@ -1,0 +1,208 @@
+{
+ "cond": "C1",
+ "run": 1,
+ "t_inject_ms": 66194,
+ "t_land_ms": 74494,
+ "t_ground_ms": 90294,
+ "delay_to_land_s": 8.3,
+ "inject_window_s": 15.8,
+ "events": [
+  {
+   "sim_ms": 30394,
+   "stage": "STATUSTEXT",
+   "detail": "PreArm: Need Position Estimate"
+  },
+  {
+   "sim_ms": 31944,
+   "stage": "준비",
+   "detail": "fix=3 sats=10"
+  },
+  {
+   "sim_ms": 33044,
+   "stage": "시동시도",
+   "detail": "ack=FAILED"
+  },
+  {
+   "sim_ms": 33044,
+   "stage": "STATUSTEXT",
+   "detail": "Arm: Need Position Estimate"
+  },
+  {
+   "sim_ms": 38094,
+   "stage": "시동시도",
+   "detail": "ack=FAILED"
+  },
+  {
+   "sim_ms": 38094,
+   "stage": "STATUSTEXT",
+   "detail": "Arm: Need Position Estimate"
+  },
+  {
+   "sim_ms": 41594,
+   "stage": "STATUSTEXT",
+   "detail": "EKF3 IMU0 is using GPS"
+  },
+  {
+   "sim_ms": 41594,
+   "stage": "STATUSTEXT",
+   "detail": "EKF3 IMU1 is using GPS"
+  },
+  {
+   "sim_ms": 43144,
+   "stage": "시동시도",
+   "detail": "ack=ACCEPTED"
+  },
+  {
+   "sim_ms": 43144,
+   "stage": "STATUSTEXT",
+   "detail": "Arming motors"
+  },
+  {
+   "sim_ms": 44194,
+   "stage": "이륙",
+   "detail": "목표 40.0 m"
+  },
+  {
+   "sim_ms": 48844,
+   "stage": "STATUSTEXT",
+   "detail": "EKF3 IMU1 MAG0 in-flight yaw alignment complete"
+  },
+  {
+   "sim_ms": 48844,
+   "stage": "STATUSTEXT",
+   "detail": "EKF3 IMU0 MAG0 in-flight yaw alignment complete"
+  },
+  {
+   "sim_ms": 63144,
+   "stage": "순항",
+   "detail": "alt=38.3 m mode=GUIDED"
+  },
+  {
+   "sim_ms": 66194,
+   "stage": "0_교란주입",
+   "detail": "C1"
+  },
+  {
+   "sim_ms": 74294,
+   "stage": "모드전환",
+   "detail": "GUIDED -> LAND"
+  },
+  {
+   "sim_ms": 74294,
+   "stage": "STATUSTEXT",
+   "detail": "EKF variance: position lost"
+  },
+  {
+   "sim_ms": 74294,
+   "stage": "STATUSTEXT",
+   "detail": "EKF Failsafe: changed to Land Mode"
+  },
+  {
+   "sim_ms": 74494,
+   "stage": "1_창_시작",
+   "detail": "LAND 진입, alt=40.0 m"
+  },
+  {
+   "sim_ms": 74544,
+   "stage": "모드전환",
+   "detail": "LAND -> STABILIZE"
+  },
+  {
+   "sim_ms": 75594,
+   "stage": "모드전환",
+   "detail": "STABILIZE -> ALT_HOLD"
+  },
+  {
+   "sim_ms": 76644,
+   "stage": "모드전환",
+   "detail": "ALT_HOLD -> GUIDED_NOGPS"
+  },
+  {
+   "sim_ms": 77694,
+   "stage": "STATUSTEXT",
+   "detail": "Mode change to Loiter failed: requires position"
+  },
+  {
+   "sim_ms": 78094,
+   "stage": "STATUSTEXT",
+   "detail": "SIM Hit ground at 16.14490 m/s"
+  },
+  {
+   "sim_ms": 78694,
+   "stage": "창_종료",
+   "detail": "프로브 중단 (armed=True alt=-0.5)"
+  },
+  {
+   "sim_ms": 81394,
+   "stage": "STATUSTEXT",
+   "detail": "EKF3 IMU1 stopped aiding"
+  },
+  {
+   "sim_ms": 81394,
+   "stage": "STATUSTEXT",
+   "detail": "EKF3 IMU0 stopped aiding"
+  },
+  {
+   "sim_ms": 88544,
+   "stage": "STATUSTEXT",
+   "detail": "SmartRTL deactivated: bad position"
+  },
+  {
+   "sim_ms": 90094,
+   "stage": "STATUSTEXT",
+   "detail": "Disarming motors"
+  },
+  {
+   "sim_ms": 90294,
+   "stage": "2_창_종료",
+   "detail": "시동꺼짐 alt=-0.1 m"
+  }
+ ],
+ "acks": [
+  {
+   "label": "SET_MODE:STABILIZE",
+   "hypothesis": "pos-independent?",
+   "sim_ms": 74494,
+   "t_since_land_s": 0.0,
+   "alt_m": 40.0,
+   "ack": "ACCEPTED",
+   "mode_before": "LAND",
+   "mode_after": "STABILIZE",
+   "mode_changed": true
+  },
+  {
+   "label": "SET_MODE:ALT_HOLD",
+   "hypothesis": "pos-independent?",
+   "sim_ms": 75544,
+   "t_since_land_s": 1.05,
+   "alt_m": 35.4,
+   "ack": "ACCEPTED",
+   "mode_before": "STABILIZE",
+   "mode_after": "ALT_HOLD",
+   "mode_changed": true
+  },
+  {
+   "label": "SET_MODE:GUIDED_NOGPS",
+   "hypothesis": "pos-independent?",
+   "sim_ms": 76594,
+   "t_since_land_s": 2.1,
+   "alt_m": 22.9,
+   "ack": "ACCEPTED",
+   "mode_before": "ALT_HOLD",
+   "mode_after": "GUIDED_NOGPS",
+   "mode_changed": true
+  },
+  {
+   "label": "SET_MODE:LOITER",
+   "hypothesis": "pos-dependent?",
+   "sim_ms": 77644,
+   "t_since_land_s": 3.15,
+   "alt_m": 6.9,
+   "ack": "FAILED",
+   "mode_before": "GUIDED_NOGPS",
+   "mode_after": "GUIDED_NOGPS",
+   "mode_changed": false
+  }
+ ],
+ "ok": true
+}

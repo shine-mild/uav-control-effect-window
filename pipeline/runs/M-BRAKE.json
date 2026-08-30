@@ -1,0 +1,70 @@
+{
+ "id": "M-BRAKE",
+ "branch": "variance",
+ "meta": {
+  "run_at": "2026-08-26T15:58:51",
+  "ardupilot_commit": "c2b898a",
+  "model": "claude-sonnet-5",
+  "graph_sha": "10ecea2caed3",
+  "gates_sha": "98100a56d5b2",
+  "runtime_sha": "377c646ee24d",
+  "script_sha": null
+ },
+ "chain": [
+  [
+   "gnssLost",
+   81827
+  ],
+  [
+   "fsLand",
+   86127
+  ],
+  [
+   "ekfVarExceeded",
+   86127
+  ],
+  [
+   "navBranch",
+   86127
+  ],
+  [
+   "landed",
+   133229
+  ],
+  [
+   "flightEnd",
+   133677
+  ]
+ ],
+ "chain_seq": [
+  "gnssLost",
+  "fsLand",
+  "navBranch",
+  "flightEnd"
+ ],
+ "chain_present": false,
+ "chain_ordered": false,
+ "link_alive": true,
+ "hb_gap_max_s": 1.0,
+ "acks": [
+  {
+   "cmd": "DO_SET_MODE(BRAKE)",
+   "ack": "FAILED",
+   "mode_after": "LAND",
+   "sim_ms": 86277
+  }
+ ],
+ "t_land_ms": 86127,
+ "t_disarm_ms": null,
+ "t_onground_ms": 133229,
+ "terminated_in_air": null,
+ "window_s": 47.1,
+ "impact_mps": 0.486899,
+ "alt_at_disarm": null,
+ "outcome": "recover",
+ "expected_outcome": null,
+ "outcome_match": false,
+ "chain_reproduced": false,
+ "failures": [],
+ "ok": true
+}

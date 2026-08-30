@@ -1,0 +1,352 @@
+[
+ {
+  "path_id": "SC-01",
+  "branch": "posLost",
+  "expected_outcome": "destroy",
+  "command": "MAV_CMD_DO_SET_MODE(STABILIZE)",
+  "gates_passed": 3,
+  "scenario": {
+   "id": "SC-01",
+   "path": "EX-0016.03 -> gnssArtifact -> navDegraded(posLost) -> fsLand -> injectWindow -> cmdInject -> effect",
+   "precondition": [
+    "noSigning",
+    "linkAlive",
+    "navBranch(posLost)"
+   ],
+   "steps": [
+    "set SIM_GPS1_ENABLE=0",
+    "observe GPS_RAW_INT",
+    "wait ekfPosLost",
+    "wait fsLand",
+    "send MAV_CMD_DO_SET_MODE(STABILIZE)",
+    "observe COMMAND_ACK"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT",
+    "HEARTBEAT.custom_mode",
+    "COMMAND_ACK.result"
+   ],
+   "success": "cmdAccepted(U, c)",
+   "abort": [
+    "고도 1 m 미만",
+    "시뮬레이션 시각 300 s 초과"
+   ]
+  }
+ },
+ {
+  "path_id": "SC-02",
+  "branch": "posLost",
+  "expected_outcome": "recover",
+  "command": "MAV_CMD_DO_SET_MODE(ALT_HOLD)",
+  "gates_passed": 3,
+  "scenario": {
+   "id": "SC-02",
+   "path": "EX-0016.03 -> gnssArtifact -> navDegraded(posLost) -> fsLand -> injectWindow -> cmdInject -> effect",
+   "precondition": [
+    "noSigning",
+    "linkAlive",
+    "navBranch(posLost)"
+   ],
+   "steps": [
+    "set SIM_GPS1_ENABLE=0",
+    "observe GPS_RAW_INT",
+    "wait ekfPosLost",
+    "wait fsLand",
+    "send MAV_CMD_DO_SET_MODE(ALT_HOLD)",
+    "observe COMMAND_ACK"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT",
+    "HEARTBEAT.custom_mode",
+    "COMMAND_ACK.result"
+   ],
+   "success": "cmdAccepted(U, c)",
+   "abort": [
+    "고도 1 m 미만",
+    "시뮬레이션 시각 300 s 초과"
+   ]
+  }
+ },
+ {
+  "path_id": "SC-03",
+  "branch": "posLost",
+  "expected_outcome": "extend",
+  "command": "MAV_CMD_DO_SET_MODE(GUIDED_NOGPS)",
+  "gates_passed": 3,
+  "scenario": {
+   "id": "SC-03",
+   "path": "EX-0016.03 -> gnssArtifact -> navDegraded(posLost) -> fsLand -> injectWindow -> cmdInject -> effect",
+   "precondition": [
+    "noSigning",
+    "linkAlive",
+    "navBranch(posLost)"
+   ],
+   "steps": [
+    "set SIM_GPS1_ENABLE=0",
+    "observe GPS_RAW_INT",
+    "wait ekfPosLost",
+    "wait fsLand",
+    "send MAV_CMD_DO_SET_MODE(GUIDED_NOGPS)",
+    "observe COMMAND_ACK"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT",
+    "HEARTBEAT.custom_mode",
+    "COMMAND_ACK.result"
+   ],
+   "success": "cmdAccepted(U, c)",
+   "abort": [
+    "고도 1 m 미만",
+    "시뮬레이션 시각 300 s 초과"
+   ]
+  }
+ },
+ {
+  "path_id": "SC-04",
+  "branch": "posLost",
+  "expected_outcome": "destroy",
+  "command": "MAV_CMD_DO_FLIGHTTERMINATION",
+  "gates_passed": 3,
+  "scenario": {
+   "id": "SC-04",
+   "path": "EX-0016.03 -> gnssArtifact -> navDegraded(posLost) -> fsLand -> injectWindow -> cmdInject -> effect",
+   "precondition": [
+    "noSigning",
+    "linkAlive",
+    "navBranch(posLost)"
+   ],
+   "steps": [
+    "set SIM_GPS1_ENABLE=0",
+    "observe GPS_RAW_INT",
+    "wait ekfPosLost",
+    "wait fsLand",
+    "send MAV_CMD_DO_FLIGHTTERMINATION",
+    "observe COMMAND_ACK"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT",
+    "HEARTBEAT.custom_mode",
+    "COMMAND_ACK.result"
+   ],
+   "success": "cmdAccepted(U, c)",
+   "abort": [
+    "고도 1 m 미만",
+    "시뮬레이션 시각 300 s 초과"
+   ]
+  }
+ },
+ {
+  "path_id": "SC-05",
+  "branch": "posLost",
+  "expected_outcome": "destroy",
+  "command": "MAV_CMD_COMPONENT_ARM_DISARM",
+  "gates_passed": 3,
+  "scenario": {
+   "id": "SC-05",
+   "path": "EX-0016.03 -> gnssArtifact -> navDegraded(posLost) -> fsLand -> injectWindow -> cmdInject -> effect",
+   "precondition": [
+    "noSigning",
+    "linkAlive",
+    "navBranch(posLost)"
+   ],
+   "steps": [
+    "set SIM_GPS1_ENABLE=0",
+    "observe GPS_RAW_INT",
+    "wait ekfPosLost",
+    "wait fsLand",
+    "send MAV_CMD_COMPONENT_ARM_DISARM",
+    "observe COMMAND_ACK"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT",
+    "HEARTBEAT.custom_mode",
+    "COMMAND_ACK.result"
+   ],
+   "success": "cmdAccepted(U, c)",
+   "abort": [
+    "고도 1 m 미만",
+    "시뮬레이션 시각 300 s 초과"
+   ]
+  }
+ },
+ {
+  "path_id": "SC-06",
+  "branch": "variance",
+  "expected_outcome": "destroy",
+  "command": "MAV_CMD_DO_SET_MODE(STABILIZE)",
+  "gates_passed": 3,
+  "scenario": {
+   "id": "SC-06",
+   "path": "EX-0016.03 -> gnssArtifact -> navDegraded(variance) -> fsLand -> injectWindow -> cmdInject -> effect",
+   "precondition": [
+    "noSigning",
+    "linkAlive",
+    "navBranch(variance)"
+   ],
+   "steps": [
+    "set SIM_GPS1_JAM=1",
+    "observe GPS_RAW_INT",
+    "wait ekfVarExceeded",
+    "wait fsLand",
+    "send MAV_CMD_DO_SET_MODE(STABILIZE)",
+    "observe COMMAND_ACK"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT",
+    "HEARTBEAT.custom_mode",
+    "COMMAND_ACK.result"
+   ],
+   "success": "cmdAccepted(U, c)",
+   "abort": [
+    "고도 1 m 미만",
+    "시뮬레이션 시각 300 s 초과"
+   ]
+  }
+ },
+ {
+  "path_id": "SC-07",
+  "branch": "variance",
+  "expected_outcome": "recover",
+  "command": "MAV_CMD_DO_SET_MODE(ALT_HOLD)",
+  "gates_passed": 3,
+  "scenario": {
+   "id": "SC-07",
+   "path": "EX-0016.03 -> gnssArtifact -> navDegraded(variance) -> fsLand -> injectWindow -> cmdInject -> effect",
+   "precondition": [
+    "noSigning",
+    "linkAlive",
+    "navBranch(variance)"
+   ],
+   "steps": [
+    "set SIM_GPS1_JAM=1",
+    "observe GPS_RAW_INT",
+    "wait ekfVarExceeded",
+    "wait fsLand",
+    "send MAV_CMD_DO_SET_MODE(ALT_HOLD)",
+    "observe COMMAND_ACK"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT",
+    "HEARTBEAT.custom_mode",
+    "COMMAND_ACK.result"
+   ],
+   "success": "cmdAccepted(U, c)",
+   "abort": [
+    "고도 1 m 미만",
+    "시뮬레이션 시각 300 s 초과"
+   ]
+  }
+ },
+ {
+  "path_id": "SC-08",
+  "branch": "variance",
+  "expected_outcome": "extend",
+  "command": "MAV_CMD_DO_SET_MODE(GUIDED_NOGPS)",
+  "gates_passed": 3,
+  "scenario": {
+   "id": "SC-08",
+   "path": "EX-0016.03 -> gnssArtifact -> navDegraded(variance) -> fsLand -> injectWindow -> cmdInject -> effect",
+   "precondition": [
+    "noSigning",
+    "linkAlive",
+    "navBranch(variance)"
+   ],
+   "steps": [
+    "set SIM_GPS1_JAM=1",
+    "observe GPS_RAW_INT",
+    "wait ekfVarExceeded",
+    "wait fsLand",
+    "send MAV_CMD_DO_SET_MODE(GUIDED_NOGPS)",
+    "observe COMMAND_ACK"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT",
+    "HEARTBEAT.custom_mode",
+    "COMMAND_ACK.result"
+   ],
+   "success": "cmdAccepted(U, c)",
+   "abort": [
+    "고도 1 m 미만",
+    "시뮬레이션 시각 300 s 초과"
+   ]
+  }
+ },
+ {
+  "path_id": "SC-09",
+  "branch": "variance",
+  "expected_outcome": "destroy",
+  "command": "MAV_CMD_DO_FLIGHTTERMINATION",
+  "gates_passed": 3,
+  "scenario": {
+   "id": "SC-09",
+   "path": "EX-0016.03 -> gnssArtifact -> navDegraded(variance) -> fsLand -> injectWindow -> cmdInject -> effect",
+   "precondition": [
+    "noSigning",
+    "linkAlive",
+    "navBranch(variance)"
+   ],
+   "steps": [
+    "set SIM_GPS1_JAM=1",
+    "observe GPS_RAW_INT",
+    "wait ekfVarExceeded",
+    "wait fsLand",
+    "send MAV_CMD_DO_FLIGHTTERMINATION",
+    "observe COMMAND_ACK"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT",
+    "HEARTBEAT.custom_mode",
+    "COMMAND_ACK.result"
+   ],
+   "success": "cmdAccepted(U, c)",
+   "abort": [
+    "고도 1 m 미만",
+    "시뮬레이션 시각 300 s 초과"
+   ]
+  }
+ },
+ {
+  "path_id": "SC-10",
+  "branch": "variance",
+  "expected_outcome": "destroy",
+  "command": "MAV_CMD_COMPONENT_ARM_DISARM",
+  "gates_passed": 3,
+  "scenario": {
+   "id": "SC-10",
+   "path": "EX-0016.03 -> gnssArtifact -> navDegraded(variance) -> fsLand -> injectWindow -> cmdInject -> effect",
+   "precondition": [
+    "noSigning",
+    "linkAlive",
+    "navBranch(variance)"
+   ],
+   "steps": [
+    "set SIM_GPS1_JAM=1",
+    "observe GPS_RAW_INT",
+    "wait ekfVarExceeded",
+    "wait fsLand",
+    "send MAV_CMD_COMPONENT_ARM_DISARM",
+    "observe COMMAND_ACK"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT",
+    "HEARTBEAT.custom_mode",
+    "COMMAND_ACK.result"
+   ],
+   "success": "cmdAccepted(U, c)",
+   "abort": [
+    "고도 1 m 미만",
+    "시뮬레이션 시각 300 s 초과"
+   ]
+  }
+ }
+]

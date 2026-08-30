@@ -1,0 +1,63 @@
+{
+ "id": "M-SMART_RTL",
+ "branch": "variance",
+ "meta": {
+  "run_at": "2026-08-26T16:02:04",
+  "ardupilot_commit": "c2b898a",
+  "model": "claude-sonnet-5",
+  "graph_sha": "10ecea2caed3",
+  "gates_sha": "98100a56d5b2",
+  "runtime_sha": "377c646ee24d",
+  "script_sha": null
+ },
+ "chain": [
+  [
+   "gnssLost",
+   81579
+  ],
+  [
+   "fsLand",
+   85729
+  ],
+  [
+   "ekfVarExceeded",
+   85729
+  ],
+  [
+   "navBranch",
+   85729
+  ]
+ ],
+ "chain_seq": [
+  "gnssLost",
+  "fsLand",
+  "navBranch"
+ ],
+ "chain_present": false,
+ "chain_ordered": false,
+ "link_alive": true,
+ "hb_gap_max_s": 1.0,
+ "acks": [
+  {
+   "cmd": "DO_SET_MODE(SMART_RTL)",
+   "ack": "FAILED",
+   "mode_after": "LAND",
+   "sim_ms": 85877
+  }
+ ],
+ "t_land_ms": 85729,
+ "t_disarm_ms": null,
+ "t_onground_ms": null,
+ "terminated_in_air": null,
+ "window_s": null,
+ "impact_mps": null,
+ "alt_at_disarm": null,
+ "outcome": null,
+ "expected_outcome": null,
+ "outcome_match": true,
+ "chain_reproduced": false,
+ "failures": [
+  "비행 종료 미관측 (160s)"
+ ],
+ "ok": false
+}

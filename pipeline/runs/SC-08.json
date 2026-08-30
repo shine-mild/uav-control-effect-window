@@ -1,0 +1,85 @@
+{
+ "id": "SC-08",
+ "branch": "variance",
+ "meta": {
+  "run_at": "2026-08-26T15:28:55",
+  "ardupilot_commit": "c2b898a",
+  "model": "claude-sonnet-5",
+  "graph_sha": "10ecea2caed3",
+  "gates_sha": "98100a56d5b2",
+  "runtime_sha": "377c646ee24d",
+  "script_sha": "f098de18e935"
+ },
+ "chain": [
+  [
+   "gnssLost",
+   81579
+  ],
+  [
+   "fsLand",
+   85729
+  ],
+  [
+   "ekfVarExceeded",
+   85729
+  ],
+  [
+   "navBranch",
+   85729
+  ],
+  [
+   "landed",
+   133229
+  ],
+  [
+   "motorsDisarmed",
+   133977
+  ],
+  [
+   "cmdAccepted",
+   149129
+  ],
+  [
+   "flightEnd",
+   150377
+  ]
+ ],
+ "chain_seq": [
+  "gnssLost",
+  "fsLand",
+  "navBranch",
+  "cmdAccepted",
+  "flightEnd"
+ ],
+ "chain_present": true,
+ "chain_ordered": true,
+ "link_alive": true,
+ "hb_gap_max_s": 1.0,
+ "acks": [
+  {
+   "cmd": "DO_SET_MODE(GUIDED_NOGPS)",
+   "ack": "ACCEPTED",
+   "mode_after": "GUIDED_NOGPS",
+   "sim_ms": 147579
+  }
+ ],
+ "t_land_ms": 85729,
+ "t_disarm_ms": 133977,
+ "t_onground_ms": 133229,
+ "terminated_in_air": false,
+ "window_s": 47.5,
+ "impact_mps": 0.498654,
+ "alt_at_disarm": -0.162,
+ "outcome": "recover",
+ "expected_outcome": "extend",
+ "outcome_match": false,
+ "chain_reproduced": false,
+ "failures": [
+  "wait navDegraded 시간초과 (60s)"
+ ],
+ "ok": false,
+ "outcome_reclassified": "recover",
+ "baseline_window_s": 57.55,
+ "outcome_match_reclassified": false,
+ "air_alt_threshold_m": 10.0
+}

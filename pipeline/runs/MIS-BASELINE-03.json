@@ -1,0 +1,81 @@
+{
+ "id": "MIS-BASELINE-03",
+ "branch": "variance",
+ "meta": {
+  "run_at": "2026-08-27T14:48:02",
+  "ardupilot_commit": "c2b898a",
+  "model": "claude-sonnet-5",
+  "graph_sha": "10ecea2caed3",
+  "gates_sha": "98100a56d5b2",
+  "runtime_sha": "1b1d927432a4",
+  "script_sha": null
+ },
+ "chain": [
+  [
+   "gnssLost",
+   104229
+  ],
+  [
+   "fsLand",
+   112329
+  ],
+  [
+   "ekfVarExceeded",
+   112329
+  ],
+  [
+   "navBranch",
+   112329
+  ],
+  [
+   "landed",
+   168829
+  ],
+  [
+   "flightEnd",
+   168979
+  ]
+ ],
+ "chain_seq": [
+  "gnssLost",
+  "fsLand",
+  "navBranch",
+  "flightEnd"
+ ],
+ "chain_present": false,
+ "chain_ordered": false,
+ "link_alive": true,
+ "hb_gap_max_s": 1.0,
+ "acks": [],
+ "t_land_ms": 112329,
+ "t_disarm_ms": null,
+ "t_onground_ms": 168829,
+ "terminated_in_air": null,
+ "window_s": 56.5,
+ "impact_mps": 0.525753,
+ "alt_at_disarm": null,
+ "outcome": "extend",
+ "expected_outcome": null,
+ "outcome_match": false,
+ "chain_reproduced": false,
+ "failures": [],
+ "ok": true,
+ "mission_experiment": {
+  "command": "BASELINE",
+  "groundspeed_at_jam": 9.96,
+  "truth_at_jam": [
+   34.7619387,
+   127.6621998
+  ],
+  "truth_at_end": [
+   34.7625941,
+   127.6626191
+  ],
+  "displacement_from_jam_m": 82.33,
+  "alt_at_observation_end": 0.8,
+  "_note": "종전 alt_at_jam 은 코드 결함으로 교란 시점이 아니라 관측 종료 시점의 고도를 담고 있었다. 값을 보존한 채 이름만 정정하였다. 교란 시점 고도는 이 배치에서 기록되지 않았으며, 스크립트는 고도 37 m 이상에서만 교란을 주입한다."
+ },
+ "outcome_reclassified": "extend",
+ "baseline_window_s": 48.65,
+ "baseline_source": "MIS-BASELINE (같은 배치)"
+}

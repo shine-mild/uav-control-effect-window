@@ -1,0 +1,78 @@
+{
+ "id": "SC-06",
+ "branch": "variance",
+ "meta": {
+  "run_at": "2026-08-26T15:26:29",
+  "ardupilot_commit": "c2b898a",
+  "model": "claude-sonnet-5",
+  "graph_sha": "10ecea2caed3",
+  "gates_sha": "98100a56d5b2",
+  "runtime_sha": "377c646ee24d",
+  "script_sha": "1f7783df148f"
+ },
+ "chain": [
+  [
+   "gnssLost",
+   81599
+  ],
+  [
+   "fsLand",
+   85699
+  ],
+  [
+   "ekfVarExceeded",
+   85699
+  ],
+  [
+   "navBranch",
+   85699
+  ],
+  [
+   "cmdAccepted",
+   87999
+  ],
+  [
+   "landed",
+   92249
+  ],
+  [
+   "flightEnd",
+   92649
+  ]
+ ],
+ "chain_seq": [
+  "gnssLost",
+  "fsLand",
+  "navBranch",
+  "cmdAccepted",
+  "flightEnd"
+ ],
+ "chain_present": true,
+ "chain_ordered": true,
+ "link_alive": true,
+ "hb_gap_max_s": 1.0,
+ "acks": [
+  {
+   "cmd": "DO_SET_MODE(STABILIZE)",
+   "ack": "ACCEPTED",
+   "mode_after": "STABILIZE",
+   "sim_ms": 86449
+  }
+ ],
+ "t_land_ms": 85699,
+ "t_disarm_ms": null,
+ "t_onground_ms": 92249,
+ "terminated_in_air": null,
+ "window_s": 6.55,
+ "impact_mps": 16.12746,
+ "alt_at_disarm": null,
+ "outcome": "destroy",
+ "expected_outcome": "destroy",
+ "outcome_match": true,
+ "chain_reproduced": true,
+ "failures": [],
+ "ok": true,
+ "outcome_reclassified": "destroy",
+ "baseline_window_s": 57.55,
+ "outcome_match_reclassified": true
+}

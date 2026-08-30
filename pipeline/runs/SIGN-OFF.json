@@ -1,0 +1,78 @@
+{
+ "id": "SIGN-OFF",
+ "branch": "variance",
+ "meta": {
+  "run_at": "2026-08-27T09:10:22",
+  "ardupilot_commit": "c2b898a",
+  "model": "claude-sonnet-5",
+  "graph_sha": "10ecea2caed3",
+  "gates_sha": "98100a56d5b2",
+  "runtime_sha": "a6c8ec19ed10",
+  "script_sha": null
+ },
+ "chain": [
+  [
+   "gnssLost",
+   81579
+  ],
+  [
+   "fsLand",
+   85729
+  ],
+  [
+   "ekfVarExceeded",
+   85729
+  ],
+  [
+   "navBranch",
+   85729
+  ],
+  [
+   "landed",
+   104229
+  ],
+  [
+   "flightEnd",
+   104527
+  ]
+ ],
+ "chain_seq": [
+  "gnssLost",
+  "fsLand",
+  "navBranch",
+  "flightEnd"
+ ],
+ "chain_present": false,
+ "chain_ordered": false,
+ "link_alive": true,
+ "hb_gap_max_s": 1.0,
+ "acks": [],
+ "t_land_ms": 85729,
+ "t_disarm_ms": null,
+ "t_onground_ms": 104229,
+ "terminated_in_air": null,
+ "window_s": 18.5,
+ "impact_mps": 2.506989,
+ "alt_at_disarm": null,
+ "outcome": "recover",
+ "expected_outcome": null,
+ "outcome_match": false,
+ "chain_reproduced": false,
+ "failures": [],
+ "ok": true,
+ "signing_experiment": {
+  "condition": "OFF",
+  "signing": "미적용",
+  "attacker_channel": "tcp:5763",
+  "attacker_source_system": 99,
+  "attacker_signed": false,
+  "attacker_channel_ok": true,
+  "window_entered": true,
+  "command": "MAV_CMD_DO_SET_MODE(ALT_HOLD)",
+  "ack": "ACCEPTED",
+  "ack_delay_s": 0.01,
+  "mode_after": "ALT_HOLD",
+  "accepted": true,
+  "effective": true
+ }
+}

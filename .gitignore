@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.log
+figs/
+sitl_*.log
+*_progress.log
+*_stdout.log
+.DS_Store

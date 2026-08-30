@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+title: "항법 상실 구간의 제어효과 창 — 실행 기록과 분석 코드"
+message: "이 저장소를 사용하는 경우 아래 논문을 인용해 주십시오."
+authors:
+  - family-names: Kim
+    given-names: Sumin
+    affiliation: "Gachon University, Dept. of Information Security"
+license: MIT
+preferred-citation:
+  type: conference-paper
+  title: "공격그래프 기반 무인기 하이브리드 모의침투 시나리오 자동 생성 및 SITL 검증"
+  authors:
+    - family-names: Kim
+      given-names: Sumin
+  collection-title: "한국정보보호학회 동계학술대회 (CISC-W'26)"
+  year: 2026
