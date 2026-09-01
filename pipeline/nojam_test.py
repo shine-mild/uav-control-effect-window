@@ -13,7 +13,8 @@ from runtime import Runner
 
 MODES = {"ALT_HOLD": 2, "RTL": 6, "LOITER": 5, "POSHOLD": 16}
 
-R = Runner("NJ-RECOVERY-01", branch="nojam")
+REP = int(sys.argv[1]) if len(sys.argv) > 1 else 1
+R = Runner(f"NJ-RECOVERY-{REP:02d}", branch="nojam")
 R.connect()
 R.preflight()          # SIM_GPS1_JAM = 0 이 여기서 설정된다
 R.takeoff(40.0)

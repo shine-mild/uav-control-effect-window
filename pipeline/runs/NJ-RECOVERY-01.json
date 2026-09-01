@@ -2,7 +2,7 @@
  "id": "NJ-RECOVERY-01",
  "branch": "nojam",
  "meta": {
-  "run_at": "2026-08-31T05:50:54",
+  "run_at": "2026-09-01T17:44:37",
   "ardupilot_commit": "c2b898a",
   "model": "claude-sonnet-5",
   "graph_sha": "542cb883df76",
@@ -13,7 +13,7 @@
  "chain": [
   [
    "cmdAccepted",
-   82899
+   82999
   ]
  ],
  "chain_seq": [
@@ -22,31 +22,31 @@
  "chain_present": false,
  "chain_ordered": false,
  "link_alive": true,
- "hb_gap_max_s": 1.01,
+ "hb_gap_max_s": 1.0,
  "acks": [
   {
    "cmd": "DO_SET_MODE(ALT_HOLD)",
    "ack": "ACCEPTED",
    "mode_after": "ALT_HOLD",
-   "sim_ms": 81349
+   "sim_ms": 81499
   },
   {
    "cmd": "DO_SET_MODE(RTL)",
    "ack": "ACCEPTED",
    "mode_after": "RTL",
-   "sim_ms": 85899
+   "sim_ms": 85999
   },
   {
    "cmd": "DO_SET_MODE(LOITER)",
    "ack": "ACCEPTED",
    "mode_after": "LOITER",
-   "sim_ms": 90449
+   "sim_ms": 90499
   },
   {
    "cmd": "DO_SET_MODE(POSHOLD)",
    "ack": "ACCEPTED",
    "mode_after": "POSHOLD",
-   "sim_ms": 94999
+   "sim_ms": 95049
   }
  ],
  "t_land_ms": null,
@@ -130,7 +130,7 @@
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 16349,
+   "simms": 16399,
    "detail": "Arm: AHRS: waiting for home"
   },
   {

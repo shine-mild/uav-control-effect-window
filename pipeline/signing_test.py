@@ -30,6 +30,8 @@ mav = mavutil.mavlink
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 COND = (sys.argv[1] if len(sys.argv) > 1 else "OFF").upper()
+REP  = int(sys.argv[2]) if len(sys.argv) > 2 else 0   # 0 이면 기존 이름 유지
+SID  = f"SIGN-{COND}" if REP == 0 else f"SIGN-{COND}-{REP:02d}"
 KEY = hashlib.sha256(b"cisc-w26-signing-demo").digest()
 ALT_HOLD = 2
 ATK_PORT = 5763                         # SERIAL2
@@ -46,7 +48,7 @@ def attacker_connect(timeout=25):
 
 
 def main():
-    gcs = Runner(f"SIGN-{COND}", expected_outcome=None, branch="variance")
+    gcs = Runner(SID, expected_outcome=None, branch="variance")
     gcs.connect()
     gcs.preflight()
     # 공격자 채널을 MAVLink2 로 둔다 (기본값이나 명시한다)
@@ -98,7 +100,7 @@ def main():
     gcs.wait_end(timeout=120)
     gcs.report()
 
-    p = os.path.join(HERE, "runs", f"SIGN-{COND}.json")
+    p = os.path.join(HERE, "runs", f"{SID}.json")
     j = json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
     j["signing_experiment"] = dict(
         condition=COND, signing=signing_state, attacker_channel=f"tcp:{ATK_PORT}",

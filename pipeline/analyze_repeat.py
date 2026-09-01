@@ -6,7 +6,10 @@ H1 (차이)   : BASELINE 대 {ALT_HOLD, STABILIZE, DISARM}, Mann-Whitney U 양�
 H2 (동등)   : BASELINE 대 LOITER, 동등성 마진 ±2.0 s 의 TOST
 제외 규칙   : failures 가 있거나 창이 정의되지 않은 비행은 제외하고 사유를 보고한다
 """
-import json, glob, os, itertools
+import json, glob, os, itertools, sys
+
+# 사전 등록은 조건당 5회다. 인자로 상한을 주면 확장 측정까지 포함해 분석한다.
+NMAX = int(sys.argv[1]) if len(sys.argv) > 1 else 5
 from scipy import stats
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -18,10 +21,9 @@ data, excluded = {c: [] for c in COND}, []
 for f in sorted(glob.glob(os.path.join(HERE, "runs", "R-*.json"))):
     j = json.load(open(f, encoding="utf-8"))
     name = j["id"].split("-")[1]; rep = int(j["id"].split("-")[2])
-    if rep not in (1, 2, 3, 4, 5):
-        # 사전 등록 범위는 rep 1~5 뿐이다. rep 0(사전 점검)과
-        # 그 밖의 번호(사후 검증 실행 등)는 분석에 넣지 않는다.
-        excluded.append((j["id"], "사전 등록 범위(rep 1~5) 밖")); continue
+    if rep < 1 or rep > NMAX:
+        # rep 0(사전 점검)과 지정 범위 밖(사후 검증 실행 등)은 넣지 않는다.
+        excluded.append((j["id"], "분석 범위(rep 1~%d) 밖" % NMAX)); continue
     if j.get("failures"):
         excluded.append((j["id"], "; ".join(j["failures"]))); continue
     if j.get("window_s") is None:
