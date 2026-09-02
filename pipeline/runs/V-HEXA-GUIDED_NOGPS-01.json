@@ -1,0 +1,871 @@
+{
+ "id": "V-HEXA-GUIDED_NOGPS-01",
+ "branch": "variance",
+ "meta": {
+  "run_at": "2026-09-02T18:12:49",
+  "ardupilot_commit": "c2b898a",
+  "model": "claude-sonnet-5",
+  "graph_sha": "542cb883df76",
+  "gates_sha": "98100a56d5b2",
+  "runtime_sha": "22358e091056",
+  "script_sha": null
+ },
+ "chain": [
+  [
+   "gnssLost",
+   81599
+  ],
+  [
+   "fsLand",
+   85699
+  ],
+  [
+   "ekfVarExceeded",
+   85699
+  ],
+  [
+   "navBranch",
+   85699
+  ],
+  [
+   "cmdAccepted",
+   87349
+  ]
+ ],
+ "chain_seq": [
+  "gnssLost",
+  "fsLand",
+  "navBranch",
+  "cmdAccepted"
+ ],
+ "chain_present": false,
+ "chain_ordered": false,
+ "link_alive": true,
+ "hb_gap_max_s": 1.01,
+ "acks": [
+  {
+   "cmd": "DO_SET_MODE(GUIDED_NOGPS)",
+   "ack": "ACCEPTED",
+   "mode_after": "GUIDED_NOGPS",
+   "sim_ms": 85799
+  }
+ ],
+ "t_land_ms": 85699,
+ "t_disarm_ms": null,
+ "t_onground_ms": null,
+ "terminated_in_air": null,
+ "window_s": null,
+ "impact_mps": null,
+ "alt_at_disarm": null,
+ "outcome": null,
+ "expected_outcome": null,
+ "outcome_match": true,
+ "chain_reproduced": false,
+ "failures": [
+  "비행 종료 미관측 (220s)"
+ ],
+ "ok": false,
+ "events": [
+  {
+   "stage": "STATUSTEXT",
+   "simms": 0,
+   "detail": "Barometer 1 calibration complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 0,
+   "detail": "Barometer 2 calibration complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 0,
+   "detail": "ArduPilot Ready"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 2699,
+   "detail": "RC7: SaveWaypoint LOW"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 4399,
+   "detail": "EKF3 IMU0 initialised"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 4399,
+   "detail": "EKF3 IMU1 initialised"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 4399,
+   "detail": "AHRS: EKF3 active"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 5749,
+   "detail": "EKF3 IMU1 tilt alignment complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 5749,
+   "detail": "EKF3 IMU0 tilt alignment complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 5849,
+   "detail": "EKF3 IMU1 MAG0 initial yaw alignment complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 5849,
+   "detail": "EKF3 IMU0 MAG0 initial yaw alignment complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 9799,
+   "detail": "GPS 1: probing for u-blox at 230400 baud"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 9799,
+   "detail": "GPS 1: detected u-blox"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 16349,
+   "detail": "Arm: AHRS: waiting for home"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 19999,
+   "detail": "EKF3 IMU1 origin set"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 19999,
+   "detail": "Field Elevation Set: 0m"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 20199,
+   "detail": "EKF3 IMU0 origin set"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 30399,
+   "detail": "PreArm: Need Position Estimate"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 41399,
+   "detail": "EKF3 IMU0 is using GPS"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 41499,
+   "detail": "Arming motors"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 41599,
+   "detail": "EKF3 IMU1 is using GPS"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 49949,
+   "detail": "EKF3 IMU0 MAG0 in-flight yaw alignment complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 49949,
+   "detail": "EKF3 IMU1 MAG0 in-flight yaw alignment complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 84599,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 84599,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 84799,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 84799,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 85599,
+   "detail": "GPS Glitch or Compass error"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 85699,
+   "detail": "EKF variance: over thresholds"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 85699,
+   "detail": "EKF Failsafe: changed to Land Mode"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 87599,
+   "detail": "EKF Failsafe Cleared"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 89299,
+   "detail": "EKF Failsafe"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 93299,
+   "detail": "EKF Failsafe Cleared"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 95199,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 95199,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 95599,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 95599,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 103299,
+   "detail": "EKF Failsafe"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 103399,
+   "detail": "Vibration compensation ON"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 103499,
+   "detail": "Vibration compensation OFF"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 105199,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 105199,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 105299,
+   "detail": "EKF Failsafe Cleared"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 105599,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 105599,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 106299,
+   "detail": "EKF Failsafe"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 106399,
+   "detail": "Vibration compensation ON"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 110499,
+   "detail": "EKF Failsafe Cleared"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 114899,
+   "detail": "EKF Failsafe"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 115399,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 115399,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 115999,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 115999,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 119599,
+   "detail": "EKF Failsafe Cleared"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 121699,
+   "detail": "EKF variance: over thresholds"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 121699,
+   "detail": "EKF Failsafe"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 125599,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 125599,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 126099,
+   "detail": "EKF Failsafe Cleared"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 126199,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 126199,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 127699,
+   "detail": "EKF Failsafe"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 135999,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 135999,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 136199,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 136199,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 139299,
+   "detail": "EKF Failsafe Cleared"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 141299,
+   "detail": "EKF Failsafe"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 142999,
+   "detail": "EKF Failsafe Cleared"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 145399,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 145399,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 145499,
+   "detail": "EKF Failsafe"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 146999,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 146999,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 146999,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 146999,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 147699,
+   "detail": "EKF Failsafe Cleared"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 150299,
+   "detail": "EKF Failsafe"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 152999,
+   "detail": "EKF Failsafe Cleared"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 154099,
+   "detail": "EKF variance: over thresholds"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 154099,
+   "detail": "EKF Failsafe"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 157399,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 157399,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 157399,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 157399,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 159299,
+   "detail": "EKF Failsafe Cleared"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 162499,
+   "detail": "EKF Failsafe"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 164599,
+   "detail": "EKF Failsafe Cleared"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 165899,
+   "detail": "EKF Failsafe"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 167599,
+   "detail": "EKF Failsafe Cleared"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 167999,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 167999,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 167999,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 167999,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 169499,
+   "detail": "EKF Failsafe"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 171399,
+   "detail": "EKF Failsafe Cleared"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 172899,
+   "detail": "EKF Failsafe"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 178199,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 178199,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 178799,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 178799,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 187949,
+   "detail": "SmartRTL deactivated: bad position"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 188199,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 188199,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 189099,
+   "detail": "EKF Failsafe Cleared"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 189599,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 189599,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 190299,
+   "detail": "EKF variance: over thresholds"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 190299,
+   "detail": "EKF Failsafe"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 198199,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 198199,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 199099,
+   "detail": "EKF Failsafe Cleared"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 199599,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 199599,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 200099,
+   "detail": "EKF Failsafe"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 208199,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 208199,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 210699,
+   "detail": "EKF Failsafe Cleared"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 211599,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 211599,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 212099,
+   "detail": "EKF Failsafe"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 218999,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 218999,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 221399,
+   "detail": "EKF Failsafe Cleared"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 221599,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 221599,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 222499,
+   "detail": "EKF variance: over thresholds"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 222499,
+   "detail": "EKF Failsafe"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 228999,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 228999,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 231799,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 231799,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 238999,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 238999,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 241949,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 241949,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 248999,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 248999,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 251949,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 251949,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 259999,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 259999,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 261949,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 261949,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 271399,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 271399,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 271999,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 271999,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 281399,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 281399,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 281999,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 281999,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 291999,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 291999,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 291999,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 291999,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 301999,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 301999,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 302199,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 302199,
+   "detail": "EKF3 primary changed:1"
+  }
+ ],
+ "tlog": "/tmp/claude-1000/-home-shine/0b8ef378-5a73-47ce-bdf3-e728d3790c50/scratchpad/pipeline/tlogs/V-HEXA-GUIDED_NOGPS-01.tlog"
+}

@@ -1,0 +1,386 @@
+{
+ "id": "V-OCTA-BASELINE-02",
+ "branch": "variance",
+ "meta": {
+  "run_at": "2026-09-02T18:25:40",
+  "ardupilot_commit": "c2b898a",
+  "model": "claude-sonnet-5",
+  "graph_sha": "542cb883df76",
+  "gates_sha": "98100a56d5b2",
+  "runtime_sha": "22358e091056",
+  "script_sha": null
+ },
+ "chain": [
+  [
+   "gnssLost",
+   81599
+  ],
+  [
+   "fsLand",
+   85699
+  ],
+  [
+   "ekfVarExceeded",
+   85699
+  ],
+  [
+   "navBranch",
+   85699
+  ],
+  [
+   "landed",
+   134049
+  ],
+  [
+   "flightEnd",
+   134449
+  ]
+ ],
+ "chain_seq": [
+  "gnssLost",
+  "fsLand",
+  "navBranch",
+  "flightEnd"
+ ],
+ "chain_present": false,
+ "chain_ordered": false,
+ "link_alive": true,
+ "hb_gap_max_s": 1.0,
+ "acks": [],
+ "t_land_ms": 85699,
+ "t_disarm_ms": null,
+ "t_onground_ms": 134049,
+ "terminated_in_air": null,
+ "window_s": 48.35,
+ "impact_mps": 0.501897,
+ "alt_at_disarm": null,
+ "outcome": "recover",
+ "expected_outcome": null,
+ "outcome_match": false,
+ "chain_reproduced": false,
+ "failures": [],
+ "ok": true,
+ "events": [
+  {
+   "stage": "STATUSTEXT",
+   "simms": 0,
+   "detail": "Barometer 1 calibration complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 0,
+   "detail": "Barometer 2 calibration complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 0,
+   "detail": "ArduPilot Ready"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 2699,
+   "detail": "RC7: SaveWaypoint LOW"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 4399,
+   "detail": "EKF3 IMU0 initialised"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 4399,
+   "detail": "EKF3 IMU1 initialised"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 4399,
+   "detail": "AHRS: EKF3 active"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 5749,
+   "detail": "EKF3 IMU1 tilt alignment complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 5749,
+   "detail": "EKF3 IMU0 tilt alignment complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 5849,
+   "detail": "EKF3 IMU1 MAG0 initial yaw alignment complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 5849,
+   "detail": "EKF3 IMU0 MAG0 initial yaw alignment complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 9799,
+   "detail": "GPS 1: probing for u-blox at 230400 baud"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 9799,
+   "detail": "GPS 1: detected u-blox"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 16399,
+   "detail": "Arm: AHRS: waiting for home"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 19999,
+   "detail": "EKF3 IMU1 origin set"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 19999,
+   "detail": "Field Elevation Set: 0m"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 20199,
+   "detail": "EKF3 IMU0 origin set"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 30399,
+   "detail": "PreArm: Need Position Estimate"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 41399,
+   "detail": "EKF3 IMU0 is using GPS"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 41549,
+   "detail": "Arming motors"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 41599,
+   "detail": "EKF3 IMU1 is using GPS"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 49949,
+   "detail": "EKF3 IMU0 MAG0 in-flight yaw alignment complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 49949,
+   "detail": "EKF3 IMU1 MAG0 in-flight yaw alignment complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 84599,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 84599,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 84799,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 84799,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 85599,
+   "detail": "GPS Glitch or Compass error"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 85699,
+   "detail": "EKF variance: over thresholds"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 85699,
+   "detail": "EKF Failsafe: changed to Land Mode"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 87599,
+   "detail": "EKF Failsafe Cleared"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 89299,
+   "detail": "EKF Failsafe"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 93299,
+   "detail": "EKF Failsafe Cleared"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 95199,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 95199,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 95599,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 95599,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 103299,
+   "detail": "EKF Failsafe"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 105199,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 105199,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 105299,
+   "detail": "EKF Failsafe Cleared"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 105599,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 105599,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 106299,
+   "detail": "EKF Failsafe"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 106999,
+   "detail": "Vibration compensation ON"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 110499,
+   "detail": "EKF Failsafe Cleared"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 114899,
+   "detail": "EKF Failsafe"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 115399,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 115399,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 115999,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 115999,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 119599,
+   "detail": "EKF Failsafe Cleared"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 121699,
+   "detail": "EKF variance: over thresholds"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 121699,
+   "detail": "EKF Failsafe"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 122999,
+   "detail": "Vibration compensation OFF"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 125599,
+   "detail": "EKF3 lane switch 1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 125599,
+   "detail": "EKF3 primary changed:1"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 126099,
+   "detail": "EKF Failsafe Cleared"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 126199,
+   "detail": "EKF3 lane switch 0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 126199,
+   "detail": "EKF3 primary changed:0"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 127699,
+   "detail": "EKF Failsafe"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 130199,
+   "detail": "Vibration compensation ON"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 132449,
+   "detail": "SIM Hit ground at 0.501897 m/s"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 134449,
+   "detail": "Disarming motors"
+  }
+ ],
+ "tlog": "/tmp/claude-1000/-home-shine/0b8ef378-5a73-47ce-bdf3-e728d3790c50/scratchpad/pipeline/tlogs/V-OCTA-BASELINE-02.tlog"
+}

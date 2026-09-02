@@ -1,0 +1,43 @@
+==============================================================================
+  기종 일반화 — 40 m, variance 분기, ArduPilot SITL c2b898a
+==============================================================================
+
+[기준선] 무주입 제어효과 창
+  기종       n     중앙값(s)                 범위    접지(m/s)
+  quad    30      48.35    48.30~57.55          0.502
+  hexa     5      48.35    48.35~57.55          0.502
+  octa     5      48.35    48.30~48.35          0.502
+
+[12종 전수] 수락·거부와 창
+  명령                             quad             hexa             octa
+  ---------------------------------------------------------------------
+  ALT_HOLD            ACCEPTED/18.75s  ACCEPTED/18.70s  ACCEPTED/18.75s
+  STABILIZE            ACCEPTED/5.95s   ACCEPTED/5.75s   ACCEPTED/5.75s
+  DISARM               ACCEPTED/0.30s   ACCEPTED/0.30s   ACCEPTED/0.25s
+  GUIDED_NOGPS               ACCEPTED         ACCEPTED         ACCEPTED
+  FLIGHTTERMINATION    ACCEPTED/0.30s   ACCEPTED/0.45s   ACCEPTED/0.30s
+  AUTO                  FAILED/47.35s    FAILED/48.35s    FAILED/48.35s
+  BRAKE                 FAILED/47.10s    FAILED/48.30s    FAILED/48.90s
+  GUIDED                FAILED/47.50s    FAILED/48.35s    FAILED/57.55s
+  LOITER                FAILED/47.50s    FAILED/48.35s    FAILED/48.35s
+  POSHOLD               FAILED/47.50s    FAILED/57.55s    FAILED/48.35s
+  RTL                   FAILED/47.35s    FAILED/48.35s    FAILED/48.35s
+  SMART_RTL                    FAILED    FAILED/57.55s    FAILED/48.30s
+
+[집합 일치]
+  세 기종의 수락·거부 판정이 12종 전부에서 일치하였다.
+
+--------------------------------------------------------------------------
+  판정
+--------------------------------------------------------------------------
+  세 기종은 로터 수(4/6/8)와 그에 따른 추력 배분이 다르지만, 무주입 기준의
+  제어효과 창 중앙값이 48.35 s로 동일하고 12종 명령의 수락·거부 집합이
+  전부 일치하였다. 수락되는 다섯 종(ALT_HOLD, STABILIZE, DISARM,
+  GUIDED_NOGPS, FLIGHTTERMINATION)과 거부되는 일곱 종의 구분이 기종에
+  의존하지 않는다.
+
+  이는 예상과 부합한다. 모드 진입 거부는 mode.cpp:396-399 의
+  requires_position() && !position_ok() 검사에서 발생하며 이 검사는
+  기체 형상을 참조하지 않는다. 강제 착륙 하강률 역시 LAND_SPD_MS(0.5 m/s)
+  로 정해지는 값이므로 로터 수와 무관하다. 측정은 이 예상을 확인한 것이며
+  형상을 넘어서는(고정익, 수직이착륙 등) 일반화는 시험하지 않았다.
