@@ -27,7 +27,7 @@ GPS를 잃은 멀티콥터는 즉시 추락하지 않는다. 비행제어기가 
 ## 주요 결과
 
 사전 등록한 주 분석은 조건당 5회(총 25비행)이다. 이후 조건당 30회로 확장하고
-고도 세 수준과 회전익 세 형상으로 넓혔다. 전체 실행 기록은 369건이다.
+고도 세 수준과 회전익 세 형상으로 넓혔다. 전체 실행 기록은 375건이다.
 
 | 조건 | n | 창 중앙값 (초) | 범위 | 접지 속도 (m/s) | 사후 상태 |
 |---|---|---|---|---|---|
@@ -134,7 +134,7 @@ pipeline/                실행기와 분석기
   variant_test.py        고도·기종 변형 측정 실행기
   analyze_altitude.py    고도 3수준 분석 (선형 적합, Holm 보정)
   analyze_frame.py       기종 3종의 수락·거부 집합 대조
-  runs/                  실행 기록 369건 (JSON)
+  runs/                  실행 기록 375건 (JSON)
   tlogs/                 원시 MAVLink 로그 — 주의 사항은 아래 참조
   scripts/               자동 생성된 실행 스크립트
 data/
@@ -210,7 +210,7 @@ preregistration/         측정 전 작성한 분석 계획
 
 **`branch` 필드는 관측이 아니라 실행 시 부여한 라벨이다.** 실제 분기는 사슬의
 `ekfVarExceeded`(STATUSTEXT `over thresholds`) 또는 `ekfPosLost`(`position lost`)로
-판별한다. 재밍을 가한 실행 338건 전부에서 `ekfVarExceeded`가 관측되었다. 나머지 30건은
+판별한다. 재밍을 가한 실행 342건 전부에서 `ekfVarExceeded`가 관측되었다. 나머지 30건은
 무재밍 대조이므로 이 조건이 성립하지 않는다.
 
 **`alt_at_observation_end` 는 주입 시점 고도가 아니다.** 초기 구현이 관측 종료 후에
