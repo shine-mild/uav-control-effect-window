@@ -27,7 +27,10 @@ AIR_ALT_MIN = 10.0          # 시동정지 시 이 고도를 넘으면 공중 �
 
 # 예측 사슬 — 순서까지 이 순열로 관측되어야 재현으로 인정한다
 # 원고 3.2 의 정의를 따른다. 주입의 성립은 응답이 아니라 모드 변화로 판정한다.
-EXPECTED_CHAIN = ["gnssLost", "navBranch", "fsLand", "injectWindow", "flightEnd"]
+# 그래프의 종단 조건(injectSucceeded)까지 포함한다. 주입 없는 대조 실행은
+# 이 사슬을 만족하지 않으며, 그것이 정의상 옳다.
+EXPECTED_CHAIN = ["gnssLost", "navBranch", "fsLand", "injectWindow",
+                  "injectSucceeded", "flightEnd"]
 ORDER_TOL_MS = 500          # 동일 사건의 메시지 도착 편차 허용 (ms)
 
 
@@ -43,6 +46,7 @@ class Runner:
         self.failures = []                   # 하나라도 있으면 ok=False
         self.t_land = None
         self.injected_mode = None    # 주입한 모드 이름. modeChanged 판정에 쓴다
+        self.injected_terminal = False  # 모드가 아닌 종료 명령을 주입했는가
         self.t_cmd = None
         self.t_disarm = None
         self.t_onground = None
@@ -115,6 +119,8 @@ class Runner:
                 # 시동정지 시점의 상대고도로 판정한다.
                 self.terminated_in_air = (self.S['alt'] > AIR_ALT_MIN)
                 self._mark("motorsDisarmed")
+                if self.injected_terminal:   # 종료 명령의 사후효과가 관측됨
+                    self._mark("injectSucceeded")
             self.S['armed'] = armed
             nm = self._modename(msg.custom_mode)
             if nm != self.S['mode']:
@@ -242,6 +248,7 @@ class Runner:
     def send_cmd(self, c):
         self.t_cmd = self.S['simms']
         args = self.CMD_ARGS.get(int(c), (1,))
+        self.injected_terminal = True      # 시동 정지로 성립을 판정한다
         r = self._cmd(c, *args); self.pump(1.5)
         self.acks.append(dict(cmd=f"CMD_{c}{args}", ack=RESULT.get(r, str(r)),
                               mode_after=self.S['mode'], sim_ms=self.t_cmd))

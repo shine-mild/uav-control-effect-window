@@ -2,54 +2,54 @@
  "id": "SC-01",
  "branch": "posLost",
  "meta": {
-  "run_at": "2026-09-04T00:10:01",
+  "run_at": "2026-09-04T01:47:37",
   "ardupilot_commit": "c2b898a",
   "model": "claude-sonnet-5",
   "graph_sha": "acda3372ddfd",
   "gates_sha": "592688b3f196",
-  "runtime_sha": "54eea09b1f36",
+  "runtime_sha": "ce461f48d804",
   "script_sha": "38b9e50965ce"
  },
  "chain": [
   [
    "gnssLost",
-   95799
+   94029
   ],
   [
    "fsLand",
-   103499
+   101729
   ],
   [
    "injectWindow",
-   103499
+   101729
   ],
   [
    "ekfPosLost",
-   103499
+   101729
   ],
   [
    "navBranch",
-   103499
+   101729
   ],
   [
    "modeChanged",
-   104349
+   102677
   ],
   [
    "injectSucceeded",
-   104349
+   102677
   ],
   [
    "cmdAccepted",
-   105849
+   104179
   ],
   [
    "landed",
-   110049
+   108429
   ],
   [
    "flightEnd",
-   110199
+   108529
   ]
  ],
  "chain_seq": [
@@ -57,6 +57,7 @@
   "fsLand",
   "injectWindow",
   "navBranch",
+  "injectSucceeded",
   "flightEnd"
  ],
  "chain_present": true,
@@ -68,15 +69,15 @@
    "cmd": "DO_SET_MODE(STABILIZE)",
    "ack": "ACCEPTED",
    "mode_after": "STABILIZE",
-   "sim_ms": 104299
+   "sim_ms": 102627
   }
  ],
- "t_land_ms": 103499,
+ "t_land_ms": 101729,
  "t_disarm_ms": null,
- "t_onground_ms": 110049,
+ "t_onground_ms": 108429,
  "terminated_in_air": null,
- "window_s": 6.55,
- "impact_mps": 16.11914,
+ "window_s": 6.7,
+ "impact_mps": 16.12041,
  "alt_at_disarm": null,
  "outcome": "destroy",
  "expected_outcome": "destroy",
@@ -97,128 +98,128 @@
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 0,
+   "simms": 2441,
    "detail": "ArduPilot Ready"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 2699,
+   "simms": 2727,
    "detail": "RC7: SaveWaypoint LOW"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 4399,
+   "simms": 4429,
    "detail": "EKF3 IMU0 initialised"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 4399,
+   "simms": 4429,
    "detail": "EKF3 IMU1 initialised"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 4399,
+   "simms": 4429,
    "detail": "AHRS: EKF3 active"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 5749,
+   "simms": 5779,
    "detail": "EKF3 IMU1 tilt alignment complete"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 5749,
+   "simms": 5779,
    "detail": "EKF3 IMU0 tilt alignment complete"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 5849,
+   "simms": 5879,
    "detail": "EKF3 IMU1 MAG0 initial yaw alignment complete"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 5849,
+   "simms": 5879,
    "detail": "EKF3 IMU0 MAG0 initial yaw alignment complete"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 9799,
+   "simms": 9779,
    "detail": "GPS 1: probing for u-blox at 230400 baud"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 9799,
+   "simms": 9779,
    "detail": "GPS 1: detected u-blox"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 14599,
+   "simms": 14179,
    "detail": "Arm: AHRS: waiting for home"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 19999,
+   "simms": 19977,
    "detail": "EKF3 IMU1 origin set"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 19999,
+   "simms": 20029,
    "detail": "Field Elevation Set: 0m"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 20199,
+   "simms": 20179,
    "detail": "EKF3 IMU0 origin set"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 30399,
+   "simms": 30429,
    "detail": "PreArm: Need Position Estimate"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 35749,
+   "simms": 34629,
    "detail": "Arm: Need Position Estimate"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 41399,
+   "simms": 41379,
    "detail": "EKF3 IMU0 is using GPS"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 41599,
+   "simms": 41579,
    "detail": "EKF3 IMU1 is using GPS"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 57199,
+   "simms": 55429,
    "detail": "Arming motors"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 64749,
-   "detail": "EKF3 IMU0 MAG0 in-flight yaw alignment complete"
-  },
-  {
-   "stage": "STATUSTEXT",
-   "simms": 64749,
+   "simms": 62977,
    "detail": "EKF3 IMU1 MAG0 in-flight yaw alignment complete"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 103499,
+   "simms": 62977,
+   "detail": "EKF3 IMU0 MAG0 in-flight yaw alignment complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 101729,
    "detail": "EKF variance: position lost"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 103499,
+   "simms": 101729,
    "detail": "EKF Failsafe: changed to Land Mode"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 107899,
-   "detail": "SIM Hit ground at 16.11914 m/s"
+   "simms": 106229,
+   "detail": "SIM Hit ground at 16.12041 m/s"
   }
  ],
  "tlog": "/tmp/claude-1000/-home-shine/0b8ef378-5a73-47ce-bdf3-e728d3790c50/scratchpad/pipeline/tlogs/SC-01.tlog"

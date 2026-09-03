@@ -2,54 +2,54 @@
  "id": "SC-02",
  "branch": "posLost",
  "meta": {
-  "run_at": "2026-09-04T00:11:01",
+  "run_at": "2026-09-04T01:48:36",
   "ardupilot_commit": "c2b898a",
   "model": "claude-sonnet-5",
   "graph_sha": "acda3372ddfd",
   "gates_sha": "592688b3f196",
-  "runtime_sha": "54eea09b1f36",
+  "runtime_sha": "ce461f48d804",
   "script_sha": "9390c80868ec"
  },
  "chain": [
   [
    "gnssLost",
-   95599
+   93599
   ],
   [
    "fsLand",
-   103299
+   101299
   ],
   [
    "injectWindow",
-   103299
+   101299
   ],
   [
    "ekfPosLost",
-   103299
+   101299
   ],
   [
    "navBranch",
-   103299
+   101299
   ],
   [
    "modeChanged",
-   104349
+   102349
   ],
   [
    "injectSucceeded",
-   104349
+   102349
   ],
   [
    "cmdAccepted",
-   105849
+   103849
   ],
   [
    "landed",
-   122649
+   120649
   ],
   [
    "flightEnd",
-   122849
+   120799
   ]
  ],
  "chain_seq": [
@@ -57,26 +57,27 @@
   "fsLand",
   "injectWindow",
   "navBranch",
+  "injectSucceeded",
   "flightEnd"
  ],
  "chain_present": true,
  "chain_ordered": true,
  "link_alive": true,
- "hb_gap_max_s": 1.0,
+ "hb_gap_max_s": 1.01,
  "acks": [
   {
    "cmd": "DO_SET_MODE(ALT_HOLD)",
    "ack": "ACCEPTED",
    "mode_after": "ALT_HOLD",
-   "sim_ms": 104299
+   "sim_ms": 102299
   }
  ],
- "t_land_ms": 103299,
+ "t_land_ms": 101299,
  "t_disarm_ms": null,
- "t_onground_ms": 122649,
+ "t_onground_ms": 120649,
  "terminated_in_air": null,
  "window_s": 19.35,
- "impact_mps": 2.487903,
+ "impact_mps": 2.509769,
  "alt_at_disarm": null,
  "outcome": "recover",
  "expected_outcome": "recover",
@@ -152,7 +153,7 @@
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 14699,
+   "simms": 14799,
    "detail": "Arm: AHRS: waiting for home"
   },
   {
@@ -177,7 +178,7 @@
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 35599,
+   "simms": 35849,
    "detail": "Arm: Need Position Estimate"
   },
   {
@@ -192,7 +193,7 @@
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 56999,
+   "simms": 57199,
    "detail": "Arming motors"
   },
   {
@@ -207,33 +208,33 @@
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 103299,
+   "simms": 101299,
    "detail": "EKF variance: position lost"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 103299,
+   "simms": 101299,
    "detail": "EKF Failsafe: changed to Land Mode"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 110399,
-   "detail": "EKF3 IMU1 stopped aiding"
-  },
-  {
-   "stage": "STATUSTEXT",
-   "simms": 110399,
+   "simms": 108399,
    "detail": "EKF3 IMU0 stopped aiding"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 117449,
+   "simms": 108399,
+   "detail": "EKF3 IMU1 stopped aiding"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 115449,
    "detail": "SmartRTL deactivated: bad position"
   },
   {
    "stage": "STATUSTEXT",
-   "simms": 121199,
-   "detail": "SIM Hit ground at 2.487903 m/s"
+   "simms": 119199,
+   "detail": "SIM Hit ground at 2.509769 m/s"
   }
  ],
  "tlog": "/tmp/claude-1000/-home-shine/0b8ef378-5a73-47ce-bdf3-e728d3790c50/scratchpad/pipeline/tlogs/SC-02.tlog"
