@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-"""자동 생성됨 — 경로 SC-06 (분기 variance) / 생성물 id EX-0016.03-gnssArtifact-cmdInject-stabilize. 수정하지 말 것."""
+"""자동 생성됨 — 경로 SC-06 (분기 variance) / 생성물 id PENTEST-EX-0016.03-GNSS-VARIANCE-INJECT. 수정하지 말 것."""
 import sys, os, time, json
+# pymavlink 위치는 환경변수로 준다. 없으면 설치본을 쓴다.
 _mav = os.environ.get("PYMAVLINK_PATH")
 if _mav:
     sys.path.insert(0, _mav)
@@ -14,18 +15,19 @@ R.connect()
 R.preflight()
 R.takeoff(40.0)
 
-R.setp("FS_EKF_ACTION", 1)
-R.setp("EK3_OPTIONS", 0)
 R.setp("SIM_GPS1_JAM", 1)
 R.observe("GPS_RAW_INT.fix_type")
-R.observe("STATUSTEXT")
-R.wait("ekfVarExceeded")
-R.observe("HEARTBEAT.system_status")
+R.wait("gnssLost")
+R.observe("STATUSTEXT.text")
+R.wait("navBranch")
 R.wait("fsLand")
+R.observe("HEARTBEAT.system_status")
+R.wait("injectWindow")
 R.send_mode("STABILIZE", 0)
-R.observe("COMMAND_ACK")
-R.observe("HEARTBEAT.custom_mode")
-R.observe("GLOBAL_POSITION_INT")
+R.observe("COMMAND_ACK.result")
+R.wait("cmdAccepted")
+R.wait("modeChanged")
+R.wait("injectSucceeded")
 
 R.wait_end()
 R.report()

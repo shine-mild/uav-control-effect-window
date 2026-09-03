@@ -8,7 +8,7 @@ usage: python3 generate.py [--n N] [--model MODEL]
 """
 import json, re, subprocess, sys, argparse, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from graph import (enumerate_paths, path_string, OBSERVED, DERIVED,
+from graph import (enumerate_paths, path_string, OBSERVED, DERIVED, RUNTIME, CONFIG, LABEL,
                    POS_INDEPENDENT, INJECTION, BASELINE_WINDOW)
 from gates import run_gates
 
@@ -22,24 +22,27 @@ PROMPT = """다음은 무인기 대상 혼합 공격그래프에서 열거된 �
 분기 교란 수단: {injection}
 주입 명령: {command}
 
-[사용 가능한 술어 — 이 목록 밖의 술어를 쓰면 폐기된다]
-관측 술어: {observed}
-유도 술어: {derived}
+[사용 가능한 조건 — 이 목록 밖의 이름을 쓰면 폐기된다]
+관측 조건: {observed}
+상태전이 조건: {derived}
+구성 사실·정적 라벨: {config}
 
 [steps 문법 — 이 네 형태만 허용된다]
   set <PARAM>=<VALUE>       PARAM in {params}
   observe <MSG>[.<field>]   MSG in {msgs}
-  send <MAV_CMD_...>        posIndependent 집합의 명령만
-  wait <조건>
+  send <MAV_CMD_...>        위의 [주입 명령] 을 괄호까지 그대로 적을 것.
+                           예: send MAV_CMD_DO_SET_MODE(ALT_HOLD)
+                           모드 인자를 빠뜨리면 변환되지 않아 폐기된다.
+  wait <조건>            조건 in {runtime}  (이 목록 밖은 폐기된다)
 
-[출력 형식 — JSON 객체 하나만. 설명 문장 금지]
+[출력 형식 — JSON 객체 하나만. 코드블록과 설명 문장 없이 여는 중괄호로 시작해 닫는 중괄호로 끝낼 것]
 {{
   "id": "...",
   "path": "...",
   "precondition": ["..."],
   "steps": ["set ...", "observe ...", "send ..."],
   "observable": ["MSG.field", ...],
-  "success": "술어로 표현한 성공 판정",
+  "success": "조건으로 표현한 성공 판정",
   "abort": ["...", "..."]
 }}
 
@@ -51,6 +54,8 @@ def build_prompt(p):
     return PROMPT.format(
         path=path_string(p), injection=p["injection"], command=p["command"],
         observed=", ".join(sorted(OBSERVED)), derived=", ".join(sorted(DERIVED)),
+        config=", ".join(sorted(CONFIG | LABEL)),
+        runtime="{" + ", ".join(sorted(RUNTIME)) + "}",
         params="{SIM_GPS1_ENABLE, SIM_GPS1_JAM, FS_EKF_ACTION, EK3_OPTIONS}",
         msgs="{GPS_RAW_INT, STATUSTEXT, HEARTBEAT, COMMAND_ACK, GLOBAL_POSITION_INT}",
         w0=BASELINE_WINDOW)

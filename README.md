@@ -145,6 +145,21 @@ data/
 preregistration/         측정 전 작성한 분석 계획
 ```
 
+## 조건 어휘 통일 (2026-09-04)
+
+`graph.py`·`gates.py`·`runtime.py` 의 조건 이름이 논문 3.1~3.2 의 정의와 어긋나 있었다
+(`descentWindow`, `cmdInject`, `navDegraded` 등 구본 어휘). 세 파일을 논문 정의로 통일하고,
+실행기가 실제로 표시하는 조건을 `graph.RUNTIME` 으로 모아 **G3 가 모든 `wait` 대상을 이
+집합에 대조**하도록 확장하였다. 사슬 판정 기준도 `cmdAccepted` 에서 `injectWindow` 로 바꾸고
+`modeChanged`·`injectSucceeded` 를 실행기가 표시하도록 추가하였다.
+
+확장한 게이트로 다시 생성·실행한 결과는 `data/generated.json` 과 `pipeline/runs/SC-*.json` 에
+있다. G1·G2 는 10건 전부 통과, G3 에서 4건 탈락(인자를 받지 않는 명령에 인자를 붙인 경우),
+통과 6건을 실행하여 4건에서 사슬이 재현되었다.
+
+이 변경은 창의 측정 논리(`window_s = t_end - t_land`)를 건드리지 않으므로 기존 반복 측정
+결과에는 영향이 없다. 각 실행 기록의 `meta.runtime_sha` 로 어느 판본에서 얻은 것인지 구분된다.
+
 ## 데이터에 관한 주의
 
 **`SIGN-ON-01`~`30` 은 무효한 실행이다.** 이 30건은 "서명을 적용하면 미서명 외부 명령이

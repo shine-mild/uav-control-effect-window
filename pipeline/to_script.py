@@ -59,6 +59,7 @@ def convert(sc, path_id, outcome, branch, here):
 
 
 def main():
+    here = os.path.dirname(os.path.abspath(__file__))
     res = json.load(open(os.path.join(here, "generated.json"), encoding="utf-8"))
     outdir = os.path.join(here, "scripts"); os.makedirs(outdir, exist_ok=True)
     ok = fail = 0

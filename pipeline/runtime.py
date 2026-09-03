@@ -26,7 +26,8 @@ AIR_ALT_MIN = 10.0          # 시동정지 시 이 고도를 넘으면 공중 �
 # 보고 고도가 3.9~6.6 m 였고 실제 공중 종료는 39.6 m 였다. 임계를 10 m 로 둔다.
 
 # 예측 사슬 — 순서까지 이 순열로 관측되어야 재현으로 인정한다
-EXPECTED_CHAIN = ["gnssLost", "navBranch", "fsLand", "cmdAccepted", "flightEnd"]
+# 원고 3.2 의 정의를 따른다. 주입의 성립은 응답이 아니라 모드 변화로 판정한다.
+EXPECTED_CHAIN = ["gnssLost", "navBranch", "fsLand", "injectWindow", "flightEnd"]
 ORDER_TOL_MS = 500          # 동일 사건의 메시지 도착 편차 허용 (ms)
 
 
@@ -41,6 +42,7 @@ class Runner:
         self.acks = []
         self.failures = []                   # 하나라도 있으면 ok=False
         self.t_land = None
+        self.injected_mode = None    # 주입한 모드 이름. modeChanged 판정에 쓴다
         self.t_cmd = None
         self.t_disarm = None
         self.t_onground = None
@@ -119,6 +121,13 @@ class Runner:
                 self.S['mode'] = nm
                 if nm == 'LAND' and self.t_land is None:
                     self.t_land = self.S['simms']; self._mark("fsLand")
+                    # 원고 Table 3: 창이 열린 동안 linkAlive·reachable·noSigning 이
+                    # 함께 성립하는 구간. 뒤의 둘은 실험 구성으로 참이므로
+                    # 링크 생존만 확인하고 표시한다.
+                    if self.hb_gap_max < HB_GAP_MAX:
+                        self._mark("injectWindow")
+                elif self.injected_mode and nm == self.injected_mode:
+                    self._mark("modeChanged"); self._mark("injectSucceeded")
         elif t == 'STATUSTEXT':
             s = msg.text.strip()
             self.events.append(dict(stage='STATUSTEXT', simms=self.S['simms'], detail=s))
@@ -221,6 +230,7 @@ class Runner:
 
     def send_mode(self, name, num):
         self.t_cmd = self.S['simms']
+        self.injected_mode = name          # 이후 HEARTBEAT 에서 modeChanged 를 판정한다
         r = self._cmd(mav.MAV_CMD_DO_SET_MODE, 1, num); self.pump(1.5)
         self.acks.append(dict(cmd=f"DO_SET_MODE({name})", ack=RESULT.get(r, str(r)),
                               mode_after=self.S['mode'], sim_ms=self.t_cmd))
@@ -309,6 +319,8 @@ class Runner:
                    chain_reproduced=reproduced,
                    failures=self.failures, ok=(not self.failures),
                    events=self.events, tlog=self.tlog_path)
+        if getattr(self, "extra", None):        # 실험별 추가 기록
+            out["signing_experiment"] = self.extra
         here = os.path.dirname(os.path.abspath(__file__))
         os.makedirs(os.path.join(here, "runs"), exist_ok=True)
         json.dump(out, open(os.path.join(here, "runs", f"{self.sid}.json"), "w"),

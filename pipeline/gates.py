@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 """시나리오 생성물의 세 검증 게이트.
 
-G1 스키마 적합성   — 필수 항목의 존재와 자료형
-G2 술어 어휘 적합성 — path/success 의 기호가 정의된 술어 집합에 속하는가
-G3 실행 가능성     — steps 의 각 항목이 MAVLink 명령 또는 파라미터로 변환되는가
+G1 스키마 적합성   — 일곱 필수 항목의 존재와 자료형
+G2 조건 어휘 적합성 — path/success 의 기호가 정의된 조건 집합에 속하는가
+G3 실행 가능성     — steps 의 각 항목이 MAVLink 명령·파라미터로 변환되는가.
+                    wait 의 대상은 런타임이 실제로 표시하는 조건이어야 한다.
 
 게이트의 목적은 생성물을 정성 평가하지 않는 것이다. 통과/불통과와 사유만 남긴다.
 """
 import re
-from graph import VOCAB, POS_INDEPENDENT, POS_DEPENDENT
+from graph import VOCAB, RUNTIME, POS_INDEPENDENT, POS_DEPENDENT
 
 REQUIRED = {
     "id": str, "path": str, "precondition": list, "steps": list,
@@ -42,14 +43,14 @@ def gate1_schema(sc):
 
 
 def gate2_vocabulary(sc):
-    """path 와 success 의 기호가 정의된 술어 어휘에 속하는가."""
+    """path 와 success 의 기호가 정의된 조건 어휘에 속하는가."""
     bad = []
     text = f"{sc.get('path','')} {sc.get('success','')}"
     # 식별자 형태의 토큰만 검사. 노드 id 와 MAVLink 상수는 어휘 밖이므로 제외한다.
     for tok in set(re.findall(r"\b([a-z][A-Za-z]+)\s*\(", text)):
         if tok not in VOCAB:
-            bad.append(f"정의되지 않은 술어: {tok}")
-    # 위치 의존 명령을 쓰면 cmdInject 의 전제조건이 성립하지 않는다.
+            bad.append(f"정의되지 않은 조건: {tok}")
+    # 위치 의존 명령을 쓰면 attemptInject 의 전제조건이 성립하지 않는다.
     # 모드 이름은 괄호로 둘러싸인 형태로만 비교한다. 부분 문자열로 비교하면
     # GUIDED 가 GUIDED_NOGPS 를 잘못 잡는다.
     for c in POS_DEPENDENT:
@@ -81,15 +82,18 @@ def gate3_executable(sc):
                     bad.append(f"{i}행: {c} 에 모드 인자가 없어 변환 불가")
                 else:
                     bad.append(f"{i}행: posIndependent 집합 밖의 명령 {c}")
-        elif STEP_WAIT.match(s):
-            pass
+        elif m := STEP_WAIT.match(s):
+            # 런타임이 표시하지 않는 조건을 기다리면 실행이 시간초과로 끝난다.
+            # 임의의 단어를 통과시키지 않는다.
+            if m.group(1) not in RUNTIME:
+                bad.append(f"{i}행: 런타임이 표시하지 않는 대기 조건 {m.group(1)}")
         else:
             bad.append(f"{i}행: 변환 불가한 문법 — {st!r}")
     return (not bad), bad
 
 
 GATES = [("G1 스키마", gate1_schema),
-         ("G2 술어어휘", gate2_vocabulary),
+         ("G2 조건어휘", gate2_vocabulary),
          ("G3 실행가능", gate3_executable)]
 
 
