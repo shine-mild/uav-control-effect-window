@@ -22,27 +22,38 @@ CELLS = [(20, "BASELINE", "V-ALT20-BASELINE-*.json"),
          (60, "ALT_HOLD", "V-ALT60-ALT_HOLD-*.json")]
 
 def mw_exact(a, b):
-    """Mann-Whitney 정확검정 양측 p (순열)."""
+    """Mann-Whitney U 양측 검정.
+
+    작은 표본은 U 통계량의 정확 분포를 순열로 계산한다. 이전 판은 같은
+    이름으로 중앙값 차이 순열검정을 수행하여 이름과 구현이 어긋나 있었다.
+    """
     na, nb = len(a), len(b)
-    if na + nb > 20:   # 순열 폭발 방지: 정규근사
-        allv = a + b; ranks = {}
-        srt = sorted(allv)
-        for v in set(allv):
-            idx = [i for i, x in enumerate(srt) if x == v]
-            ranks[v] = sum(i + 1 for i in idx) / len(idx)
-        Ra = sum(ranks[x] for x in a)
-        U = Ra - na * (na + 1) / 2
-        mu = na * nb / 2; sd = math.sqrt(na * nb * (na + nb + 1) / 12)
-        z = (U - mu) / sd
-        return 2 * (1 - 0.5 * (1 + math.erf(abs(z) / math.sqrt(2)))), "정규근사"
-    obs = st.median(a) - st.median(b)
-    allv = a + b; cnt = 0; tot = 0
-    for comb in itertools.combinations(range(na + nb), na):
-        g1 = [allv[i] for i in comb]
-        g2 = [allv[i] for i in range(na + nb) if i not in comb]
-        tot += 1
-        if abs(st.median(g1) - st.median(g2)) >= abs(obs) - 1e-9: cnt += 1
-    return cnt / tot, "정확검정"
+
+    def U_of(g1, g2):
+        return sum((x > y) + 0.5 * (x == y) for x in g1 for y in g2)
+
+    obs = U_of(a, b)
+    if na + nb <= 20:                      # 정확검정
+        allv = a + b
+        cnt = tot = 0
+        for comb in itertools.combinations(range(na + nb), na):
+            g1 = [allv[k] for k in comb]
+            g2 = [allv[k] for k in range(na + nb) if k not in comb]
+            u = U_of(g1, g2); tot += 1
+            if abs(u - na * nb / 2) >= abs(obs - na * nb / 2) - 1e-9: cnt += 1
+        return cnt / tot, "정확검정"
+    # 큰 표본은 동순위 보정을 넣은 정규근사
+    allv = sorted(a + b)
+    mu = na * nb / 2
+    ties = 0
+    for v in set(allv):
+        t = allv.count(v)
+        if t > 1: ties += t ** 3 - t
+    N = na + nb
+    sd = math.sqrt(na * nb / 12.0 * ((N + 1) - ties / (N * (N - 1.0))))
+    z = (obs - mu) / sd
+    return 2 * (1 - 0.5 * (1 + math.erf(abs(z) / math.sqrt(2)))), "정규근사"
+
 
 rows = []
 print("=" * 74)
