@@ -65,7 +65,7 @@ for c in COND:
     else: print("  %-11s 관측 없음 (전건 공중 종료)" % c)
 
 # ── H1
-print("\n[H1] 수락 명령의 창은 무주입 기준과 다른가 — Mann-Whitney U 양측 정확검정")
+print("\n[A1] 수락 명령의 창은 무주입 기준과 다른가 — Mann-Whitney U 양측 정확검정")
 tests, raw = [], []
 for c in ["ALT_HOLD", "STABILIZE", "DISARM"]:
     if len(W["BASELINE"]) < 3 or len(W[c]) < 3:
@@ -81,7 +81,7 @@ if raw:
     print("  Holm 보정 p:", ", ".join("%s %.4f%s" % (tests[i], holm[i], " (유의)" if holm[i] < .05 else "") for i in range(m)))
 
 # ── H2
-print("\n[H2] 거부 명령의 창은 무주입 기준과 동등한가 — TOST, 마진 ±%.1f 초" % MARGIN)
+print("\n[A2] 거부 명령의 창은 무주입 기준과 동등한가 — TOST, 마진 ±%.1f 초" % MARGIN)
 a, b = W["BASELINE"], W["LOITER"]
 if len(a) >= 3 and len(b) >= 3:
     d = stats.scoreatpercentile(a,50) - stats.scoreatpercentile(b,50)
