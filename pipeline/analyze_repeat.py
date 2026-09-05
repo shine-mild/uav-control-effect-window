@@ -97,6 +97,15 @@ if len(a) >= 3 and len(b) >= 3:
           (lo, hi, ptost, "동등성 성립" if ptost < .05 else "동등성 불성립 (표본 부족 또는 실제 차이)"))
     print("  참고: Mann-Whitney 양측 p=%.4f (유의하지 않음이 곧 같음은 아니다)" % pmw)
     print("  참고: CLES=%.2f" % cles(a, b))
+    # TOST 는 정규성을 가정한다. 두 군이 이봉일 때도 결론이 같은지
+    # 중앙값 차이의 부트스트랩 신뢰구간으로 함께 확인한다. 시드는 사전 등록값을 쓴다.
+    rng = np.random.default_rng(20260829)
+    diffs = [float(np.median(rng.choice(a, len(a), True)) -
+                   np.median(rng.choice(b, len(b), True))) for _ in range(20000)]
+    ci = np.percentile(diffs, [2.5, 97.5])
+    inside = abs(ci[0]) <= MARGIN and abs(ci[1]) <= MARGIN
+    print("  참고: 중앙값 차이의 부트스트랩 95%% CI [%+.2f, %+.2f] 초 — 마진 ±%.1f 초 %s"
+          % (ci[0], ci[1], MARGIN, "안" if inside else "밖"))
 else:
     print("  유효 표본 부족 — 검정하지 않음")
 
