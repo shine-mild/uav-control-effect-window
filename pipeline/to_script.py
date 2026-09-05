@@ -44,11 +44,13 @@ def convert(sc, path_id, outcome, branch, here):
             lines.append(f'R.observe("{m.group(1)}")')
         elif m := STEP_SEND.match(s):
             c = m.group(1)
-            if "(" in c:
-                base, arg = c.split("(")[0], c.split("(")[1].rstrip(")")
+            base, arg = (c.split("(")[0], c.split("(")[1].rstrip(")")) if "(" in c else (c, None)
+            if base == "MAV_CMD_DO_SET_MODE":
                 lines.append(f'R.send_mode("{arg}", {MODES[arg]})')
             else:
-                lines.append(f'R.send_cmd(mav.{c})')
+                # 모드가 아닌 명령은 인자를 실행기가 CMD_ARGS 로 채운다.
+                # 생성물이 붙인 인자(예: DO_FLIGHTTERMINATION(1))는 그 값과 같은 뜻이다.
+                lines.append(f'R.send_cmd(mav.{base})')
             sent = True
         elif m := STEP_WAIT.match(s):
             lines.append(f'R.wait("{m.group(1)}")')

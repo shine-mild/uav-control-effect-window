@@ -76,12 +76,17 @@ def gate3_executable(sc):
                     bad.append(f"{i}행: 알 수 없는 메시지 {f}")
         elif m := STEP_SEND.match(s):
             c = m.group(1)
-            if c not in POS_INDEPENDENT:
-                # 인자를 요구하는 명령을 인자 없이 쓰면 스크립트로 변환되지 않는다
-                if c in {k.split("(")[0] for k in POS_INDEPENDENT if "(" in k}:
-                    bad.append(f"{i}행: {c} 에 모드 인자가 없어 변환 불가")
-                else:
-                    bad.append(f"{i}행: posIndependent 집합 밖의 명령 {c}")
+            # 모드 전환은 인자가 곧 모드 이름이므로 집합과 문자열이 정확히 맞아야 한다.
+            # 그 밖의 명령은 인자를 실행기가 채우므로 인자 유무를 따지지 않는다.
+            base = c.split("(")[0]
+            mode_cmds = {k.split("(")[0] for k in POS_INDEPENDENT if "(" in k}
+            nonmode = {k for k in POS_INDEPENDENT if "(" not in k}
+            if base in mode_cmds:
+                if c not in POS_INDEPENDENT:
+                    bad.append(f"{i}행: {c} 는 posIndependent 집합 밖의 모드이다"
+                               if "(" in c else f"{i}행: {c} 에 모드 인자가 없어 변환 불가")
+            elif base not in nonmode:
+                bad.append(f"{i}행: posIndependent 집합 밖의 명령 {c}")
         elif m := STEP_WAIT.match(s):
             # 런타임이 표시하지 않는 조건을 기다리면 실행이 시간초과로 끝난다.
             # 임의의 단어를 통과시키지 않는다.
