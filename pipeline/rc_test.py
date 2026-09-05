@@ -6,7 +6,7 @@
 창 단축이 RC 입력에 얼마나 의존하는지 알 수 없다. 스로틀을 최하단과
 중립으로 고정하고 무주입·ALT_HOLD 를 각각 재어 그 의존성을 본다.
 
-usage: rc_test.py {LOW|MID} {BASELINE|ALT_HOLD} <rep>
+usage: rc_test.py {LOW|MID} {BASELINE|ALT_HOLD|STABILIZE} <rep>
 """
 import sys, os, time
 sys.path.insert(0, os.environ.get("PYMAVLINK_PATH", ""))
@@ -16,13 +16,13 @@ from runtime import Runner
 
 mav = mavutil.mavlink
 THR = {"LOW": 1000, "MID": 1500}          # 스로틀 PWM
-ALT_HOLD = 2
+MODE = {"ALT_HOLD": 2, "STABILIZE": 0}    # ArduCopter 모드 번호
 
 thr_name = (sys.argv[1] if len(sys.argv) > 1 else "LOW").upper()
 cond     = (sys.argv[2] if len(sys.argv) > 2 else "BASELINE").upper()
 rep      = int(sys.argv[3]) if len(sys.argv) > 3 else 1
 SID = f"RC-{thr_name}-{cond}-{rep:02d}"
-assert thr_name in THR and cond in ("BASELINE", "ALT_HOLD")
+assert thr_name in THR and (cond == "BASELINE" or cond in MODE)
 
 
 def main():
@@ -47,8 +47,8 @@ def main():
     got = g.wait("fsLand", timeout=90)
     hold_rc(0.5)
 
-    if cond == "ALT_HOLD":
-        g.send_mode("ALT_HOLD", ALT_HOLD)
+    if cond in MODE:
+        g.send_mode(cond, MODE[cond])
 
     # 종료까지 스로틀을 유지한다. wait_end 는 자체 pump 를 돌리므로
     # 짧은 구간으로 나누어 override 를 끼워 넣는다.

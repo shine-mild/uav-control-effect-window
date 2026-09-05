@@ -9,8 +9,8 @@
 import json, glob, os, statistics as st
 
 P = os.path.dirname(os.path.abspath(__file__))
-COND = [("LOW", "BASELINE"), ("LOW", "ALT_HOLD"),
-        ("MID", "BASELINE"), ("MID", "ALT_HOLD")]
+COND = [("LOW", "BASELINE"), ("LOW", "ALT_HOLD"), ("LOW", "STABILIZE"),
+        ("MID", "BASELINE"), ("MID", "ALT_HOLD"), ("MID", "STABILIZE")]
 NAME = {"LOW": "최하단(1000)", "MID": "중립(1500)"}
 
 data = {k: [] for k in COND}
@@ -40,10 +40,10 @@ for k in COND:
         ("%.3f" % st.median(vs)) if vs else "—"))
 
 print("\n[주입 수락 여부 — 스로틀과 무관하게 성립하는가]")
-for k in [("LOW", "ALT_HOLD"), ("MID", "ALT_HOLD")]:
+for k in [("LOW", "ALT_HOLD"), ("MID", "ALT_HOLD"), ("LOW", "STABILIZE"), ("MID", "STABILIZE")]:
     r = data[k]
-    ok = sum(1 for x in r if x["ack"] == "ACCEPTED" and x["mode"] == "ALT_HOLD")
-    print("  %-12s 모드 전환 성립 %d/%d" % (NAME[k[0]], ok, len(r)))
+    ok = sum(1 for x in r if x["ack"] == "ACCEPTED" and x["mode"] == k[1])
+    print("  %-12s %-9s 모드 전환 성립 %d/%d" % (NAME[k[0]], k[1], ok, len(r)))
 
 print("\n[해석]")
 b_low = [x["w"] for x in data[("LOW", "BASELINE")] if x["w"] is not None]
