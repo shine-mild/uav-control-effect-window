@@ -1,0 +1,20 @@
+{
+  "id": "EX-0016.03-SITL",
+  "path": "EX-0016.03 -> gnssArtifact -> navBranch(posLost) -> fsLand -> injectWindow -> attemptInject -> injectSucceeded",
+  "precondition": ["reachable", "noSigning", "posIndependent"],
+  "steps": [
+    "set SIM_GPS1_ENABLE=0",
+    "observe GPS_RAW_INT.fix_type",
+    "wait gnssLost",
+    "observe STATUSTEXT.text",
+    "wait navBranch",
+    "wait fsLand",
+    "wait injectWindow",
+    "send MAV_CMD_DO_FLIGHTTERMINATION(1)",
+    "observe COMMAND_ACK.result",
+    "wait injectSucceeded"
+  ],
+  "observable": ["GPS_RAW_INT.fix_type", "STATUSTEXT.text", "COMMAND_ACK.result", "HEARTBEAT.system_status"],
+  "success": "injectSucceeded",
+  "abort": ["injectWindow 만료 (48.35s 경과, attemptInject 미도달)", "cmdAccepted=false", "linkAlive=false"]
+}

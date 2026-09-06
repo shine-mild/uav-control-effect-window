@@ -1,0 +1,504 @@
+[
+ {
+  "path_id": "SC-01",
+  "gates_passed": 3,
+  "reasons": [],
+  "scenario": {
+   "id": "EX-0016.03-GNSS-STABILIZE-INJECT",
+   "path": "EX-0016.03 -> gnssArtifact -> navBranch(posLost) -> fsLand -> injectWindow -> attemptInject -> injectSucceeded",
+   "precondition": [
+    "reachable",
+    "noSigning",
+    "posIndependent"
+   ],
+   "steps": [
+    "set SIM_GPS1_ENABLE=0",
+    "observe GPS_RAW_INT.fix_type",
+    "wait gnssLost",
+    "observe STATUSTEXT",
+    "wait navBranch",
+    "wait fsLand",
+    "wait injectWindow",
+    "send MAV_CMD_DO_SET_MODE(STABILIZE)",
+    "observe COMMAND_ACK",
+    "wait cmdAccepted",
+    "observe HEARTBEAT.custom_mode",
+    "wait modeChanged"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT.text",
+    "COMMAND_ACK.result",
+    "HEARTBEAT.custom_mode",
+    "GLOBAL_POSITION_INT.alt"
+   ],
+   "success": "injectSucceeded",
+   "abort": [
+    "landed",
+    "motorsDisarmed",
+    "flightEnd"
+   ]
+  },
+  "empty_response": false,
+  "attempts": [
+   {
+    "rc": 0,
+    "bytes": 805
+   }
+  ],
+  "command": "MAV_CMD_DO_SET_MODE(STABILIZE)",
+  "branch": "posLost"
+ },
+ {
+  "path_id": "SC-02",
+  "gates_passed": 3,
+  "reasons": [],
+  "scenario": {
+   "id": "EX-0016.03",
+   "path": "EX-0016.03 -> gnssArtifact -> navBranch(posLost) -> fsLand -> injectWindow -> attemptInject -> injectSucceeded",
+   "precondition": [
+    "reachable",
+    "posIndependent",
+    "noSigning"
+   ],
+   "steps": [
+    "set SIM_GPS1_ENABLE=0",
+    "observe GPS_RAW_INT.fix_type",
+    "wait gnssLost",
+    "observe STATUSTEXT",
+    "wait navBranch",
+    "wait fsLand",
+    "wait injectWindow",
+    "send MAV_CMD_DO_SET_MODE(ALT_HOLD)",
+    "observe COMMAND_ACK.result",
+    "wait cmdAccepted",
+    "observe HEARTBEAT.custom_mode",
+    "wait modeChanged"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT.text",
+    "COMMAND_ACK.result",
+    "HEARTBEAT.custom_mode",
+    "GLOBAL_POSITION_INT.relative_alt"
+   ],
+   "success": "injectSucceeded",
+   "abort": [
+    "landed",
+    "motorsDisarmed",
+    "flightEnd"
+   ]
+  },
+  "empty_response": false,
+  "attempts": [
+   {
+    "rc": 0,
+    "bytes": 822
+   }
+  ],
+  "command": "MAV_CMD_DO_SET_MODE(ALT_HOLD)",
+  "branch": "posLost"
+ },
+ {
+  "path_id": "SC-03",
+  "gates_passed": 3,
+  "reasons": [],
+  "scenario": {
+   "id": "PEN-EX-0016.03",
+   "path": "EX-0016.03 -> gnssArtifact -> navBranch(posLost) -> fsLand -> injectWindow -> attemptInject -> injectSucceeded",
+   "precondition": [
+    "reachable",
+    "posIndependent",
+    "noSigning",
+    "linkAlive"
+   ],
+   "steps": [
+    "set SIM_GPS1_ENABLE=0",
+    "observe GPS_RAW_INT.fix_type",
+    "wait gnssLost",
+    "observe STATUSTEXT.text",
+    "wait navBranch",
+    "wait fsLand",
+    "wait injectWindow",
+    "send MAV_CMD_DO_SET_MODE(GUIDED_NOGPS)",
+    "observe COMMAND_ACK.result",
+    "wait cmdAccepted",
+    "observe HEARTBEAT.custom_mode",
+    "wait modeChanged"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT.text",
+    "COMMAND_ACK.result",
+    "HEARTBEAT.custom_mode",
+    "GLOBAL_POSITION_INT.relative_alt"
+   ],
+   "success": "injectWindow 내에 cmdAccepted ∧ modeChanged(GUIDED_NOGPS) → injectSucceeded",
+   "abort": [
+    "landed",
+    "motorsDisarmed",
+    "flightEnd"
+   ]
+  },
+  "empty_response": false,
+  "attempts": [
+   {
+    "rc": 0,
+    "bytes": 918
+   }
+  ],
+  "command": "MAV_CMD_DO_SET_MODE(GUIDED_NOGPS)",
+  "branch": "posLost"
+ },
+ {
+  "path_id": "SC-04",
+  "gates_passed": 3,
+  "reasons": [],
+  "scenario": {
+   "id": "EX-0016.03-SITL",
+   "path": "EX-0016.03 -> gnssArtifact -> navBranch(posLost) -> fsLand -> injectWindow -> attemptInject -> injectSucceeded",
+   "precondition": [
+    "reachable",
+    "noSigning",
+    "posIndependent"
+   ],
+   "steps": [
+    "set SIM_GPS1_ENABLE=0",
+    "observe GPS_RAW_INT.fix_type",
+    "wait gnssLost",
+    "observe STATUSTEXT.text",
+    "wait navBranch",
+    "wait fsLand",
+    "wait injectWindow",
+    "send MAV_CMD_DO_FLIGHTTERMINATION(1)",
+    "observe COMMAND_ACK.result",
+    "wait injectSucceeded"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT.text",
+    "COMMAND_ACK.result",
+    "HEARTBEAT.system_status"
+   ],
+   "success": "injectSucceeded",
+   "abort": [
+    "injectWindow 만료 (48.35s 경과, attemptInject 미도달)",
+    "cmdAccepted=false",
+    "linkAlive=false"
+   ]
+  },
+  "empty_response": false,
+  "attempts": [
+   {
+    "rc": 0,
+    "bytes": 768
+   }
+  ],
+  "command": "MAV_CMD_DO_FLIGHTTERMINATION",
+  "branch": "posLost"
+ },
+ {
+  "path_id": "SC-05",
+  "gates_passed": 2,
+  "reasons": [
+   "[G3 실행가능] 10행: 런타임이 표시하지 않는 대기 조건 attemptInject"
+  ],
+  "scenario": {
+   "id": "EX-0016.03",
+   "path": "EX-0016.03 -> gnssArtifact -> navBranch(posLost) -> fsLand -> injectWindow -> attemptInject -> injectSucceeded",
+   "precondition": [
+    "reachable",
+    "posIndependent",
+    "noSigning"
+   ],
+   "steps": [
+    "set SIM_GPS1_ENABLE=0",
+    "observe GPS_RAW_INT.fix_type",
+    "wait gnssLost",
+    "observe HEARTBEAT.system_status",
+    "wait navBranch",
+    "observe STATUSTEXT.text",
+    "wait fsLand",
+    "wait injectWindow",
+    "send MAV_CMD_COMPONENT_ARM_DISARM(0)",
+    "wait attemptInject",
+    "observe COMMAND_ACK.result",
+    "wait injectSucceeded"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "HEARTBEAT.system_status",
+    "STATUSTEXT.text",
+    "COMMAND_ACK.result"
+   ],
+   "success": "injectSucceeded && motorsDisarmed",
+   "abort": [
+    "!linkAlive",
+    "!injectWindow",
+    "flightEnd",
+    "landed"
+   ]
+  },
+  "empty_response": false,
+  "attempts": [
+   {
+    "rc": 0,
+    "bytes": 842
+   }
+  ],
+  "command": "MAV_CMD_COMPONENT_ARM_DISARM",
+  "branch": "posLost"
+ },
+ {
+  "path_id": "SC-06",
+  "gates_passed": 3,
+  "reasons": [],
+  "scenario": {
+   "id": "EX-0016.03",
+   "path": "EX-0016.03 -> gnssArtifact -> navBranch(variance) -> fsLand -> injectWindow -> attemptInject -> injectSucceeded",
+   "precondition": [
+    "reachable",
+    "noSigning",
+    "posIndependent",
+    "linkAlive"
+   ],
+   "steps": [
+    "set SIM_GPS1_JAM=1",
+    "observe GPS_RAW_INT.fix_type",
+    "wait gnssLost",
+    "observe STATUSTEXT",
+    "wait navBranch",
+    "wait fsLand",
+    "wait injectWindow",
+    "send MAV_CMD_DO_SET_MODE(STABILIZE)",
+    "observe COMMAND_ACK.result",
+    "wait cmdAccepted",
+    "observe HEARTBEAT.custom_mode",
+    "wait modeChanged",
+    "wait injectSucceeded"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT.text",
+    "COMMAND_ACK.result",
+    "HEARTBEAT.custom_mode",
+    "GLOBAL_POSITION_INT.alt"
+   ],
+   "success": "injectWindow ∧ cmdAccepted ∧ modeChanged ∧ injectSucceeded",
+   "abort": [
+    "!gnssLost (SIM_GPS1_JAM 인가 후 GPS 상실 미관측)",
+    "navBranch != variance (분산 기반 분기 미진입)",
+    "!fsLand (Failsafe LAND 미진입)",
+    "landed 또는 motorsDisarmed (injectWindow 진입 전 착륙 완료)",
+    "flightEnd (controlEffectWindow 48.35s 초과, injectWindow 종료)"
+   ]
+  },
+  "empty_response": false,
+  "attempts": [
+   {
+    "rc": 0,
+    "bytes": 1122
+   }
+  ],
+  "command": "MAV_CMD_DO_SET_MODE(STABILIZE)",
+  "branch": "variance"
+ },
+ {
+  "path_id": "SC-07",
+  "gates_passed": 3,
+  "reasons": [],
+  "scenario": {
+   "id": "EX-0016.03-SITL-01",
+   "path": "EX-0016.03 -> gnssArtifact -> navBranch(variance) -> fsLand -> injectWindow -> attemptInject -> injectSucceeded",
+   "precondition": [
+    "reachable",
+    "posIndependent",
+    "noSigning",
+    "linkAlive"
+   ],
+   "steps": [
+    "set SIM_GPS1_JAM=1",
+    "observe GPS_RAW_INT.fix_type",
+    "wait gnssLost",
+    "wait navBranch",
+    "wait fsLand",
+    "wait injectWindow",
+    "send MAV_CMD_DO_SET_MODE(ALT_HOLD)",
+    "observe COMMAND_ACK.result",
+    "wait injectSucceeded",
+    "observe HEARTBEAT.custom_mode"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT.text",
+    "COMMAND_ACK.result",
+    "HEARTBEAT.custom_mode",
+    "GLOBAL_POSITION_INT.relative_alt"
+   ],
+   "success": "cmdAccepted && modeChanged && injectSucceeded",
+   "abort": [
+    "landed",
+    "motorsDisarmed"
+   ]
+  },
+  "empty_response": false,
+  "attempts": [
+   {
+    "rc": 0,
+    "bytes": 824
+   }
+  ],
+  "command": "MAV_CMD_DO_SET_MODE(ALT_HOLD)",
+  "branch": "variance"
+ },
+ {
+  "path_id": "SC-08",
+  "gates_passed": 3,
+  "reasons": [],
+  "scenario": {
+   "id": "EX-0016.03-SITL",
+   "path": "EX-0016.03 -> gnssArtifact -> navBranch(variance) -> fsLand -> injectWindow -> attemptInject -> injectSucceeded",
+   "precondition": [
+    "reachable",
+    "posIndependent",
+    "noSigning"
+   ],
+   "steps": [
+    "set SIM_GPS1_JAM=1",
+    "observe GPS_RAW_INT.fix_type",
+    "wait gnssLost",
+    "observe STATUSTEXT.text",
+    "wait navBranch",
+    "wait fsLand",
+    "wait injectWindow",
+    "send MAV_CMD_DO_SET_MODE(GUIDED_NOGPS)",
+    "observe COMMAND_ACK.result",
+    "wait cmdAccepted",
+    "observe HEARTBEAT.custom_mode",
+    "wait modeChanged",
+    "wait injectSucceeded"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT.text",
+    "COMMAND_ACK.result",
+    "HEARTBEAT.custom_mode",
+    "GLOBAL_POSITION_INT.relative_alt"
+   ],
+   "success": "cmdAccepted && modeChanged && injectSucceeded",
+   "abort": [
+    "landed",
+    "motorsDisarmed",
+    "flightEnd"
+   ]
+  },
+  "empty_response": false,
+  "attempts": [
+   {
+    "rc": 0,
+    "bytes": 904
+   }
+  ],
+  "command": "MAV_CMD_DO_SET_MODE(GUIDED_NOGPS)",
+  "branch": "variance"
+ },
+ {
+  "path_id": "SC-09",
+  "gates_passed": 3,
+  "reasons": [],
+  "scenario": {
+   "id": "PEN-EX-0016.03",
+   "path": "EX-0016.03 -> gnssArtifact -> navBranch(variance) -> fsLand -> injectWindow -> attemptInject -> injectSucceeded",
+   "precondition": [
+    "reachable",
+    "posIndependent",
+    "noSigning",
+    "linkAlive"
+   ],
+   "steps": [
+    "set SIM_GPS1_JAM=1",
+    "observe GPS_RAW_INT.fix_type",
+    "wait gnssLost",
+    "observe STATUSTEXT",
+    "wait navBranch",
+    "wait fsLand",
+    "wait injectWindow",
+    "send MAV_CMD_DO_FLIGHTTERMINATION(1)",
+    "observe COMMAND_ACK.result",
+    "wait injectSucceeded"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT.text",
+    "COMMAND_ACK.result",
+    "HEARTBEAT.system_status"
+   ],
+   "success": "injectSucceeded",
+   "abort": [
+    "landed",
+    "motorsDisarmed",
+    "linkAlive"
+   ]
+  },
+  "empty_response": false,
+  "attempts": [
+   {
+    "rc": 0,
+    "bytes": 756
+   }
+  ],
+  "command": "MAV_CMD_DO_FLIGHTTERMINATION",
+  "branch": "variance"
+ },
+ {
+  "path_id": "SC-10",
+  "gates_passed": 3,
+  "reasons": [],
+  "scenario": {
+   "id": "EX-0016.03",
+   "path": "EX-0016.03 -> gnssArtifact -> navBranch(variance) -> fsLand -> injectWindow -> attemptInject -> injectSucceeded",
+   "precondition": [
+    "reachable",
+    "linkAlive",
+    "posIndependent",
+    "noSigning"
+   ],
+   "steps": [
+    "set SIM_GPS1_JAM=1",
+    "observe GPS_RAW_INT.fix_type",
+    "wait gnssLost",
+    "observe STATUSTEXT.text",
+    "wait navBranch",
+    "wait fsLand",
+    "wait injectWindow",
+    "send MAV_CMD_COMPONENT_ARM_DISARM(0)",
+    "observe COMMAND_ACK.result",
+    "wait injectSucceeded"
+   ],
+   "observable": [
+    "GPS_RAW_INT.fix_type",
+    "STATUSTEXT.text",
+    "HEARTBEAT.system_status",
+    "COMMAND_ACK.result",
+    "GLOBAL_POSITION_INT.relative_alt"
+   ],
+   "success": "injectSucceeded",
+   "abort": [
+    "!linkAlive",
+    "!fsLand",
+    "!injectWindow",
+    "flightEnd",
+    "landed"
+   ]
+  },
+  "empty_response": false,
+  "attempts": [
+   {
+    "rc": 0,
+    "bytes": 821
+   }
+  ],
+  "command": "MAV_CMD_COMPONENT_ARM_DISARM",
+  "branch": "variance"
+ }
+]

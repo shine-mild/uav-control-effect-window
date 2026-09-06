@@ -1,0 +1,22 @@
+{
+  "id": "EX-0016.03-GNSS-STABILIZE-INJECT",
+  "path": "EX-0016.03 -> gnssArtifact -> navBranch(posLost) -> fsLand -> injectWindow -> attemptInject -> injectSucceeded",
+  "precondition": ["reachable", "noSigning", "posIndependent"],
+  "steps": [
+    "set SIM_GPS1_ENABLE=0",
+    "observe GPS_RAW_INT.fix_type",
+    "wait gnssLost",
+    "observe STATUSTEXT",
+    "wait navBranch",
+    "wait fsLand",
+    "wait injectWindow",
+    "send MAV_CMD_DO_SET_MODE(STABILIZE)",
+    "observe COMMAND_ACK",
+    "wait cmdAccepted",
+    "observe HEARTBEAT.custom_mode",
+    "wait modeChanged"
+  ],
+  "observable": ["GPS_RAW_INT.fix_type", "STATUSTEXT.text", "COMMAND_ACK.result", "HEARTBEAT.custom_mode", "GLOBAL_POSITION_INT.alt"],
+  "success": "injectSucceeded",
+  "abort": ["landed", "motorsDisarmed", "flightEnd"]
+}

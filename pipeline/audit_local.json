@@ -1,0 +1,3492 @@
+[
+ {
+  "id": "RC-LOW-ALT_HOLD-01",
+  "sha256": "4b331f74359162c3c548304bf93570959dedaeec5db68bd49eac31e0692c6f4f",
+  "bytes": 3860086,
+  "messages": 69123,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 69123
+  },
+  "counts": {
+   "HEARTBEAT": 136,
+   "COMMAND_ACK": 9,
+   "PARAM_VALUE": 40,
+   "STATUSTEXT": 49,
+   "AHRS": 2589,
+   "AHRS2": 2588,
+   "ATTITUDE": 2588,
+   "GLOBAL_POSITION_INT": 2588,
+   "VFR_HUD": 2588,
+   "SYS_STATUS": 2588,
+   "POWER_STATUS": 2588,
+   "MEMINFO": 2588,
+   "NAV_CONTROLLER_OUTPUT": 2588,
+   "MISSION_CURRENT": 2588,
+   "SERVO_OUTPUT_RAW": 2588,
+   "RC_CHANNELS": 2588,
+   "RAW_IMU": 2588,
+   "SCALED_IMU2": 2588,
+   "SCALED_IMU3": 2588,
+   "SCALED_PRESSURE": 2588,
+   "SCALED_PRESSURE2": 2588,
+   "GPS_RAW_INT": 2588,
+   "SYSTEM_TIME": 2588,
+   "SIMSTATE": 2588,
+   "TERRAIN_REPORT": 2588,
+   "VIBRATION": 2588,
+   "BATTERY_STATUS": 2588,
+   "EXTENDED_SYS_STATE": 647,
+   "EKF_STATUS_REPORT": 2568,
+   "ESC_TELEMETRY_1_TO_4": 2516,
+   "TIMESYNC": 13,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 1808,
+   "LOCAL_POSITION_NED": 1808
+  },
+  "t_land_ms": 112299,
+  "t_disarm_ms": null,
+  "t_onground_ms": 131449,
+  "window_s": 19.15,
+  "original_window_s": 19.15,
+  "window_matches": true,
+  "impacts": [
+   [
+    129899,
+    2.503674
+   ]
+  ],
+  "original_impact_mps": 2.503674,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    112299,
+    9
+   ],
+   [
+    113099,
+    2
+   ]
+  ],
+  "command_acks": [
+   [
+    113099,
+    176,
+    0
+   ]
+  ],
+  "rc_expected": 1000,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 379,
+  "rc_matches": true,
+  "censored": false,
+  "last_sim_ms": 131799,
+  "last_seen_after_land_sim_s": 19.5,
+  "last_seen_after_land_wall_s": 19.515,
+  "relative_alt_last_m": 0.106,
+  "relative_alt_range_after_land_m": [
+   -0.059,
+   39.99
+  ]
+ },
+ {
+  "id": "RC-LOW-ALT_HOLD-02",
+  "sha256": "9aa632da87619add2fb1aaf6ae6dacf8df3257fd56b0de9ecebf7aa8d7d05f86",
+  "bytes": 3702384,
+  "messages": 66303,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 66303
+  },
+  "counts": {
+   "HEARTBEAT": 131,
+   "COMMAND_ACK": 9,
+   "PARAM_VALUE": 40,
+   "STATUSTEXT": 41,
+   "AHRS": 2486,
+   "AHRS2": 2485,
+   "ATTITUDE": 2485,
+   "GLOBAL_POSITION_INT": 2485,
+   "VFR_HUD": 2485,
+   "SYS_STATUS": 2485,
+   "POWER_STATUS": 2485,
+   "MEMINFO": 2485,
+   "NAV_CONTROLLER_OUTPUT": 2485,
+   "MISSION_CURRENT": 2485,
+   "SERVO_OUTPUT_RAW": 2485,
+   "RC_CHANNELS": 2485,
+   "RAW_IMU": 2485,
+   "SCALED_IMU2": 2485,
+   "SCALED_IMU3": 2485,
+   "SCALED_PRESSURE": 2485,
+   "SCALED_PRESSURE2": 2485,
+   "GPS_RAW_INT": 2485,
+   "SYSTEM_TIME": 2485,
+   "SIMSTATE": 2485,
+   "TERRAIN_REPORT": 2485,
+   "VIBRATION": 2485,
+   "BATTERY_STATUS": 2485,
+   "EXTENDED_SYS_STATE": 622,
+   "EKF_STATUS_REPORT": 2465,
+   "ESC_TELEMETRY_1_TO_4": 2413,
+   "TIMESYNC": 12,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 1705,
+   "LOCAL_POSITION_NED": 1705
+  },
+  "t_land_ms": 107299,
+  "t_disarm_ms": null,
+  "t_onground_ms": 126449,
+  "window_s": 19.15,
+  "original_window_s": 19.15,
+  "window_matches": true,
+  "impacts": [
+   [
+    124949,
+    2.496428
+   ]
+  ],
+  "original_impact_mps": 2.496428,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    107299,
+    9
+   ],
+   [
+    108099,
+    2
+   ]
+  ],
+  "command_acks": [
+   [
+    108099,
+    176,
+    0
+   ]
+  ],
+  "rc_expected": 1000,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 376,
+  "rc_matches": true,
+  "censored": false,
+  "last_sim_ms": 126649,
+  "last_seen_after_land_sim_s": 19.35,
+  "last_seen_after_land_wall_s": 19.362,
+  "relative_alt_last_m": -0.004,
+  "relative_alt_range_after_land_m": [
+   -0.16,
+   40.001
+  ]
+ },
+ {
+  "id": "RC-LOW-ALT_HOLD-03",
+  "sha256": "201f5506c90349b0e5676edc4af068863e371b682cb9e25bf9e2932c262b3c17",
+  "bytes": 3731748,
+  "messages": 66825,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 66825
+  },
+  "counts": {
+   "HEARTBEAT": 132,
+   "COMMAND_ACK": 9,
+   "PARAM_VALUE": 40,
+   "STATUSTEXT": 46,
+   "AHRS": 2505,
+   "AHRS2": 2504,
+   "ATTITUDE": 2504,
+   "GLOBAL_POSITION_INT": 2504,
+   "VFR_HUD": 2504,
+   "SYS_STATUS": 2504,
+   "POWER_STATUS": 2504,
+   "MEMINFO": 2504,
+   "NAV_CONTROLLER_OUTPUT": 2504,
+   "MISSION_CURRENT": 2504,
+   "SERVO_OUTPUT_RAW": 2504,
+   "RC_CHANNELS": 2504,
+   "RAW_IMU": 2504,
+   "SCALED_IMU2": 2504,
+   "SCALED_IMU3": 2504,
+   "SCALED_PRESSURE": 2504,
+   "SCALED_PRESSURE2": 2504,
+   "GPS_RAW_INT": 2504,
+   "SYSTEM_TIME": 2504,
+   "SIMSTATE": 2504,
+   "TERRAIN_REPORT": 2504,
+   "VIBRATION": 2504,
+   "BATTERY_STATUS": 2504,
+   "EXTENDED_SYS_STATE": 626,
+   "EKF_STATUS_REPORT": 2483,
+   "ESC_TELEMETRY_1_TO_4": 2432,
+   "TIMESYNC": 12,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 1724,
+   "LOCAL_POSITION_NED": 1724
+  },
+  "t_land_ms": 108329,
+  "t_disarm_ms": null,
+  "t_onground_ms": 127427,
+  "window_s": 19.1,
+  "original_window_s": 19.1,
+  "window_matches": true,
+  "impacts": [
+   [
+    125927,
+    2.487986
+   ]
+  ],
+  "original_impact_mps": 2.487986,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    108329,
+    9
+   ],
+   [
+    109077,
+    2
+   ]
+  ],
+  "command_acks": [
+   [
+    109077,
+    176,
+    0
+   ]
+  ],
+  "rc_expected": 1000,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 373,
+  "rc_matches": true,
+  "censored": false,
+  "last_sim_ms": 127577,
+  "last_seen_after_land_sim_s": 19.248,
+  "last_seen_after_land_wall_s": 19.288,
+  "relative_alt_last_m": 0.008,
+  "relative_alt_range_after_land_m": [
+   -0.14,
+   40.002
+  ]
+ },
+ {
+  "id": "RC-LOW-ALT_HOLD-04",
+  "sha256": "78707850c1920c961ffea1bc104b0182e23873bb21a4b8bda15833609411b4d2",
+  "bytes": 3710696,
+  "messages": 66447,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 66447
+  },
+  "counts": {
+   "HEARTBEAT": 131,
+   "COMMAND_ACK": 9,
+   "PARAM_VALUE": 40,
+   "STATUSTEXT": 49,
+   "AHRS": 2491,
+   "AHRS2": 2490,
+   "ATTITUDE": 2490,
+   "GLOBAL_POSITION_INT": 2490,
+   "VFR_HUD": 2490,
+   "SYS_STATUS": 2490,
+   "POWER_STATUS": 2490,
+   "MEMINFO": 2490,
+   "NAV_CONTROLLER_OUTPUT": 2490,
+   "MISSION_CURRENT": 2490,
+   "SERVO_OUTPUT_RAW": 2490,
+   "RC_CHANNELS": 2490,
+   "RAW_IMU": 2490,
+   "SCALED_IMU2": 2490,
+   "SCALED_IMU3": 2490,
+   "SCALED_PRESSURE": 2490,
+   "SCALED_PRESSURE2": 2490,
+   "GPS_RAW_INT": 2490,
+   "SYSTEM_TIME": 2490,
+   "SIMSTATE": 2490,
+   "TERRAIN_REPORT": 2490,
+   "VIBRATION": 2490,
+   "BATTERY_STATUS": 2490,
+   "EXTENDED_SYS_STATE": 623,
+   "EKF_STATUS_REPORT": 2470,
+   "ESC_TELEMETRY_1_TO_4": 2418,
+   "TIMESYNC": 12,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 1710,
+   "LOCAL_POSITION_NED": 1710
+  },
+  "t_land_ms": 107699,
+  "t_disarm_ms": null,
+  "t_onground_ms": 126649,
+  "window_s": 18.95,
+  "original_window_s": 18.95,
+  "window_matches": true,
+  "impacts": [
+   [
+    125199,
+    2.490406
+   ]
+  ],
+  "original_impact_mps": 2.490406,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    107699,
+    9
+   ],
+   [
+    108349,
+    2
+   ]
+  ],
+  "command_acks": [
+   [
+    108349,
+    176,
+    0
+   ]
+  ],
+  "rc_expected": 1000,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 373,
+  "rc_matches": true,
+  "censored": false,
+  "last_sim_ms": 126899,
+  "last_seen_after_land_sim_s": 19.2,
+  "last_seen_after_land_wall_s": 19.212,
+  "relative_alt_last_m": -0.084,
+  "relative_alt_range_after_land_m": [
+   -0.127,
+   40.001
+  ]
+ },
+ {
+  "id": "RC-LOW-ALT_HOLD-05",
+  "sha256": "3b417e37fc6e264c75d12b3fbbfc76200fb70a2801cf2f0292e33b7434d6c0f7",
+  "bytes": 3709064,
+  "messages": 66414,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 66414
+  },
+  "counts": {
+   "HEARTBEAT": 131,
+   "COMMAND_ACK": 9,
+   "PARAM_VALUE": 40,
+   "STATUSTEXT": 43,
+   "AHRS": 2490,
+   "AHRS2": 2489,
+   "ATTITUDE": 2489,
+   "GLOBAL_POSITION_INT": 2489,
+   "VFR_HUD": 2489,
+   "SYS_STATUS": 2489,
+   "POWER_STATUS": 2489,
+   "MEMINFO": 2489,
+   "NAV_CONTROLLER_OUTPUT": 2489,
+   "MISSION_CURRENT": 2489,
+   "SERVO_OUTPUT_RAW": 2489,
+   "RC_CHANNELS": 2489,
+   "RAW_IMU": 2489,
+   "SCALED_IMU2": 2489,
+   "SCALED_IMU3": 2489,
+   "SCALED_PRESSURE": 2489,
+   "SCALED_PRESSURE2": 2489,
+   "GPS_RAW_INT": 2489,
+   "SYSTEM_TIME": 2489,
+   "SIMSTATE": 2489,
+   "TERRAIN_REPORT": 2489,
+   "VIBRATION": 2489,
+   "BATTERY_STATUS": 2489,
+   "EXTENDED_SYS_STATE": 623,
+   "EKF_STATUS_REPORT": 2469,
+   "ESC_TELEMETRY_1_TO_4": 2417,
+   "TIMESYNC": 12,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 1709,
+   "LOCAL_POSITION_NED": 1709
+  },
+  "t_land_ms": 107699,
+  "t_disarm_ms": null,
+  "t_onground_ms": 126849,
+  "window_s": 19.15,
+  "original_window_s": 19.15,
+  "window_matches": true,
+  "impacts": [
+   [
+    125399,
+    2.489046
+   ]
+  ],
+  "original_impact_mps": 2.489046,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    107699,
+    9
+   ],
+   [
+    108549,
+    2
+   ]
+  ],
+  "command_acks": [
+   [
+    108549,
+    176,
+    0
+   ]
+  ],
+  "rc_expected": 1000,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 372,
+  "rc_matches": true,
+  "censored": false,
+  "last_sim_ms": 126849,
+  "last_seen_after_land_sim_s": 19.15,
+  "last_seen_after_land_wall_s": 19.163,
+  "relative_alt_last_m": 0.014,
+  "relative_alt_range_after_land_m": [
+   -0.162,
+   40.0
+  ]
+ },
+ {
+  "id": "RC-LOW-BASELINE-01",
+  "sha256": "9cb2ba3765b26e080c38d822a3b31f4434a349e3f663236fb5d89d6496a71e5a",
+  "bytes": 4489100,
+  "messages": 80432,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 80432
+  },
+  "counts": {
+   "HEARTBEAT": 156,
+   "COMMAND_ACK": 8,
+   "PARAM_VALUE": 41,
+   "STATUSTEXT": 65,
+   "AHRS": 3002,
+   "AHRS2": 3001,
+   "ATTITUDE": 3001,
+   "GLOBAL_POSITION_INT": 3001,
+   "VFR_HUD": 3001,
+   "SYS_STATUS": 3001,
+   "POWER_STATUS": 3001,
+   "MEMINFO": 3001,
+   "NAV_CONTROLLER_OUTPUT": 3001,
+   "MISSION_CURRENT": 3001,
+   "SERVO_OUTPUT_RAW": 3001,
+   "RC_CHANNELS": 3001,
+   "RAW_IMU": 3001,
+   "SCALED_IMU2": 3001,
+   "SCALED_IMU3": 3001,
+   "SCALED_PRESSURE": 3001,
+   "SCALED_PRESSURE2": 3001,
+   "GPS_RAW_INT": 3001,
+   "SYSTEM_TIME": 3001,
+   "SIMSTATE": 3001,
+   "TERRAIN_REPORT": 3001,
+   "VIBRATION": 3001,
+   "BATTERY_STATUS": 3001,
+   "EXTENDED_SYS_STATE": 751,
+   "EKF_STATUS_REPORT": 2980,
+   "ESC_TELEMETRY_1_TO_4": 2929,
+   "TIMESYNC": 15,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 2221,
+   "LOCAL_POSITION_NED": 2221,
+   "TERRAIN_REQUEST": 17
+  },
+  "t_land_ms": 106329,
+  "t_disarm_ms": 151979,
+  "t_onground_ms": 151429,
+  "window_s": 45.1,
+  "original_window_s": 45.1,
+  "window_matches": true,
+  "impacts": [
+   [
+    149829,
+    0.512675
+   ]
+  ],
+  "original_impact_mps": 0.512675,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    106329,
+    9
+   ]
+  ],
+  "command_acks": [],
+  "rc_expected": 1000,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 910,
+  "rc_matches": true,
+  "censored": false,
+  "last_sim_ms": 152427,
+  "last_seen_after_land_sim_s": 46.098,
+  "last_seen_after_land_wall_s": 46.142,
+  "relative_alt_last_m": 0.027,
+  "relative_alt_range_after_land_m": [
+   0.027,
+   40.001
+  ]
+ },
+ {
+  "id": "RC-LOW-BASELINE-02",
+  "sha256": "a5209fc75df6b622a71c2690bdda1a095dbd90b3ea841e8fc8f68c431bd11e6d",
+  "bytes": 4583938,
+  "messages": 82138,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 82138
+  },
+  "counts": {
+   "HEARTBEAT": 159,
+   "COMMAND_ACK": 8,
+   "PARAM_VALUE": 41,
+   "STATUSTEXT": 69,
+   "AHRS": 3065,
+   "AHRS2": 3064,
+   "ATTITUDE": 3064,
+   "GLOBAL_POSITION_INT": 3064,
+   "VFR_HUD": 3064,
+   "SYS_STATUS": 3064,
+   "POWER_STATUS": 3064,
+   "MEMINFO": 3064,
+   "NAV_CONTROLLER_OUTPUT": 3064,
+   "MISSION_CURRENT": 3064,
+   "SERVO_OUTPUT_RAW": 3064,
+   "RC_CHANNELS": 3064,
+   "RAW_IMU": 3064,
+   "SCALED_IMU2": 3064,
+   "SCALED_IMU3": 3064,
+   "SCALED_PRESSURE": 3064,
+   "SCALED_PRESSURE2": 3064,
+   "GPS_RAW_INT": 3064,
+   "SYSTEM_TIME": 3064,
+   "SIMSTATE": 3064,
+   "TERRAIN_REPORT": 3064,
+   "VIBRATION": 3064,
+   "BATTERY_STATUS": 3064,
+   "EXTENDED_SYS_STATE": 766,
+   "EKF_STATUS_REPORT": 3043,
+   "ESC_TELEMETRY_1_TO_4": 2992,
+   "TIMESYNC": 15,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 2284,
+   "LOCAL_POSITION_NED": 2284
+  },
+  "t_land_ms": 109527,
+  "t_disarm_ms": null,
+  "t_onground_ms": 155027,
+  "window_s": 45.5,
+  "original_window_s": 45.5,
+  "window_matches": true,
+  "impacts": [
+   [
+    153177,
+    0.496103
+   ]
+  ],
+  "original_impact_mps": 0.496103,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    109527,
+    9
+   ]
+  ],
+  "command_acks": [],
+  "rc_expected": 1000,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 910,
+  "rc_matches": true,
+  "censored": false,
+  "last_sim_ms": 155579,
+  "last_seen_after_land_sim_s": 46.052,
+  "last_seen_after_land_wall_s": 46.095,
+  "relative_alt_last_m": -0.113,
+  "relative_alt_range_after_land_m": [
+   -0.113,
+   40.0
+  ]
+ },
+ {
+  "id": "RC-LOW-BASELINE-03",
+  "sha256": "83b3b3456ac633fc126f46d1f59c3d7a18ca0c8a88e3e7513a0549d39d35d52d",
+  "bytes": 4712413,
+  "messages": 84439,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 84439
+  },
+  "counts": {
+   "HEARTBEAT": 163,
+   "COMMAND_ACK": 8,
+   "PARAM_VALUE": 43,
+   "STATUSTEXT": 47,
+   "AHRS": 3150,
+   "AHRS2": 3149,
+   "ATTITUDE": 3149,
+   "GLOBAL_POSITION_INT": 3149,
+   "VFR_HUD": 3149,
+   "SYS_STATUS": 3149,
+   "POWER_STATUS": 3149,
+   "MEMINFO": 3149,
+   "NAV_CONTROLLER_OUTPUT": 3149,
+   "MISSION_CURRENT": 3149,
+   "SERVO_OUTPUT_RAW": 3149,
+   "RC_CHANNELS": 3149,
+   "RAW_IMU": 3149,
+   "SCALED_IMU2": 3149,
+   "SCALED_IMU3": 3149,
+   "SCALED_PRESSURE": 3149,
+   "SCALED_PRESSURE2": 3149,
+   "GPS_RAW_INT": 3149,
+   "SYSTEM_TIME": 3149,
+   "SIMSTATE": 3149,
+   "TERRAIN_REPORT": 3149,
+   "VIBRATION": 3149,
+   "BATTERY_STATUS": 3149,
+   "EXTENDED_SYS_STATE": 788,
+   "EKF_STATUS_REPORT": 3128,
+   "ESC_TELEMETRY_1_TO_4": 3077,
+   "TIMESYNC": 15,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 2369,
+   "LOCAL_POSITION_NED": 2369
+  },
+  "t_land_ms": 107127,
+  "t_disarm_ms": null,
+  "t_onground_ms": 159629,
+  "window_s": 52.5,
+  "original_window_s": 52.5,
+  "window_matches": true,
+  "impacts": [
+   [
+    157979,
+    0.602001
+   ]
+  ],
+  "original_impact_mps": 0.602001,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    107127,
+    9
+   ]
+  ],
+  "command_acks": [],
+  "rc_expected": 1000,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 1043,
+  "rc_matches": true,
+  "censored": false,
+  "last_sim_ms": 159829,
+  "last_seen_after_land_sim_s": 52.702,
+  "last_seen_after_land_wall_s": 52.744,
+  "relative_alt_last_m": -0.774,
+  "relative_alt_range_after_land_m": [
+   -0.822,
+   40.001
+  ]
+ },
+ {
+  "id": "RC-LOW-BASELINE-04",
+  "sha256": "1373e8d1e376945285aca12150d7b989418c3ac98e6c38ff2d64a19ee612fc6f",
+  "bytes": 4827276,
+  "messages": 86489,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 86489
+  },
+  "counts": {
+   "HEARTBEAT": 167,
+   "COMMAND_ACK": 8,
+   "PARAM_VALUE": 43,
+   "STATUSTEXT": 67,
+   "AHRS": 3224,
+   "AHRS2": 3223,
+   "ATTITUDE": 3223,
+   "GLOBAL_POSITION_INT": 3223,
+   "VFR_HUD": 3223,
+   "SYS_STATUS": 3223,
+   "POWER_STATUS": 3223,
+   "MEMINFO": 3223,
+   "NAV_CONTROLLER_OUTPUT": 3223,
+   "MISSION_CURRENT": 3223,
+   "SERVO_OUTPUT_RAW": 3223,
+   "RC_CHANNELS": 3223,
+   "RAW_IMU": 3223,
+   "SCALED_IMU2": 3223,
+   "SCALED_IMU3": 3223,
+   "SCALED_PRESSURE": 3223,
+   "SCALED_PRESSURE2": 3223,
+   "GPS_RAW_INT": 3223,
+   "SYSTEM_TIME": 3223,
+   "SIMSTATE": 3223,
+   "TERRAIN_REPORT": 3223,
+   "VIBRATION": 3223,
+   "BATTERY_STATUS": 3223,
+   "EXTENDED_SYS_STATE": 806,
+   "EKF_STATUS_REPORT": 3202,
+   "ESC_TELEMETRY_1_TO_4": 3151,
+   "TIMESYNC": 16,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 2443,
+   "LOCAL_POSITION_NED": 2443,
+   "TERRAIN_REQUEST": 9
+  },
+  "t_land_ms": 107729,
+  "t_disarm_ms": null,
+  "t_onground_ms": 163427,
+  "window_s": 55.7,
+  "original_window_s": 55.7,
+  "window_matches": true,
+  "impacts": [
+   [
+    159879,
+    0.607041
+   ]
+  ],
+  "original_impact_mps": 0.607041,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    107729,
+    9
+   ]
+  ],
+  "command_acks": [],
+  "rc_expected": 1000,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 1105,
+  "rc_matches": true,
+  "censored": false,
+  "last_sim_ms": 163527,
+  "last_seen_after_land_sim_s": 55.798,
+  "last_seen_after_land_wall_s": 55.842,
+  "relative_alt_last_m": 2.197,
+  "relative_alt_range_after_land_m": [
+   2.105,
+   40.001
+  ]
+ },
+ {
+  "id": "RC-LOW-BASELINE-05",
+  "sha256": "cf943a0943c61555e78d11e1312c34995e6b0e55bc539cb02228570b66a641f7",
+  "bytes": 4625532,
+  "messages": 82879,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 82879
+  },
+  "counts": {
+   "HEARTBEAT": 160,
+   "COMMAND_ACK": 8,
+   "PARAM_VALUE": 43,
+   "STATUSTEXT": 64,
+   "AHRS": 3092,
+   "AHRS2": 3091,
+   "ATTITUDE": 3091,
+   "GLOBAL_POSITION_INT": 3091,
+   "VFR_HUD": 3091,
+   "SYS_STATUS": 3091,
+   "POWER_STATUS": 3091,
+   "MEMINFO": 3091,
+   "NAV_CONTROLLER_OUTPUT": 3091,
+   "MISSION_CURRENT": 3091,
+   "SERVO_OUTPUT_RAW": 3091,
+   "RC_CHANNELS": 3091,
+   "RAW_IMU": 3091,
+   "SCALED_IMU2": 3091,
+   "SCALED_IMU3": 3091,
+   "SCALED_PRESSURE": 3091,
+   "SCALED_PRESSURE2": 3091,
+   "GPS_RAW_INT": 3091,
+   "SYSTEM_TIME": 3091,
+   "SIMSTATE": 3091,
+   "TERRAIN_REPORT": 3091,
+   "VIBRATION": 3091,
+   "BATTERY_STATUS": 3091,
+   "EXTENDED_SYS_STATE": 773,
+   "EKF_STATUS_REPORT": 3070,
+   "ESC_TELEMETRY_1_TO_4": 3019,
+   "TIMESYNC": 15,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 2311,
+   "LOCAL_POSITION_NED": 2311,
+   "TERRAIN_REQUEST": 7
+  },
+  "t_land_ms": 108329,
+  "t_disarm_ms": null,
+  "t_onground_ms": 156627,
+  "window_s": 48.3,
+  "original_window_s": 48.3,
+  "window_matches": true,
+  "impacts": [
+   [
+    152279,
+    0.513463
+   ]
+  ],
+  "original_impact_mps": 0.513463,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    108329,
+    9
+   ]
+  ],
+  "command_acks": [],
+  "rc_expected": 1000,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 960,
+  "rc_matches": true,
+  "censored": false,
+  "last_sim_ms": 156927,
+  "last_seen_after_land_sim_s": 48.598,
+  "last_seen_after_land_wall_s": 48.644,
+  "relative_alt_last_m": 0.395,
+  "relative_alt_range_after_land_m": [
+   0.058,
+   39.999
+  ]
+ },
+ {
+  "id": "RC-LOW-STABILIZE-01",
+  "sha256": "3b048bca1c00203db10fcc12966f36088217e612f7b9b1295dbc3bf82d06f665",
+  "bytes": 3469969,
+  "messages": 62117,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 62117
+  },
+  "counts": {
+   "HEARTBEAT": 124,
+   "COMMAND_ACK": 9,
+   "PARAM_VALUE": 37,
+   "STATUSTEXT": 38,
+   "AHRS": 2332,
+   "AHRS2": 2332,
+   "ATTITUDE": 2332,
+   "GLOBAL_POSITION_INT": 2332,
+   "VFR_HUD": 2332,
+   "SYS_STATUS": 2332,
+   "POWER_STATUS": 2332,
+   "MEMINFO": 2332,
+   "NAV_CONTROLLER_OUTPUT": 2332,
+   "MISSION_CURRENT": 2332,
+   "SERVO_OUTPUT_RAW": 2332,
+   "RC_CHANNELS": 2332,
+   "RAW_IMU": 2332,
+   "SCALED_IMU2": 2332,
+   "SCALED_IMU3": 2332,
+   "SCALED_PRESSURE": 2332,
+   "SCALED_PRESSURE2": 2332,
+   "GPS_RAW_INT": 2332,
+   "SYSTEM_TIME": 2332,
+   "SIMSTATE": 2332,
+   "TERRAIN_REPORT": 2332,
+   "VIBRATION": 2332,
+   "BATTERY_STATUS": 2332,
+   "EXTENDED_SYS_STATE": 583,
+   "EKF_STATUS_REPORT": 2311,
+   "ESC_TELEMETRY_1_TO_4": 2260,
+   "TIMESYNC": 11,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 1552,
+   "LOCAL_POSITION_NED": 1552
+  },
+  "t_land_ms": 112329,
+  "t_disarm_ms": null,
+  "t_onground_ms": 118829,
+  "window_s": 6.5,
+  "original_window_s": 6.5,
+  "window_matches": true,
+  "impacts": [
+   [
+    116779,
+    16.12254
+   ]
+  ],
+  "original_impact_mps": 16.12254,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    112329,
+    9
+   ],
+   [
+    113227,
+    0
+   ]
+  ],
+  "command_acks": [
+   [
+    113227,
+    176,
+    0
+   ]
+  ],
+  "rc_expected": 1000,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 121,
+  "rc_matches": true,
+  "censored": false,
+  "last_sim_ms": 118979,
+  "last_seen_after_land_sim_s": 6.65,
+  "last_seen_after_land_wall_s": 6.683,
+  "relative_alt_last_m": -0.277,
+  "relative_alt_range_after_land_m": [
+   -1.453,
+   39.99
+  ]
+ },
+ {
+  "id": "RC-LOW-STABILIZE-02",
+  "sha256": "888415de6c21a3c0b7ae92efe55b6f824847609cfe9909b8e3e71674cc38401e",
+  "bytes": 3282171,
+  "messages": 58757,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 58757
+  },
+  "counts": {
+   "HEARTBEAT": 117,
+   "COMMAND_ACK": 9,
+   "PARAM_VALUE": 37,
+   "STATUSTEXT": 35,
+   "AHRS": 2210,
+   "AHRS2": 2209,
+   "ATTITUDE": 2209,
+   "GLOBAL_POSITION_INT": 2209,
+   "VFR_HUD": 2209,
+   "SYS_STATUS": 2209,
+   "POWER_STATUS": 2209,
+   "MEMINFO": 2209,
+   "NAV_CONTROLLER_OUTPUT": 2209,
+   "MISSION_CURRENT": 2209,
+   "SERVO_OUTPUT_RAW": 2209,
+   "RC_CHANNELS": 2209,
+   "RAW_IMU": 2209,
+   "SCALED_IMU2": 2209,
+   "SCALED_IMU3": 2209,
+   "SCALED_PRESSURE": 2209,
+   "SCALED_PRESSURE2": 2209,
+   "GPS_RAW_INT": 2209,
+   "SYSTEM_TIME": 2209,
+   "SIMSTATE": 2209,
+   "TERRAIN_REPORT": 2209,
+   "VIBRATION": 2209,
+   "BATTERY_STATUS": 2209,
+   "EXTENDED_SYS_STATE": 553,
+   "EKF_STATUS_REPORT": 2188,
+   "ESC_TELEMETRY_1_TO_4": 2137,
+   "TIMESYNC": 11,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 1429,
+   "LOCAL_POSITION_NED": 1429
+  },
+  "t_land_ms": 106329,
+  "t_disarm_ms": null,
+  "t_onground_ms": 112629,
+  "window_s": 6.3,
+  "original_window_s": 6.3,
+  "window_matches": true,
+  "impacts": [
+   [
+    110579,
+    16.1681
+   ]
+  ],
+  "original_impact_mps": 16.1681,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    106329,
+    9
+   ],
+   [
+    106977,
+    0
+   ]
+  ],
+  "command_acks": [
+   [
+    106977,
+    176,
+    0
+   ]
+  ],
+  "rc_expected": 1000,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 118,
+  "rc_matches": true,
+  "censored": false,
+  "last_sim_ms": 112827,
+  "last_seen_after_land_sim_s": 6.498,
+  "last_seen_after_land_wall_s": 6.537,
+  "relative_alt_last_m": -0.371,
+  "relative_alt_range_after_land_m": [
+   -1.617,
+   40.001
+  ]
+ },
+ {
+  "id": "RC-LOW-STABILIZE-03",
+  "sha256": "8fa2d0ba3088d1f8a1cfaab3a7ecb988f9b2634e83c26433d08606b3d3d326d9",
+  "bytes": 3549367,
+  "messages": 63541,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 63541
+  },
+  "counts": {
+   "HEARTBEAT": 126,
+   "COMMAND_ACK": 9,
+   "PARAM_VALUE": 37,
+   "STATUSTEXT": 40,
+   "AHRS": 2385,
+   "AHRS2": 2384,
+   "ATTITUDE": 2384,
+   "GLOBAL_POSITION_INT": 2384,
+   "VFR_HUD": 2384,
+   "SYS_STATUS": 2384,
+   "POWER_STATUS": 2384,
+   "MEMINFO": 2384,
+   "NAV_CONTROLLER_OUTPUT": 2384,
+   "MISSION_CURRENT": 2384,
+   "SERVO_OUTPUT_RAW": 2384,
+   "RC_CHANNELS": 2384,
+   "RAW_IMU": 2384,
+   "SCALED_IMU2": 2384,
+   "SCALED_IMU3": 2384,
+   "SCALED_PRESSURE": 2384,
+   "SCALED_PRESSURE2": 2384,
+   "GPS_RAW_INT": 2384,
+   "SYSTEM_TIME": 2384,
+   "SIMSTATE": 2384,
+   "TERRAIN_REPORT": 2384,
+   "VIBRATION": 2384,
+   "BATTERY_STATUS": 2384,
+   "EXTENDED_SYS_STATE": 596,
+   "EKF_STATUS_REPORT": 2364,
+   "ESC_TELEMETRY_1_TO_4": 2312,
+   "TIMESYNC": 12,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 1604,
+   "LOCAL_POSITION_NED": 1604
+  },
+  "t_land_ms": 114099,
+  "t_disarm_ms": null,
+  "t_onground_ms": 120649,
+  "window_s": 6.55,
+  "original_window_s": 6.55,
+  "window_matches": true,
+  "impacts": [
+   [
+    118449,
+    16.14417
+   ]
+  ],
+  "original_impact_mps": 16.14417,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    114099,
+    9
+   ],
+   [
+    114899,
+    0
+   ]
+  ],
+  "command_acks": [
+   [
+    114899,
+    176,
+    0
+   ]
+  ],
+  "rc_expected": 1000,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 139,
+  "rc_matches": true,
+  "censored": false,
+  "last_sim_ms": 121599,
+  "last_seen_after_land_sim_s": 7.5,
+  "last_seen_after_land_wall_s": 7.512,
+  "relative_alt_last_m": -0.014,
+  "relative_alt_range_after_land_m": [
+   -1.427,
+   39.995
+  ]
+ },
+ {
+  "id": "RC-LOW-STABILIZE-04",
+  "sha256": "39fe26960b567635218c5dd777480a56b5b423f45d1af0b199d7d6d5b4f4963d",
+  "bytes": 3247325,
+  "messages": 58129,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 58129
+  },
+  "counts": {
+   "HEARTBEAT": 116,
+   "COMMAND_ACK": 9,
+   "PARAM_VALUE": 37,
+   "STATUSTEXT": 35,
+   "AHRS": 2187,
+   "AHRS2": 2186,
+   "ATTITUDE": 2186,
+   "GLOBAL_POSITION_INT": 2186,
+   "VFR_HUD": 2186,
+   "SYS_STATUS": 2186,
+   "POWER_STATUS": 2186,
+   "MEMINFO": 2186,
+   "NAV_CONTROLLER_OUTPUT": 2186,
+   "MISSION_CURRENT": 2186,
+   "SERVO_OUTPUT_RAW": 2186,
+   "RC_CHANNELS": 2186,
+   "RAW_IMU": 2186,
+   "SCALED_IMU2": 2186,
+   "SCALED_IMU3": 2186,
+   "SCALED_PRESSURE": 2186,
+   "SCALED_PRESSURE2": 2186,
+   "GPS_RAW_INT": 2186,
+   "SYSTEM_TIME": 2186,
+   "SIMSTATE": 2186,
+   "TERRAIN_REPORT": 2186,
+   "VIBRATION": 2186,
+   "BATTERY_STATUS": 2186,
+   "EXTENDED_SYS_STATE": 547,
+   "EKF_STATUS_REPORT": 2165,
+   "ESC_TELEMETRY_1_TO_4": 2114,
+   "TIMESYNC": 11,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 1406,
+   "LOCAL_POSITION_NED": 1406
+  },
+  "t_land_ms": 105327,
+  "t_disarm_ms": null,
+  "t_onground_ms": 111629,
+  "window_s": 6.3,
+  "original_window_s": 6.3,
+  "window_matches": true,
+  "impacts": [
+   [
+    109527,
+    16.11781
+   ]
+  ],
+  "original_impact_mps": 16.11781,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    105327,
+    9
+   ],
+   [
+    105979,
+    0
+   ]
+  ],
+  "command_acks": [
+   [
+    105979,
+    176,
+    0
+   ]
+  ],
+  "rc_expected": 1000,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 116,
+  "rc_matches": true,
+  "censored": false,
+  "last_sim_ms": 111679,
+  "last_seen_after_land_sim_s": 6.352,
+  "last_seen_after_land_wall_s": 6.392,
+  "relative_alt_last_m": -0.362,
+  "relative_alt_range_after_land_m": [
+   -1.557,
+   40.001
+  ]
+ },
+ {
+  "id": "RC-LOW-STABILIZE-05",
+  "sha256": "ca5eb16e96033f99a979f6251596750d502126e46531dd9c5b88ccba8e52c501",
+  "bytes": 3303287,
+  "messages": 59137,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 59137
+  },
+  "counts": {
+   "HEARTBEAT": 118,
+   "COMMAND_ACK": 9,
+   "PARAM_VALUE": 37,
+   "STATUSTEXT": 33,
+   "AHRS": 2224,
+   "AHRS2": 2223,
+   "ATTITUDE": 2223,
+   "GLOBAL_POSITION_INT": 2223,
+   "VFR_HUD": 2223,
+   "SYS_STATUS": 2223,
+   "POWER_STATUS": 2223,
+   "MEMINFO": 2223,
+   "NAV_CONTROLLER_OUTPUT": 2223,
+   "MISSION_CURRENT": 2223,
+   "SERVO_OUTPUT_RAW": 2223,
+   "RC_CHANNELS": 2223,
+   "RAW_IMU": 2223,
+   "SCALED_IMU2": 2223,
+   "SCALED_IMU3": 2223,
+   "SCALED_PRESSURE": 2223,
+   "SCALED_PRESSURE2": 2223,
+   "GPS_RAW_INT": 2223,
+   "SYSTEM_TIME": 2223,
+   "SIMSTATE": 2223,
+   "TERRAIN_REPORT": 2223,
+   "VIBRATION": 2223,
+   "BATTERY_STATUS": 2223,
+   "EXTENDED_SYS_STATE": 556,
+   "EKF_STATUS_REPORT": 2202,
+   "ESC_TELEMETRY_1_TO_4": 2151,
+   "TIMESYNC": 11,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 1443,
+   "LOCAL_POSITION_NED": 1443
+  },
+  "t_land_ms": 107127,
+  "t_disarm_ms": null,
+  "t_onground_ms": 113427,
+  "window_s": 6.3,
+  "original_window_s": 6.3,
+  "window_matches": true,
+  "impacts": [
+   [
+    111377,
+    16.11813
+   ]
+  ],
+  "original_impact_mps": 16.11813,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    107127,
+    9
+   ],
+   [
+    107829,
+    0
+   ]
+  ],
+  "command_acks": [
+   [
+    107829,
+    176,
+    0
+   ]
+  ],
+  "rc_expected": 1000,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 117,
+  "rc_matches": true,
+  "censored": false,
+  "last_sim_ms": 113527,
+  "last_seen_after_land_sim_s": 6.4,
+  "last_seen_after_land_wall_s": 6.438,
+  "relative_alt_last_m": -0.341,
+  "relative_alt_range_after_land_m": [
+   -1.614,
+   40.001
+  ]
+ },
+ {
+  "id": "RC-MID-ALT_HOLD-01",
+  "sha256": "08add812d1e14126f86f9b0d7378797db15938a998cf205ce992f1f21caf53bf",
+  "bytes": 9352903,
+  "messages": 167752,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 167752
+  },
+  "counts": {
+   "HEARTBEAT": 317,
+   "COMMAND_ACK": 9,
+   "PARAM_VALUE": 55,
+   "STATUSTEXT": 118,
+   "AHRS": 6198,
+   "AHRS2": 6197,
+   "ATTITUDE": 6197,
+   "GLOBAL_POSITION_INT": 6197,
+   "VFR_HUD": 6197,
+   "SYS_STATUS": 6197,
+   "POWER_STATUS": 6197,
+   "MEMINFO": 6197,
+   "NAV_CONTROLLER_OUTPUT": 6197,
+   "MISSION_CURRENT": 6197,
+   "SERVO_OUTPUT_RAW": 6197,
+   "RC_CHANNELS": 6197,
+   "RAW_IMU": 6197,
+   "SCALED_IMU2": 6197,
+   "SCALED_IMU3": 6197,
+   "SCALED_PRESSURE": 6197,
+   "SCALED_PRESSURE2": 6197,
+   "GPS_RAW_INT": 6197,
+   "SYSTEM_TIME": 6197,
+   "SIMSTATE": 6197,
+   "TERRAIN_REPORT": 6197,
+   "VIBRATION": 6197,
+   "BATTERY_STATUS": 6197,
+   "EXTENDED_SYS_STATE": 1550,
+   "EKF_STATUS_REPORT": 6177,
+   "ESC_TELEMETRY_1_TO_4": 6125,
+   "TIMESYNC": 31,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 5417,
+   "LOCAL_POSITION_NED": 5417
+  },
+  "t_land_ms": 109299,
+  "t_disarm_ms": null,
+  "t_onground_ms": null,
+  "window_s": null,
+  "original_window_s": null,
+  "window_matches": true,
+  "impacts": [],
+  "original_impact_mps": null,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    109299,
+    9
+   ],
+   [
+    109849,
+    2
+   ]
+  ],
+  "command_acks": [
+   [
+    109849,
+    176,
+    0
+   ]
+  ],
+  "rc_expected": 1500,
+  "rc_observed_values": [
+   1500
+  ],
+  "rc_samples": 4048,
+  "rc_matches": true,
+  "censored": true,
+  "last_sim_ms": 312249,
+  "last_seen_after_land_sim_s": 202.95,
+  "last_seen_after_land_wall_s": 202.973,
+  "relative_alt_last_m": 40.054,
+  "relative_alt_range_after_land_m": [
+   39.968,
+   40.314
+  ]
+ },
+ {
+  "id": "RC-MID-ALT_HOLD-02",
+  "sha256": "9c28a30d76595d33eb107fd643aee62724283feb89d217745c35974c10bf909b",
+  "bytes": 9386438,
+  "messages": 168467,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 168467
+  },
+  "counts": {
+   "HEARTBEAT": 317,
+   "COMMAND_ACK": 9,
+   "PARAM_VALUE": 55,
+   "STATUSTEXT": 119,
+   "AHRS": 6200,
+   "AHRS2": 6199,
+   "ATTITUDE": 6199,
+   "GLOBAL_POSITION_INT": 6199,
+   "VFR_HUD": 6199,
+   "SYS_STATUS": 6199,
+   "POWER_STATUS": 6199,
+   "MEMINFO": 6199,
+   "NAV_CONTROLLER_OUTPUT": 6199,
+   "MISSION_CURRENT": 6199,
+   "SERVO_OUTPUT_RAW": 6199,
+   "RC_CHANNELS": 6199,
+   "RAW_IMU": 6199,
+   "SCALED_IMU2": 6199,
+   "SCALED_IMU3": 6199,
+   "SCALED_PRESSURE": 6199,
+   "SCALED_PRESSURE2": 6199,
+   "GPS_RAW_INT": 6199,
+   "SYSTEM_TIME": 6199,
+   "SIMSTATE": 6199,
+   "TERRAIN_REPORT": 6199,
+   "VIBRATION": 6199,
+   "BATTERY_STATUS": 6199,
+   "EXTENDED_SYS_STATE": 1550,
+   "EKF_STATUS_REPORT": 6178,
+   "ESC_TELEMETRY_1_TO_4": 6127,
+   "TIMESYNC": 31,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 5419,
+   "LOCAL_POSITION_NED": 5419,
+   "TERRAIN_REQUEST": 661
+  },
+  "t_land_ms": 109729,
+  "t_disarm_ms": null,
+  "t_onground_ms": null,
+  "window_s": null,
+  "original_window_s": null,
+  "window_matches": true,
+  "impacts": [],
+  "original_impact_mps": null,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    109729,
+    9
+   ],
+   [
+    110479,
+    2
+   ]
+  ],
+  "command_acks": [
+   [
+    110479,
+    176,
+    0
+   ]
+  ],
+  "rc_expected": 1500,
+  "rc_observed_values": [
+   1500
+  ],
+  "rc_samples": 4041,
+  "rc_matches": true,
+  "censored": true,
+  "last_sim_ms": 312329,
+  "last_seen_after_land_sim_s": 202.6,
+  "last_seen_after_land_wall_s": 202.653,
+  "relative_alt_last_m": 40.04,
+  "relative_alt_range_after_land_m": [
+   39.904,
+   40.166
+  ]
+ },
+ {
+  "id": "RC-MID-ALT_HOLD-03",
+  "sha256": "36640ef8b5bba5689eacbb34e1772a5235fb688c27ef3bccb8b61c5a464de9fa",
+  "bytes": 9372103,
+  "messages": 168138,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 168138
+  },
+  "counts": {
+   "HEARTBEAT": 317,
+   "COMMAND_ACK": 9,
+   "PARAM_VALUE": 55,
+   "STATUSTEXT": 134,
+   "AHRS": 6211,
+   "AHRS2": 6210,
+   "ATTITUDE": 6210,
+   "GLOBAL_POSITION_INT": 6210,
+   "VFR_HUD": 6210,
+   "SYS_STATUS": 6210,
+   "POWER_STATUS": 6210,
+   "MEMINFO": 6210,
+   "NAV_CONTROLLER_OUTPUT": 6210,
+   "MISSION_CURRENT": 6210,
+   "SERVO_OUTPUT_RAW": 6210,
+   "RC_CHANNELS": 6210,
+   "RAW_IMU": 6210,
+   "SCALED_IMU2": 6210,
+   "SCALED_IMU3": 6210,
+   "SCALED_PRESSURE": 6210,
+   "SCALED_PRESSURE2": 6210,
+   "GPS_RAW_INT": 6210,
+   "SYSTEM_TIME": 6210,
+   "SIMSTATE": 6210,
+   "TERRAIN_REPORT": 6210,
+   "VIBRATION": 6210,
+   "BATTERY_STATUS": 6210,
+   "EXTENDED_SYS_STATE": 1553,
+   "EKF_STATUS_REPORT": 6189,
+   "ESC_TELEMETRY_1_TO_4": 6138,
+   "TIMESYNC": 31,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 5430,
+   "LOCAL_POSITION_NED": 5430,
+   "TERRAIN_REQUEST": 17
+  },
+  "t_land_ms": 109929,
+  "t_disarm_ms": null,
+  "t_onground_ms": null,
+  "window_s": null,
+  "original_window_s": null,
+  "window_matches": true,
+  "impacts": [],
+  "original_impact_mps": null,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    109929,
+    9
+   ],
+   [
+    110679,
+    2
+   ]
+  ],
+  "command_acks": [
+   [
+    110679,
+    176,
+    0
+   ]
+  ],
+  "rc_expected": 1500,
+  "rc_observed_values": [
+   1500
+  ],
+  "rc_samples": 4048,
+  "rc_matches": true,
+  "censored": true,
+  "last_sim_ms": 312877,
+  "last_seen_after_land_sim_s": 202.948,
+  "last_seen_after_land_wall_s": 203.005,
+  "relative_alt_last_m": 39.933,
+  "relative_alt_range_after_land_m": [
+   39.857,
+   40.374
+  ]
+ },
+ {
+  "id": "RC-MID-ALT_HOLD-04",
+  "sha256": "845fc902073a10ca630e51eecbffa285b9b25d2cc72f9ff15fe507d9ba849408",
+  "bytes": 9298733,
+  "messages": 166835,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 166835
+  },
+  "counts": {
+   "HEARTBEAT": 315,
+   "COMMAND_ACK": 9,
+   "PARAM_VALUE": 55,
+   "STATUSTEXT": 52,
+   "AHRS": 6152,
+   "AHRS2": 6152,
+   "ATTITUDE": 6152,
+   "GLOBAL_POSITION_INT": 6152,
+   "VFR_HUD": 6152,
+   "SYS_STATUS": 6152,
+   "POWER_STATUS": 6152,
+   "MEMINFO": 6152,
+   "NAV_CONTROLLER_OUTPUT": 6152,
+   "MISSION_CURRENT": 6152,
+   "SERVO_OUTPUT_RAW": 6152,
+   "RC_CHANNELS": 6152,
+   "RAW_IMU": 6152,
+   "SCALED_IMU2": 6152,
+   "SCALED_IMU3": 6152,
+   "SCALED_PRESSURE": 6152,
+   "SCALED_PRESSURE2": 6152,
+   "GPS_RAW_INT": 6152,
+   "SYSTEM_TIME": 6152,
+   "SIMSTATE": 6152,
+   "TERRAIN_REPORT": 6152,
+   "VIBRATION": 6152,
+   "BATTERY_STATUS": 6152,
+   "EXTENDED_SYS_STATE": 1538,
+   "EKF_STATUS_REPORT": 6132,
+   "ESC_TELEMETRY_1_TO_4": 6080,
+   "TIMESYNC": 30,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 5372,
+   "LOCAL_POSITION_NED": 5372,
+   "TERRAIN_REQUEST": 380
+  },
+  "t_land_ms": 107099,
+  "t_disarm_ms": null,
+  "t_onground_ms": null,
+  "window_s": null,
+  "original_window_s": null,
+  "window_matches": true,
+  "impacts": [],
+  "original_impact_mps": null,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    107099,
+    9
+   ],
+   [
+    107799,
+    2
+   ]
+  ],
+  "command_acks": [
+   [
+    107799,
+    176,
+    0
+   ]
+  ],
+  "rc_expected": 1500,
+  "rc_observed_values": [
+   1500
+  ],
+  "rc_samples": 4047,
+  "rc_matches": true,
+  "censored": true,
+  "last_sim_ms": 309999,
+  "last_seen_after_land_sim_s": 202.9,
+  "last_seen_after_land_wall_s": 202.903,
+  "relative_alt_last_m": 40.012,
+  "relative_alt_range_after_land_m": [
+   39.957,
+   40.048
+  ]
+ },
+ {
+  "id": "RC-MID-ALT_HOLD-05",
+  "sha256": "d8ac0915294a9c89dea35fd330d32ce804c3f1824b8307067f0de78332cea69e",
+  "bytes": 9411215,
+  "messages": 168857,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 168857
+  },
+  "counts": {
+   "HEARTBEAT": 318,
+   "COMMAND_ACK": 9,
+   "PARAM_VALUE": 55,
+   "STATUSTEXT": 160,
+   "AHRS": 6227,
+   "AHRS2": 6226,
+   "ATTITUDE": 6226,
+   "GLOBAL_POSITION_INT": 6226,
+   "VFR_HUD": 6226,
+   "SYS_STATUS": 6226,
+   "POWER_STATUS": 6226,
+   "MEMINFO": 6226,
+   "NAV_CONTROLLER_OUTPUT": 6226,
+   "MISSION_CURRENT": 6226,
+   "SERVO_OUTPUT_RAW": 6226,
+   "RC_CHANNELS": 6226,
+   "RAW_IMU": 6226,
+   "SCALED_IMU2": 6226,
+   "SCALED_IMU3": 6226,
+   "SCALED_PRESSURE": 6226,
+   "SCALED_PRESSURE2": 6226,
+   "GPS_RAW_INT": 6226,
+   "SYSTEM_TIME": 6226,
+   "SIMSTATE": 6226,
+   "TERRAIN_REPORT": 6226,
+   "VIBRATION": 6226,
+   "BATTERY_STATUS": 6226,
+   "EXTENDED_SYS_STATE": 1557,
+   "EKF_STATUS_REPORT": 6206,
+   "ESC_TELEMETRY_1_TO_4": 6154,
+   "TIMESYNC": 31,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 5446,
+   "LOCAL_POSITION_NED": 5446,
+   "TERRAIN_REQUEST": 272
+  },
+  "t_land_ms": 110499,
+  "t_disarm_ms": null,
+  "t_onground_ms": null,
+  "window_s": null,
+  "original_window_s": null,
+  "window_matches": true,
+  "impacts": [],
+  "original_impact_mps": null,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    110499,
+    9
+   ],
+   [
+    111199,
+    2
+   ]
+  ],
+  "command_acks": [
+   [
+    111199,
+    176,
+    0
+   ]
+  ],
+  "rc_expected": 1500,
+  "rc_observed_values": [
+   1500
+  ],
+  "rc_samples": 4053,
+  "rc_matches": true,
+  "censored": true,
+  "last_sim_ms": 313699,
+  "last_seen_after_land_sim_s": 203.2,
+  "last_seen_after_land_wall_s": 203.23,
+  "relative_alt_last_m": 40.034,
+  "relative_alt_range_after_land_m": [
+   39.945,
+   40.131
+  ]
+ },
+ {
+  "id": "RC-MID-BASELINE-01",
+  "sha256": "b5199068fc12d01354f9e767b63b21e623e0e66057df2a16faa26c329b29a51f",
+  "bytes": 5744599,
+  "messages": 102975,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 102975
+  },
+  "counts": {
+   "HEARTBEAT": 197,
+   "COMMAND_ACK": 8,
+   "PARAM_VALUE": 47,
+   "STATUSTEXT": 82,
+   "AHRS": 3827,
+   "AHRS2": 3826,
+   "ATTITUDE": 3826,
+   "GLOBAL_POSITION_INT": 3826,
+   "VFR_HUD": 3826,
+   "SYS_STATUS": 3826,
+   "POWER_STATUS": 3826,
+   "MEMINFO": 3826,
+   "NAV_CONTROLLER_OUTPUT": 3826,
+   "MISSION_CURRENT": 3826,
+   "SERVO_OUTPUT_RAW": 3826,
+   "RC_CHANNELS": 3826,
+   "RAW_IMU": 3826,
+   "SCALED_IMU2": 3826,
+   "SCALED_IMU3": 3826,
+   "SCALED_PRESSURE": 3826,
+   "SCALED_PRESSURE2": 3826,
+   "GPS_RAW_INT": 3826,
+   "SYSTEM_TIME": 3826,
+   "SIMSTATE": 3826,
+   "TERRAIN_REPORT": 3826,
+   "VIBRATION": 3826,
+   "BATTERY_STATUS": 3826,
+   "EXTENDED_SYS_STATE": 957,
+   "EKF_STATUS_REPORT": 3806,
+   "ESC_TELEMETRY_1_TO_4": 3754,
+   "TIMESYNC": 19,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 3046,
+   "LOCAL_POSITION_NED": 3046,
+   "TERRAIN_REQUEST": 10
+  },
+  "t_land_ms": 112299,
+  "t_disarm_ms": null,
+  "t_onground_ms": 192849,
+  "window_s": 80.55,
+  "original_window_s": 80.55,
+  "window_matches": true,
+  "impacts": [
+   [
+    163049,
+    0.595601
+   ]
+  ],
+  "original_impact_mps": 0.595601,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    112299,
+    9
+   ]
+  ],
+  "command_acks": [],
+  "rc_expected": 1500,
+  "rc_observed_values": [
+   1500
+  ],
+  "rc_samples": 1617,
+  "rc_matches": true,
+  "censored": false,
+  "last_sim_ms": 193699,
+  "last_seen_after_land_sim_s": 81.4,
+  "last_seen_after_land_wall_s": 81.415,
+  "relative_alt_last_m": -0.682,
+  "relative_alt_range_after_land_m": [
+   -2.234,
+   39.997
+  ]
+ },
+ {
+  "id": "RC-MID-BASELINE-02",
+  "sha256": "86b778de0017ad198574e7cc0fabb981fc233a3638c89227e4388e2e524c9517",
+  "bytes": 4625217,
+  "messages": 82881,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 82881
+  },
+  "counts": {
+   "HEARTBEAT": 160,
+   "COMMAND_ACK": 8,
+   "PARAM_VALUE": 44,
+   "STATUSTEXT": 72,
+   "AHRS": 3092,
+   "AHRS2": 3091,
+   "ATTITUDE": 3091,
+   "GLOBAL_POSITION_INT": 3091,
+   "VFR_HUD": 3091,
+   "SYS_STATUS": 3091,
+   "POWER_STATUS": 3091,
+   "MEMINFO": 3091,
+   "NAV_CONTROLLER_OUTPUT": 3091,
+   "MISSION_CURRENT": 3091,
+   "SERVO_OUTPUT_RAW": 3091,
+   "RC_CHANNELS": 3091,
+   "RAW_IMU": 3091,
+   "SCALED_IMU2": 3091,
+   "SCALED_IMU3": 3091,
+   "SCALED_PRESSURE": 3091,
+   "SCALED_PRESSURE2": 3091,
+   "GPS_RAW_INT": 3091,
+   "SYSTEM_TIME": 3091,
+   "SIMSTATE": 3091,
+   "TERRAIN_REPORT": 3091,
+   "VIBRATION": 3091,
+   "BATTERY_STATUS": 3091,
+   "EXTENDED_SYS_STATE": 773,
+   "EKF_STATUS_REPORT": 3070,
+   "ESC_TELEMETRY_1_TO_4": 3019,
+   "TIMESYNC": 15,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 2311,
+   "LOCAL_POSITION_NED": 2311
+  },
+  "t_land_ms": 108727,
+  "t_disarm_ms": null,
+  "t_onground_ms": 156029,
+  "window_s": 47.3,
+  "original_window_s": 47.3,
+  "window_matches": true,
+  "impacts": [
+   [
+    154477,
+    0.501364
+   ]
+  ],
+  "original_impact_mps": 0.501364,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    108727,
+    9
+   ]
+  ],
+  "command_acks": [],
+  "rc_expected": 1500,
+  "rc_observed_values": [
+   1500
+  ],
+  "rc_samples": 953,
+  "rc_matches": true,
+  "censored": false,
+  "last_sim_ms": 156927,
+  "last_seen_after_land_sim_s": 48.2,
+  "last_seen_after_land_wall_s": 48.24,
+  "relative_alt_last_m": 0.177,
+  "relative_alt_range_after_land_m": [
+   0.177,
+   40.001
+  ]
+ },
+ {
+  "id": "RC-MID-BASELINE-03",
+  "sha256": "172a1053e21ec79b74b9f318007b30819413c20557fcf3cbb0e361232796c947",
+  "bytes": 4603604,
+  "messages": 82487,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 82487
+  },
+  "counts": {
+   "HEARTBEAT": 160,
+   "COMMAND_ACK": 8,
+   "PARAM_VALUE": 43,
+   "STATUSTEXT": 60,
+   "AHRS": 3078,
+   "AHRS2": 3077,
+   "ATTITUDE": 3077,
+   "GLOBAL_POSITION_INT": 3077,
+   "VFR_HUD": 3077,
+   "SYS_STATUS": 3077,
+   "POWER_STATUS": 3077,
+   "MEMINFO": 3077,
+   "NAV_CONTROLLER_OUTPUT": 3077,
+   "MISSION_CURRENT": 3077,
+   "SERVO_OUTPUT_RAW": 3077,
+   "RC_CHANNELS": 3077,
+   "RAW_IMU": 3077,
+   "SCALED_IMU2": 3077,
+   "SCALED_IMU3": 3077,
+   "SCALED_PRESSURE": 3077,
+   "SCALED_PRESSURE2": 3077,
+   "GPS_RAW_INT": 3077,
+   "SYSTEM_TIME": 3077,
+   "SIMSTATE": 3077,
+   "TERRAIN_REPORT": 3077,
+   "VIBRATION": 3077,
+   "BATTERY_STATUS": 3077,
+   "EXTENDED_SYS_STATE": 770,
+   "EKF_STATUS_REPORT": 3056,
+   "ESC_TELEMETRY_1_TO_4": 3005,
+   "TIMESYNC": 15,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 2297,
+   "LOCAL_POSITION_NED": 2297
+  },
+  "t_land_ms": 109729,
+  "t_disarm_ms": null,
+  "t_onground_ms": 156029,
+  "window_s": 46.3,
+  "original_window_s": 46.3,
+  "window_matches": true,
+  "impacts": [
+   [
+    154229,
+    0.500458
+   ]
+  ],
+  "original_impact_mps": 0.500458,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    109729,
+    9
+   ]
+  ],
+  "command_acks": [],
+  "rc_expected": 1500,
+  "rc_observed_values": [
+   1500
+  ],
+  "rc_samples": 919,
+  "rc_matches": true,
+  "censored": false,
+  "last_sim_ms": 156229,
+  "last_seen_after_land_sim_s": 46.5,
+  "last_seen_after_land_wall_s": 46.543,
+  "relative_alt_last_m": 0.092,
+  "relative_alt_range_after_land_m": [
+   0.061,
+   40.002
+  ]
+ },
+ {
+  "id": "RC-MID-BASELINE-04",
+  "sha256": "8176087fcd0a82a5d4ff9e3cd19ee5bac9cf5883606849919f90ebc939f652c6",
+  "bytes": 4626985,
+  "messages": 82908,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 82908
+  },
+  "counts": {
+   "HEARTBEAT": 161,
+   "COMMAND_ACK": 8,
+   "PARAM_VALUE": 44,
+   "STATUSTEXT": 65,
+   "AHRS": 3092,
+   "AHRS2": 3092,
+   "ATTITUDE": 3092,
+   "GLOBAL_POSITION_INT": 3092,
+   "VFR_HUD": 3092,
+   "SYS_STATUS": 3092,
+   "POWER_STATUS": 3092,
+   "MEMINFO": 3092,
+   "NAV_CONTROLLER_OUTPUT": 3092,
+   "MISSION_CURRENT": 3092,
+   "SERVO_OUTPUT_RAW": 3092,
+   "RC_CHANNELS": 3092,
+   "RAW_IMU": 3092,
+   "SCALED_IMU2": 3092,
+   "SCALED_IMU3": 3092,
+   "SCALED_PRESSURE": 3092,
+   "SCALED_PRESSURE2": 3092,
+   "GPS_RAW_INT": 3092,
+   "SYSTEM_TIME": 3092,
+   "SIMSTATE": 3092,
+   "TERRAIN_REPORT": 3092,
+   "VIBRATION": 3092,
+   "BATTERY_STATUS": 3092,
+   "EXTENDED_SYS_STATE": 773,
+   "EKF_STATUS_REPORT": 3071,
+   "ESC_TELEMETRY_1_TO_4": 3020,
+   "TIMESYNC": 15,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 2312,
+   "LOCAL_POSITION_NED": 2312,
+   "TERRAIN_REQUEST": 7
+  },
+  "t_land_ms": 108329,
+  "t_disarm_ms": 156977,
+  "t_onground_ms": 156627,
+  "window_s": 48.3,
+  "original_window_s": 48.3,
+  "window_matches": true,
+  "impacts": [
+   [
+    152279,
+    0.513593
+   ]
+  ],
+  "original_impact_mps": 0.513593,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    108329,
+    9
+   ]
+  ],
+  "command_acks": [],
+  "rc_expected": 1500,
+  "rc_observed_values": [
+   1500
+  ],
+  "rc_samples": 961,
+  "rc_matches": true,
+  "censored": false,
+  "last_sim_ms": 156977,
+  "last_seen_after_land_sim_s": 48.648,
+  "last_seen_after_land_wall_s": 48.691,
+  "relative_alt_last_m": 0.385,
+  "relative_alt_range_after_land_m": [
+   0.058,
+   40.002
+  ]
+ },
+ {
+  "id": "RC-MID-BASELINE-05",
+  "sha256": "1ef804f6957eda975d2e5c297bb15a0e07cce870ff2b2e372684410be64e9f7d",
+  "bytes": 4634809,
+  "messages": 83047,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 83047
+  },
+  "counts": {
+   "HEARTBEAT": 161,
+   "COMMAND_ACK": 8,
+   "PARAM_VALUE": 44,
+   "STATUSTEXT": 65,
+   "AHRS": 3098,
+   "AHRS2": 3097,
+   "ATTITUDE": 3097,
+   "GLOBAL_POSITION_INT": 3097,
+   "VFR_HUD": 3097,
+   "SYS_STATUS": 3097,
+   "POWER_STATUS": 3097,
+   "MEMINFO": 3097,
+   "NAV_CONTROLLER_OUTPUT": 3097,
+   "MISSION_CURRENT": 3097,
+   "SERVO_OUTPUT_RAW": 3097,
+   "RC_CHANNELS": 3097,
+   "RAW_IMU": 3097,
+   "SCALED_IMU2": 3097,
+   "SCALED_IMU3": 3097,
+   "SCALED_PRESSURE": 3097,
+   "SCALED_PRESSURE2": 3097,
+   "GPS_RAW_INT": 3097,
+   "SYSTEM_TIME": 3097,
+   "SIMSTATE": 3097,
+   "TERRAIN_REPORT": 3097,
+   "VIBRATION": 3097,
+   "BATTERY_STATUS": 3097,
+   "EXTENDED_SYS_STATE": 775,
+   "EKF_STATUS_REPORT": 3076,
+   "ESC_TELEMETRY_1_TO_4": 3025,
+   "TIMESYNC": 15,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 2317,
+   "LOCAL_POSITION_NED": 2317,
+   "TERRAIN_REQUEST": 8
+  },
+  "t_land_ms": 108329,
+  "t_disarm_ms": 156977,
+  "t_onground_ms": 156627,
+  "window_s": 48.3,
+  "original_window_s": 48.3,
+  "window_matches": true,
+  "impacts": [
+   [
+    152279,
+    0.513621
+   ]
+  ],
+  "original_impact_mps": 0.513621,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    108329,
+    9
+   ]
+  ],
+  "command_acks": [],
+  "rc_expected": 1500,
+  "rc_observed_values": [
+   1500
+  ],
+  "rc_samples": 966,
+  "rc_matches": true,
+  "censored": false,
+  "last_sim_ms": 157227,
+  "last_seen_after_land_sim_s": 48.898,
+  "last_seen_after_land_wall_s": 48.94,
+  "relative_alt_last_m": 0.41,
+  "relative_alt_range_after_land_m": [
+   0.058,
+   40.002
+  ]
+ },
+ {
+  "id": "RC-MID-STABILIZE-01",
+  "sha256": "709e057acf135aa736ce4a405eaf02ee50178110c51eab9c14d0b367dc65a4d7",
+  "bytes": 9485985,
+  "messages": 169875,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 169875
+  },
+  "counts": {
+   "HEARTBEAT": 321,
+   "COMMAND_ACK": 9,
+   "PARAM_VALUE": 55,
+   "STATUSTEXT": 140,
+   "AHRS": 6275,
+   "AHRS2": 6274,
+   "ATTITUDE": 6274,
+   "GLOBAL_POSITION_INT": 6274,
+   "VFR_HUD": 6274,
+   "SYS_STATUS": 6274,
+   "POWER_STATUS": 6274,
+   "MEMINFO": 6274,
+   "NAV_CONTROLLER_OUTPUT": 6274,
+   "MISSION_CURRENT": 6274,
+   "SERVO_OUTPUT_RAW": 6274,
+   "RC_CHANNELS": 6274,
+   "RAW_IMU": 6274,
+   "SCALED_IMU2": 6274,
+   "SCALED_IMU3": 6274,
+   "SCALED_PRESSURE": 6274,
+   "SCALED_PRESSURE2": 6274,
+   "GPS_RAW_INT": 6274,
+   "SYSTEM_TIME": 6274,
+   "SIMSTATE": 6274,
+   "TERRAIN_REPORT": 6274,
+   "VIBRATION": 6274,
+   "BATTERY_STATUS": 6274,
+   "EXTENDED_SYS_STATE": 1569,
+   "EKF_STATUS_REPORT": 6253,
+   "ESC_TELEMETRY_1_TO_4": 6202,
+   "TIMESYNC": 31,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 5494,
+   "LOCAL_POSITION_NED": 5494
+  },
+  "t_land_ms": 113327,
+  "t_disarm_ms": null,
+  "t_onground_ms": null,
+  "window_s": null,
+  "original_window_s": null,
+  "window_matches": true,
+  "impacts": [],
+  "original_impact_mps": null,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    113327,
+    9
+   ],
+   [
+    113929,
+    0
+   ]
+  ],
+  "command_acks": [
+   [
+    113929,
+    176,
+    0
+   ]
+  ],
+  "rc_expected": 1500,
+  "rc_observed_values": [
+   1500
+  ],
+  "rc_samples": 4044,
+  "rc_matches": true,
+  "censored": true,
+  "last_sim_ms": 316079,
+  "last_seen_after_land_sim_s": 202.752,
+  "last_seen_after_land_wall_s": 202.805,
+  "relative_alt_last_m": 18.528,
+  "relative_alt_range_after_land_m": [
+   18.527,
+   40.001
+  ]
+ },
+ {
+  "id": "RC-MID-STABILIZE-02",
+  "sha256": "13163d966ff031fa17d7a9e66849e3d3454d7d79208329466e8501b15fd33335",
+  "bytes": 9461404,
+  "messages": 169704,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 169704
+  },
+  "counts": {
+   "HEARTBEAT": 320,
+   "COMMAND_ACK": 9,
+   "PARAM_VALUE": 55,
+   "STATUSTEXT": 132,
+   "AHRS": 6252,
+   "AHRS2": 6252,
+   "ATTITUDE": 6252,
+   "GLOBAL_POSITION_INT": 6252,
+   "VFR_HUD": 6252,
+   "SYS_STATUS": 6252,
+   "POWER_STATUS": 6252,
+   "MEMINFO": 6252,
+   "NAV_CONTROLLER_OUTPUT": 6252,
+   "MISSION_CURRENT": 6252,
+   "SERVO_OUTPUT_RAW": 6252,
+   "RC_CHANNELS": 6252,
+   "RAW_IMU": 6252,
+   "SCALED_IMU2": 6252,
+   "SCALED_IMU3": 6252,
+   "SCALED_PRESSURE": 6252,
+   "SCALED_PRESSURE2": 6252,
+   "GPS_RAW_INT": 6252,
+   "SYSTEM_TIME": 6252,
+   "SIMSTATE": 6252,
+   "TERRAIN_REPORT": 6252,
+   "VIBRATION": 6252,
+   "BATTERY_STATUS": 6252,
+   "EXTENDED_SYS_STATE": 1563,
+   "EKF_STATUS_REPORT": 6231,
+   "ESC_TELEMETRY_1_TO_4": 6180,
+   "TIMESYNC": 31,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 5472,
+   "LOCAL_POSITION_NED": 5472,
+   "TERRAIN_REQUEST": 439
+  },
+  "t_land_ms": 112329,
+  "t_disarm_ms": null,
+  "t_onground_ms": null,
+  "window_s": null,
+  "original_window_s": null,
+  "window_matches": true,
+  "impacts": [],
+  "original_impact_mps": null,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    112329,
+    9
+   ],
+   [
+    113227,
+    0
+   ]
+  ],
+  "command_acks": [
+   [
+    113227,
+    176,
+    0
+   ]
+  ],
+  "rc_expected": 1500,
+  "rc_observed_values": [
+   1500
+  ],
+  "rc_samples": 4041,
+  "rc_matches": true,
+  "censored": true,
+  "last_sim_ms": 314977,
+  "last_seen_after_land_sim_s": 202.648,
+  "last_seen_after_land_wall_s": 202.699,
+  "relative_alt_last_m": 15.636,
+  "relative_alt_range_after_land_m": [
+   15.636,
+   39.991
+  ]
+ },
+ {
+  "id": "RC-MID-STABILIZE-03",
+  "sha256": "04f9e0447c93e4a2e3e60055301e30ef057bc17da17036cf6b444a67b5d982fd",
+  "bytes": 9391006,
+  "messages": 168492,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 168492
+  },
+  "counts": {
+   "HEARTBEAT": 318,
+   "COMMAND_ACK": 9,
+   "PARAM_VALUE": 55,
+   "STATUSTEXT": 155,
+   "AHRS": 6214,
+   "AHRS2": 6213,
+   "ATTITUDE": 6213,
+   "GLOBAL_POSITION_INT": 6213,
+   "VFR_HUD": 6213,
+   "SYS_STATUS": 6213,
+   "POWER_STATUS": 6213,
+   "MEMINFO": 6213,
+   "NAV_CONTROLLER_OUTPUT": 6213,
+   "MISSION_CURRENT": 6213,
+   "SERVO_OUTPUT_RAW": 6213,
+   "RC_CHANNELS": 6213,
+   "RAW_IMU": 6213,
+   "SCALED_IMU2": 6213,
+   "SCALED_IMU3": 6213,
+   "SCALED_PRESSURE": 6213,
+   "SCALED_PRESSURE2": 6213,
+   "GPS_RAW_INT": 6213,
+   "SYSTEM_TIME": 6213,
+   "SIMSTATE": 6213,
+   "TERRAIN_REPORT": 6213,
+   "VIBRATION": 6213,
+   "BATTERY_STATUS": 6213,
+   "EXTENDED_SYS_STATE": 1554,
+   "EKF_STATUS_REPORT": 6192,
+   "ESC_TELEMETRY_1_TO_4": 6141,
+   "TIMESYNC": 31,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 5433,
+   "LOCAL_POSITION_NED": 5433,
+   "TERRAIN_REQUEST": 267
+  },
+  "t_land_ms": 110529,
+  "t_disarm_ms": null,
+  "t_onground_ms": null,
+  "window_s": null,
+  "original_window_s": null,
+  "window_matches": true,
+  "impacts": [],
+  "original_impact_mps": null,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    110529,
+    9
+   ],
+   [
+    111177,
+    0
+   ]
+  ],
+  "command_acks": [
+   [
+    111177,
+    176,
+    0
+   ]
+  ],
+  "rc_expected": 1500,
+  "rc_observed_values": [
+   1500
+  ],
+  "rc_samples": 4038,
+  "rc_matches": true,
+  "censored": true,
+  "last_sim_ms": 313027,
+  "last_seen_after_land_sim_s": 202.498,
+  "last_seen_after_land_wall_s": 202.557,
+  "relative_alt_last_m": 27.619,
+  "relative_alt_range_after_land_m": [
+   27.619,
+   40.0
+  ]
+ },
+ {
+  "id": "RC-MID-STABILIZE-04",
+  "sha256": "d88d949bbd2222b7b9b5bb8d67ec0a3ce2c08b5a1d14a5cbf46a96d89c0626c7",
+  "bytes": 9378768,
+  "messages": 167727,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 167727
+  },
+  "counts": {
+   "HEARTBEAT": 316,
+   "COMMAND_ACK": 9,
+   "PARAM_VALUE": 55,
+   "STATUSTEXT": 175,
+   "AHRS": 6187,
+   "AHRS2": 6186,
+   "ATTITUDE": 6186,
+   "GLOBAL_POSITION_INT": 6186,
+   "VFR_HUD": 6186,
+   "SYS_STATUS": 6186,
+   "POWER_STATUS": 6186,
+   "MEMINFO": 6186,
+   "NAV_CONTROLLER_OUTPUT": 6186,
+   "MISSION_CURRENT": 6186,
+   "SERVO_OUTPUT_RAW": 6186,
+   "RC_CHANNELS": 6186,
+   "RAW_IMU": 6186,
+   "SCALED_IMU2": 6186,
+   "SCALED_IMU3": 6186,
+   "SCALED_PRESSURE": 6186,
+   "SCALED_PRESSURE2": 6186,
+   "GPS_RAW_INT": 6186,
+   "SYSTEM_TIME": 6186,
+   "SIMSTATE": 6186,
+   "TERRAIN_REPORT": 6186,
+   "VIBRATION": 6186,
+   "BATTERY_STATUS": 6186,
+   "EXTENDED_SYS_STATE": 1547,
+   "EKF_STATUS_REPORT": 6165,
+   "ESC_TELEMETRY_1_TO_4": 6114,
+   "TIMESYNC": 31,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 5406,
+   "LOCAL_POSITION_NED": 5406,
+   "TERRAIN_REQUEST": 220
+  },
+  "t_land_ms": 108329,
+  "t_disarm_ms": null,
+  "t_onground_ms": null,
+  "window_s": null,
+  "original_window_s": null,
+  "window_matches": true,
+  "impacts": [],
+  "original_impact_mps": null,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    108329,
+    9
+   ],
+   [
+    109227,
+    0
+   ]
+  ],
+  "command_acks": [
+   [
+    109227,
+    176,
+    0
+   ]
+  ],
+  "rc_expected": 1500,
+  "rc_observed_values": [
+   1500
+  ],
+  "rc_samples": 4055,
+  "rc_matches": true,
+  "censored": true,
+  "last_sim_ms": 311679,
+  "last_seen_after_land_sim_s": 203.35,
+  "last_seen_after_land_wall_s": 203.405,
+  "relative_alt_last_m": 23.781,
+  "relative_alt_range_after_land_m": [
+   23.777,
+   39.999
+  ]
+ },
+ {
+  "id": "RC-MID-STABILIZE-05",
+  "sha256": "b052b62694ca83c995a4528b9692b2bd9babcf17fdb2c10073e0dd069437ef22",
+  "bytes": 9356658,
+  "messages": 167629,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 167629
+  },
+  "counts": {
+   "HEARTBEAT": 316,
+   "COMMAND_ACK": 9,
+   "PARAM_VALUE": 55,
+   "STATUSTEXT": 115,
+   "AHRS": 6178,
+   "AHRS2": 6177,
+   "ATTITUDE": 6177,
+   "GLOBAL_POSITION_INT": 6177,
+   "VFR_HUD": 6177,
+   "SYS_STATUS": 6177,
+   "POWER_STATUS": 6177,
+   "MEMINFO": 6177,
+   "NAV_CONTROLLER_OUTPUT": 6177,
+   "MISSION_CURRENT": 6177,
+   "SERVO_OUTPUT_RAW": 6177,
+   "RC_CHANNELS": 6177,
+   "RAW_IMU": 6177,
+   "SCALED_IMU2": 6177,
+   "SCALED_IMU3": 6177,
+   "SCALED_PRESSURE": 6177,
+   "SCALED_PRESSURE2": 6177,
+   "GPS_RAW_INT": 6177,
+   "SYSTEM_TIME": 6177,
+   "SIMSTATE": 6177,
+   "TERRAIN_REPORT": 6177,
+   "VIBRATION": 6177,
+   "BATTERY_STATUS": 6177,
+   "EXTENDED_SYS_STATE": 1545,
+   "EKF_STATUS_REPORT": 6156,
+   "ESC_TELEMETRY_1_TO_4": 6105,
+   "TIMESYNC": 31,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 5397,
+   "LOCAL_POSITION_NED": 5397,
+   "TERRAIN_REQUEST": 427
+  },
+  "t_land_ms": 108329,
+  "t_disarm_ms": null,
+  "t_onground_ms": null,
+  "window_s": null,
+  "original_window_s": null,
+  "window_matches": true,
+  "impacts": [],
+  "original_impact_mps": null,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    108329,
+    9
+   ],
+   [
+    109077,
+    0
+   ]
+  ],
+  "command_acks": [
+   [
+    109077,
+    176,
+    0
+   ]
+  ],
+  "rc_expected": 1500,
+  "rc_observed_values": [
+   1500
+  ],
+  "rc_samples": 4046,
+  "rc_matches": true,
+  "censored": true,
+  "last_sim_ms": 311227,
+  "last_seen_after_land_sim_s": 202.898,
+  "last_seen_after_land_wall_s": 202.955,
+  "relative_alt_last_m": 11.633,
+  "relative_alt_range_after_land_m": [
+   9.336,
+   40.001
+  ]
+ },
+ {
+  "id": "S4-OFF-01",
+  "sha256": "452289043366faaeac5b745e3703223c2cd1b71c6628e53f4b9479d594e045a9",
+  "bytes": 3014087,
+  "messages": 70369,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 70368,
+   "99:0": 1
+  },
+  "counts": {
+   "HEARTBEAT": 140,
+   "COMMAND_ACK": 8,
+   "STATUSTEXT": 45,
+   "PARAM_VALUE": 41,
+   "AHRS": 2634,
+   "AHRS2": 2634,
+   "ATTITUDE": 2634,
+   "GLOBAL_POSITION_INT": 2634,
+   "VFR_HUD": 2634,
+   "SYS_STATUS": 2634,
+   "POWER_STATUS": 2634,
+   "MEMINFO": 2634,
+   "NAV_CONTROLLER_OUTPUT": 2634,
+   "MISSION_CURRENT": 2634,
+   "SERVO_OUTPUT_RAW": 2634,
+   "RC_CHANNELS": 2634,
+   "RAW_IMU": 2634,
+   "SCALED_IMU2": 2634,
+   "SCALED_IMU3": 2634,
+   "SCALED_PRESSURE": 2634,
+   "SCALED_PRESSURE2": 2634,
+   "GPS_RAW_INT": 2634,
+   "SYSTEM_TIME": 2634,
+   "SIMSTATE": 2634,
+   "TERRAIN_REPORT": 2633,
+   "VIBRATION": 2633,
+   "BATTERY_STATUS": 2633,
+   "EXTENDED_SYS_STATE": 659,
+   "EKF_STATUS_REPORT": 2612,
+   "ESC_TELEMETRY_1_TO_4": 2561,
+   "TIMESYNC": 13,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 1854,
+   "LOCAL_POSITION_NED": 1853
+  },
+  "t_land_ms": 115327,
+  "t_disarm_ms": null,
+  "t_onground_ms": 134027,
+  "window_s": 18.7,
+  "original_window_s": 18.7,
+  "window_matches": true,
+  "impacts": [
+   [
+    132427,
+    2.50625
+   ]
+  ],
+  "original_impact_mps": 2.50625,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    115327,
+    9
+   ],
+   [
+    115627,
+    2
+   ]
+  ],
+  "command_acks": [],
+  "rc_expected": null,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 364,
+  "rc_matches": false,
+  "censored": false,
+  "last_sim_ms": 134077,
+  "last_seen_after_land_sim_s": 18.75,
+  "last_seen_after_land_wall_s": 18.741,
+  "relative_alt_last_m": 0.073,
+  "relative_alt_range_after_land_m": [
+   -0.098,
+   40.0
+  ]
+ },
+ {
+  "id": "S4-OFF-02",
+  "sha256": "ff08ff9396f9cccd1977765db1f370bc307de1edcfe37c4f6f44bad1b0f0b09d",
+  "bytes": 3014085,
+  "messages": 70369,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 70368,
+   "99:0": 1
+  },
+  "counts": {
+   "HEARTBEAT": 140,
+   "COMMAND_ACK": 8,
+   "STATUSTEXT": 45,
+   "PARAM_VALUE": 41,
+   "AHRS": 2634,
+   "AHRS2": 2634,
+   "ATTITUDE": 2634,
+   "GLOBAL_POSITION_INT": 2634,
+   "VFR_HUD": 2634,
+   "SYS_STATUS": 2634,
+   "POWER_STATUS": 2634,
+   "MEMINFO": 2634,
+   "NAV_CONTROLLER_OUTPUT": 2634,
+   "MISSION_CURRENT": 2634,
+   "SERVO_OUTPUT_RAW": 2634,
+   "RC_CHANNELS": 2634,
+   "RAW_IMU": 2634,
+   "SCALED_IMU2": 2634,
+   "SCALED_IMU3": 2634,
+   "SCALED_PRESSURE": 2634,
+   "SCALED_PRESSURE2": 2634,
+   "GPS_RAW_INT": 2634,
+   "SYSTEM_TIME": 2634,
+   "SIMSTATE": 2634,
+   "TERRAIN_REPORT": 2633,
+   "VIBRATION": 2633,
+   "BATTERY_STATUS": 2633,
+   "EXTENDED_SYS_STATE": 659,
+   "EKF_STATUS_REPORT": 2612,
+   "ESC_TELEMETRY_1_TO_4": 2561,
+   "TIMESYNC": 13,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 1854,
+   "LOCAL_POSITION_NED": 1853
+  },
+  "t_land_ms": 115327,
+  "t_disarm_ms": null,
+  "t_onground_ms": 134027,
+  "window_s": 18.7,
+  "original_window_s": 18.7,
+  "window_matches": true,
+  "impacts": [
+   [
+    132479,
+    2.506401
+   ]
+  ],
+  "original_impact_mps": 2.506401,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    115327,
+    9
+   ],
+   [
+    115677,
+    2
+   ]
+  ],
+  "command_acks": [],
+  "rc_expected": null,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 364,
+  "rc_matches": false,
+  "censored": false,
+  "last_sim_ms": 134077,
+  "last_seen_after_land_sim_s": 18.75,
+  "last_seen_after_land_wall_s": 18.744,
+  "relative_alt_last_m": 0.066,
+  "relative_alt_range_after_land_m": [
+   -0.098,
+   40.0
+  ]
+ },
+ {
+  "id": "S4-OFF-03",
+  "sha256": "331f05464e07d7295941f4b3b66189ed6fa9ff358105791aaf0fbe23c521bc65",
+  "bytes": 2883071,
+  "messages": 67297,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 67296,
+   "99:0": 1
+  },
+  "counts": {
+   "HEARTBEAT": 134,
+   "COMMAND_ACK": 8,
+   "STATUSTEXT": 38,
+   "PARAM_VALUE": 38,
+   "AHRS": 2522,
+   "AHRS2": 2522,
+   "ATTITUDE": 2522,
+   "GLOBAL_POSITION_INT": 2522,
+   "VFR_HUD": 2522,
+   "SYS_STATUS": 2522,
+   "POWER_STATUS": 2522,
+   "MEMINFO": 2522,
+   "NAV_CONTROLLER_OUTPUT": 2522,
+   "MISSION_CURRENT": 2522,
+   "SERVO_OUTPUT_RAW": 2522,
+   "RC_CHANNELS": 2522,
+   "RAW_IMU": 2522,
+   "SCALED_IMU2": 2522,
+   "SCALED_IMU3": 2522,
+   "SCALED_PRESSURE": 2522,
+   "SCALED_PRESSURE2": 2522,
+   "GPS_RAW_INT": 2522,
+   "SYSTEM_TIME": 2521,
+   "SIMSTATE": 2521,
+   "TERRAIN_REPORT": 2521,
+   "VIBRATION": 2521,
+   "BATTERY_STATUS": 2521,
+   "EXTENDED_SYS_STATE": 631,
+   "EKF_STATUS_REPORT": 2500,
+   "ESC_TELEMETRY_1_TO_4": 2449,
+   "TIMESYNC": 12,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 1741,
+   "LOCAL_POSITION_NED": 1741
+  },
+  "t_land_ms": 115327,
+  "t_disarm_ms": null,
+  "t_onground_ms": null,
+  "window_s": null,
+  "original_window_s": 18.3,
+  "window_matches": false,
+  "impacts": [],
+  "original_impact_mps": 2.502348,
+  "impact_matches": false,
+  "mode_transitions": [
+   [
+    115327,
+    9
+   ],
+   [
+    115327,
+    2
+   ]
+  ],
+  "command_acks": [],
+  "rc_expected": null,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 252,
+  "rc_matches": false,
+  "censored": true,
+  "last_sim_ms": 128479,
+  "last_seen_after_land_sim_s": 13.152,
+  "last_seen_after_land_wall_s": 13.14,
+  "relative_alt_last_m": 9.322,
+  "relative_alt_range_after_land_m": [
+   9.322,
+   39.999
+  ]
+ },
+ {
+  "id": "S4-OFF-04",
+  "sha256": "daa5a427ff5f9cfee9fde3abceeee65758ef23a0e68c95a4c58face2eb82d6b6",
+  "bytes": 3014166,
+  "messages": 70371,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 70370,
+   "99:0": 1
+  },
+  "counts": {
+   "HEARTBEAT": 140,
+   "COMMAND_ACK": 8,
+   "STATUSTEXT": 45,
+   "PARAM_VALUE": 41,
+   "AHRS": 2634,
+   "AHRS2": 2634,
+   "ATTITUDE": 2634,
+   "GLOBAL_POSITION_INT": 2634,
+   "VFR_HUD": 2634,
+   "SYS_STATUS": 2634,
+   "POWER_STATUS": 2634,
+   "MEMINFO": 2634,
+   "NAV_CONTROLLER_OUTPUT": 2634,
+   "MISSION_CURRENT": 2634,
+   "SERVO_OUTPUT_RAW": 2634,
+   "RC_CHANNELS": 2634,
+   "RAW_IMU": 2634,
+   "SCALED_IMU2": 2634,
+   "SCALED_IMU3": 2634,
+   "SCALED_PRESSURE": 2634,
+   "SCALED_PRESSURE2": 2634,
+   "GPS_RAW_INT": 2634,
+   "SYSTEM_TIME": 2634,
+   "SIMSTATE": 2634,
+   "TERRAIN_REPORT": 2634,
+   "VIBRATION": 2633,
+   "BATTERY_STATUS": 2633,
+   "EXTENDED_SYS_STATE": 659,
+   "EKF_STATUS_REPORT": 2613,
+   "ESC_TELEMETRY_1_TO_4": 2561,
+   "TIMESYNC": 13,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 1854,
+   "LOCAL_POSITION_NED": 1853
+  },
+  "t_land_ms": 115327,
+  "t_disarm_ms": null,
+  "t_onground_ms": 134027,
+  "window_s": 18.7,
+  "original_window_s": 18.7,
+  "window_matches": true,
+  "impacts": [
+   [
+    132479,
+    2.506317
+   ]
+  ],
+  "original_impact_mps": 2.506317,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    115327,
+    9
+   ],
+   [
+    115677,
+    2
+   ]
+  ],
+  "command_acks": [],
+  "rc_expected": null,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 364,
+  "rc_matches": false,
+  "censored": false,
+  "last_sim_ms": 134077,
+  "last_seen_after_land_sim_s": 18.75,
+  "last_seen_after_land_wall_s": 18.74,
+  "relative_alt_last_m": 0.067,
+  "relative_alt_range_after_land_m": [
+   -0.098,
+   40.0
+  ]
+ },
+ {
+  "id": "S4-OFF-05",
+  "sha256": "e2a6ccc48d2860dc785480fe5f2f185e029f106e5b8bb97cbec76f4ac61c915f",
+  "bytes": 3014076,
+  "messages": 70369,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 70368,
+   "99:0": 1
+  },
+  "counts": {
+   "HEARTBEAT": 140,
+   "COMMAND_ACK": 8,
+   "STATUSTEXT": 46,
+   "PARAM_VALUE": 41,
+   "AHRS": 2634,
+   "AHRS2": 2634,
+   "ATTITUDE": 2634,
+   "GLOBAL_POSITION_INT": 2634,
+   "VFR_HUD": 2634,
+   "SYS_STATUS": 2634,
+   "POWER_STATUS": 2634,
+   "MEMINFO": 2634,
+   "NAV_CONTROLLER_OUTPUT": 2634,
+   "MISSION_CURRENT": 2634,
+   "SERVO_OUTPUT_RAW": 2634,
+   "RC_CHANNELS": 2634,
+   "RAW_IMU": 2634,
+   "SCALED_IMU2": 2634,
+   "SCALED_IMU3": 2634,
+   "SCALED_PRESSURE": 2634,
+   "SCALED_PRESSURE2": 2634,
+   "GPS_RAW_INT": 2634,
+   "SYSTEM_TIME": 2634,
+   "SIMSTATE": 2634,
+   "TERRAIN_REPORT": 2633,
+   "VIBRATION": 2633,
+   "BATTERY_STATUS": 2633,
+   "EXTENDED_SYS_STATE": 659,
+   "EKF_STATUS_REPORT": 2612,
+   "ESC_TELEMETRY_1_TO_4": 2561,
+   "TIMESYNC": 13,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 1853,
+   "LOCAL_POSITION_NED": 1853
+  },
+  "t_land_ms": 115327,
+  "t_disarm_ms": null,
+  "t_onground_ms": 133827,
+  "window_s": 18.5,
+  "original_window_s": 18.5,
+  "window_matches": true,
+  "impacts": [
+   [
+    132277,
+    2.504401
+   ]
+  ],
+  "original_impact_mps": 2.504401,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    115327,
+    9
+   ],
+   [
+    115477,
+    2
+   ]
+  ],
+  "command_acks": [],
+  "rc_expected": null,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 364,
+  "rc_matches": false,
+  "censored": false,
+  "last_sim_ms": 134077,
+  "last_seen_after_land_sim_s": 18.75,
+  "last_seen_after_land_wall_s": 18.743,
+  "relative_alt_last_m": 0.062,
+  "relative_alt_range_after_land_m": [
+   -0.099,
+   39.999
+  ]
+ },
+ {
+  "id": "S4-ON-01",
+  "sha256": "945a2a153af457d2ecd636fd78c0d27ed8b7e0e87e3b74c7ab1917daee9362aa",
+  "bytes": 4062332,
+  "messages": 72751,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 72751
+  },
+  "counts": {
+   "HEARTBEAT": 142,
+   "COMMAND_ACK": 8,
+   "STATUSTEXT": 56,
+   "PARAM_VALUE": 40,
+   "AHRS": 2721,
+   "AHRS2": 2721,
+   "ATTITUDE": 2721,
+   "GLOBAL_POSITION_INT": 2721,
+   "VFR_HUD": 2721,
+   "SYS_STATUS": 2721,
+   "POWER_STATUS": 2721,
+   "MEMINFO": 2721,
+   "NAV_CONTROLLER_OUTPUT": 2721,
+   "MISSION_CURRENT": 2721,
+   "SERVO_OUTPUT_RAW": 2721,
+   "RC_CHANNELS": 2721,
+   "RAW_IMU": 2721,
+   "SCALED_IMU2": 2721,
+   "SCALED_IMU3": 2721,
+   "SCALED_PRESSURE": 2721,
+   "SCALED_PRESSURE2": 2721,
+   "GPS_RAW_INT": 2721,
+   "SYSTEM_TIME": 2721,
+   "SIMSTATE": 2721,
+   "TERRAIN_REPORT": 2720,
+   "VIBRATION": 2720,
+   "BATTERY_STATUS": 2720,
+   "EXTENDED_SYS_STATE": 680,
+   "EKF_STATUS_REPORT": 2699,
+   "ESC_TELEMETRY_1_TO_4": 2648,
+   "TIMESYNC": 13,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 1941,
+   "LOCAL_POSITION_NED": 1940
+  },
+  "t_land_ms": 94527,
+  "t_disarm_ms": null,
+  "t_onground_ms": null,
+  "window_s": null,
+  "original_window_s": 44.1,
+  "window_matches": false,
+  "impacts": [
+   [
+    136829,
+    0.592512
+   ]
+  ],
+  "original_impact_mps": 0.592512,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    94527,
+    9
+   ]
+  ],
+  "command_acks": [],
+  "rc_expected": null,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 867,
+  "rc_matches": false,
+  "censored": true,
+  "last_sim_ms": 138427,
+  "last_seen_after_land_sim_s": 43.9,
+  "last_seen_after_land_wall_s": 43.898,
+  "relative_alt_last_m": 0.833,
+  "relative_alt_range_after_land_m": [
+   0.565,
+   40.002
+  ]
+ },
+ {
+  "id": "S4-ON-02",
+  "sha256": "23dac7ed9da67955243857b2c2a304ba07ebc115ffec7fbbbf9bcd83a8328b7d",
+  "bytes": 4324613,
+  "messages": 77479,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 77479
+  },
+  "counts": {
+   "HEARTBEAT": 151,
+   "COMMAND_ACK": 8,
+   "STATUSTEXT": 53,
+   "PARAM_VALUE": 38,
+   "AHRS": 2893,
+   "AHRS2": 2893,
+   "ATTITUDE": 2893,
+   "GLOBAL_POSITION_INT": 2893,
+   "VFR_HUD": 2893,
+   "SYS_STATUS": 2893,
+   "POWER_STATUS": 2893,
+   "MEMINFO": 2893,
+   "NAV_CONTROLLER_OUTPUT": 2893,
+   "MISSION_CURRENT": 2893,
+   "SERVO_OUTPUT_RAW": 2893,
+   "RC_CHANNELS": 2893,
+   "RAW_IMU": 2892,
+   "SCALED_IMU2": 2892,
+   "SCALED_IMU3": 2892,
+   "SCALED_PRESSURE": 2892,
+   "SCALED_PRESSURE2": 2892,
+   "GPS_RAW_INT": 2892,
+   "SYSTEM_TIME": 2892,
+   "SIMSTATE": 2892,
+   "TERRAIN_REPORT": 2892,
+   "VIBRATION": 2892,
+   "BATTERY_STATUS": 2892,
+   "EXTENDED_SYS_STATE": 723,
+   "EKF_STATUS_REPORT": 2871,
+   "ESC_TELEMETRY_1_TO_4": 2820,
+   "TIMESYNC": 14,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 2112,
+   "LOCAL_POSITION_NED": 2112,
+   "TERRAIN_REQUEST": 45
+  },
+  "t_land_ms": 99529,
+  "t_disarm_ms": null,
+  "t_onground_ms": null,
+  "window_s": null,
+  "original_window_s": 48.9,
+  "window_matches": false,
+  "impacts": [
+   [
+    140127,
+    0.47904
+   ]
+  ],
+  "original_impact_mps": 0.47904,
+  "impact_matches": true,
+  "mode_transitions": [
+   [
+    99529,
+    9
+   ]
+  ],
+  "command_acks": [],
+  "rc_expected": null,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 939,
+  "rc_matches": false,
+  "censored": true,
+  "last_sim_ms": 147029,
+  "last_seen_after_land_sim_s": 47.5,
+  "last_seen_after_land_wall_s": 47.496,
+  "relative_alt_last_m": -0.375,
+  "relative_alt_range_after_land_m": [
+   -0.513,
+   40.001
+  ]
+ },
+ {
+  "id": "S4-ON-03",
+  "sha256": "29bebf7d5e5ca9ea92eb4cef6b68bd1a2b9e97c1bdc8897031020ebd6636de51",
+  "bytes": 3931291,
+  "messages": 70407,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 70407
+  },
+  "counts": {
+   "HEARTBEAT": 138,
+   "COMMAND_ACK": 8,
+   "STATUSTEXT": 53,
+   "PARAM_VALUE": 38,
+   "AHRS": 2636,
+   "AHRS2": 2636,
+   "ATTITUDE": 2635,
+   "GLOBAL_POSITION_INT": 2635,
+   "VFR_HUD": 2635,
+   "SYS_STATUS": 2635,
+   "POWER_STATUS": 2635,
+   "MEMINFO": 2635,
+   "NAV_CONTROLLER_OUTPUT": 2635,
+   "MISSION_CURRENT": 2635,
+   "SERVO_OUTPUT_RAW": 2635,
+   "RC_CHANNELS": 2635,
+   "RAW_IMU": 2635,
+   "SCALED_IMU2": 2635,
+   "SCALED_IMU3": 2635,
+   "SCALED_PRESSURE": 2635,
+   "SCALED_PRESSURE2": 2635,
+   "GPS_RAW_INT": 2635,
+   "SYSTEM_TIME": 2635,
+   "SIMSTATE": 2635,
+   "TERRAIN_REPORT": 2635,
+   "VIBRATION": 2635,
+   "BATTERY_STATUS": 2635,
+   "EXTENDED_SYS_STATE": 659,
+   "EKF_STATUS_REPORT": 2614,
+   "ESC_TELEMETRY_1_TO_4": 2563,
+   "TIMESYNC": 13,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 1855,
+   "LOCAL_POSITION_NED": 1855
+  },
+  "t_land_ms": 100727,
+  "t_disarm_ms": null,
+  "t_onground_ms": null,
+  "window_s": null,
+  "original_window_s": 37.1,
+  "window_matches": false,
+  "impacts": [],
+  "original_impact_mps": 0.548637,
+  "impact_matches": false,
+  "mode_transitions": [
+   [
+    100727,
+    9
+   ]
+  ],
+  "command_acks": [],
+  "rc_expected": null,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 657,
+  "rc_matches": false,
+  "censored": true,
+  "last_sim_ms": 134127,
+  "last_seen_after_land_sim_s": 33.4,
+  "last_seen_after_land_wall_s": 33.449,
+  "relative_alt_last_m": 0.637,
+  "relative_alt_range_after_land_m": [
+   0.637,
+   40.001
+  ]
+ },
+ {
+  "id": "S4-ON-04",
+  "sha256": "ba159b13880d42d420805ba501696853d57e456b60c9e052cf7736f708b8292f",
+  "bytes": 4324462,
+  "messages": 77467,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 77467
+  },
+  "counts": {
+   "HEARTBEAT": 151,
+   "COMMAND_ACK": 8,
+   "STATUSTEXT": 61,
+   "PARAM_VALUE": 38,
+   "AHRS": 2894,
+   "AHRS2": 2894,
+   "ATTITUDE": 2894,
+   "GLOBAL_POSITION_INT": 2894,
+   "VFR_HUD": 2894,
+   "SYS_STATUS": 2894,
+   "POWER_STATUS": 2894,
+   "MEMINFO": 2894,
+   "NAV_CONTROLLER_OUTPUT": 2894,
+   "MISSION_CURRENT": 2893,
+   "SERVO_OUTPUT_RAW": 2893,
+   "RC_CHANNELS": 2893,
+   "RAW_IMU": 2893,
+   "SCALED_IMU2": 2893,
+   "SCALED_IMU3": 2893,
+   "SCALED_PRESSURE": 2893,
+   "SCALED_PRESSURE2": 2893,
+   "GPS_RAW_INT": 2893,
+   "SYSTEM_TIME": 2893,
+   "SIMSTATE": 2893,
+   "TERRAIN_REPORT": 2893,
+   "VIBRATION": 2893,
+   "BATTERY_STATUS": 2893,
+   "EXTENDED_SYS_STATE": 724,
+   "EKF_STATUS_REPORT": 2872,
+   "ESC_TELEMETRY_1_TO_4": 2821,
+   "TIMESYNC": 14,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 2113,
+   "LOCAL_POSITION_NED": 2113
+  },
+  "t_land_ms": 101729,
+  "t_disarm_ms": null,
+  "t_onground_ms": null,
+  "window_s": null,
+  "original_window_s": 47.3,
+  "window_matches": false,
+  "impacts": [],
+  "original_impact_mps": 0.496179,
+  "impact_matches": false,
+  "mode_transitions": [
+   [
+    101729,
+    9
+   ]
+  ],
+  "command_acks": [],
+  "rc_expected": null,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 895,
+  "rc_matches": false,
+  "censored": true,
+  "last_sim_ms": 147079,
+  "last_seen_after_land_sim_s": 45.35,
+  "last_seen_after_land_wall_s": 45.353,
+  "relative_alt_last_m": 0.478,
+  "relative_alt_range_after_land_m": [
+   0.478,
+   40.006
+  ]
+ },
+ {
+  "id": "S4-ON-05",
+  "sha256": "0af5b0c3ef6eb66efb8ad1f20d1fac4d27404d31031b4ae0a7bdfc6f22c076fd",
+  "bytes": 4193342,
+  "messages": 75110,
+  "bad_data": 0,
+  "sources": {
+   "1:1": 75110
+  },
+  "counts": {
+   "HEARTBEAT": 146,
+   "COMMAND_ACK": 8,
+   "STATUSTEXT": 62,
+   "PARAM_VALUE": 38,
+   "AHRS": 2807,
+   "AHRS2": 2807,
+   "ATTITUDE": 2807,
+   "GLOBAL_POSITION_INT": 2807,
+   "VFR_HUD": 2807,
+   "SYS_STATUS": 2807,
+   "POWER_STATUS": 2807,
+   "MEMINFO": 2807,
+   "NAV_CONTROLLER_OUTPUT": 2807,
+   "MISSION_CURRENT": 2807,
+   "SERVO_OUTPUT_RAW": 2807,
+   "RC_CHANNELS": 2807,
+   "RAW_IMU": 2807,
+   "SCALED_IMU2": 2807,
+   "SCALED_IMU3": 2807,
+   "SCALED_PRESSURE": 2807,
+   "SCALED_PRESSURE2": 2807,
+   "GPS_RAW_INT": 2807,
+   "SYSTEM_TIME": 2807,
+   "SIMSTATE": 2807,
+   "TERRAIN_REPORT": 2807,
+   "VIBRATION": 2807,
+   "BATTERY_STATUS": 2807,
+   "EXTENDED_SYS_STATE": 702,
+   "EKF_STATUS_REPORT": 2786,
+   "ESC_TELEMETRY_1_TO_4": 2735,
+   "TIMESYNC": 14,
+   "GPS_GLOBAL_ORIGIN": 2,
+   "HOME_POSITION": 2,
+   "WIND": 2027,
+   "LOCAL_POSITION_NED": 2027
+  },
+  "t_land_ms": 101329,
+  "t_disarm_ms": null,
+  "t_onground_ms": null,
+  "window_s": null,
+  "original_window_s": 45.5,
+  "window_matches": false,
+  "impacts": [],
+  "original_impact_mps": 0.500167,
+  "impact_matches": false,
+  "mode_transitions": [
+   [
+    101329,
+    9
+   ]
+  ],
+  "command_acks": [],
+  "rc_expected": null,
+  "rc_observed_values": [
+   1000
+  ],
+  "rc_samples": 817,
+  "rc_matches": false,
+  "censored": true,
+  "last_sim_ms": 142727,
+  "last_seen_after_land_sim_s": 41.398,
+  "last_seen_after_land_wall_s": 41.398,
+  "relative_alt_last_m": 1.255,
+  "relative_alt_range_after_land_m": [
+   1.255,
+   40.003
+  ]
+ }
+]
