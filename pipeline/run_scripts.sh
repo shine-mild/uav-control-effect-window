@@ -1,7 +1,7 @@
 #!/bin/bash
 # 게이트를 통과해 변환된 시나리오 스크립트를 각각 새 SITL 인스턴스에서 실행한다.
 # 시나리오 사이에 상태를 초기화하지 않으면 판정이 성립하지 않는다(IV 4.5).
-P=/tmp/claude-1000/-home-shine/0b8ef378-5a73-47ce-bdf3-e728d3790c50/scratchpad/pipeline
+P="$(cd "$(dirname "$0")" && pwd)"
 export ARDUPILOT_PATH="${ARDUPILOT_PATH:-$HOME/ardupilot}"
 export PYMAVLINK_PATH="$ARDUPILOT_PATH/modules/mavlink"
 cd "$ARDUPILOT_PATH"

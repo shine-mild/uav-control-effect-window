@@ -1,0 +1,217 @@
+{
+ "L": {
+  "생성": 10,
+  "정적통과": 9,
+  "실행": 9,
+  "재현": 7,
+  "상세": [
+   {
+    "id": "L-SC-01",
+    "명령": "MAV_CMD_DO_SET_MODE(STABILIZE)",
+    "실행": true,
+    "사슬": true,
+    "결과일치": true,
+    "관측결과": "destroy",
+    "기대": "destroy",
+    "실패": []
+   },
+   {
+    "id": "L-SC-02",
+    "명령": "MAV_CMD_DO_SET_MODE(ALT_HOLD)",
+    "실행": true,
+    "사슬": true,
+    "결과일치": true,
+    "관측결과": "recover",
+    "기대": "recover",
+    "실패": []
+   },
+   {
+    "id": "L-SC-03",
+    "명령": "MAV_CMD_DO_SET_MODE(GUIDED_NOGPS)",
+    "실행": true,
+    "사슬": false,
+    "결과일치": false,
+    "관측결과": null,
+    "기대": "extend",
+    "실패": [
+     "비행 종료 미관측 (160s)"
+    ]
+   },
+   {
+    "id": "L-SC-04",
+    "명령": "MAV_CMD_DO_FLIGHTTERMINATION",
+    "실행": true,
+    "사슬": true,
+    "결과일치": true,
+    "관측결과": "destroy",
+    "기대": "destroy",
+    "실패": []
+   },
+   {
+    "id": "L-SC-05",
+    "명령": "MAV_CMD_COMPONENT_ARM_DISARM",
+    "실행": true,
+    "사슬": true,
+    "결과일치": true,
+    "관측결과": "destroy",
+    "기대": "destroy",
+    "실패": []
+   },
+   {
+    "id": "L-SC-06",
+    "명령": "MAV_CMD_DO_SET_MODE(STABILIZE)",
+    "실행": true,
+    "사슬": true,
+    "결과일치": true,
+    "관측결과": "destroy",
+    "기대": "destroy",
+    "실패": []
+   },
+   {
+    "id": "L-SC-07",
+    "명령": "MAV_CMD_DO_SET_MODE(ALT_HOLD)",
+    "실행": true,
+    "사슬": true,
+    "결과일치": true,
+    "관측결과": "recover",
+    "기대": "recover",
+    "실패": []
+   },
+   {
+    "id": "L-SC-08",
+    "명령": "MAV_CMD_DO_SET_MODE(GUIDED_NOGPS)",
+    "실행": true,
+    "사슬": false,
+    "결과일치": false,
+    "관측결과": null,
+    "기대": "extend",
+    "실패": [
+     "비행 종료 미관측 (160s)"
+    ]
+   },
+   {
+    "id": "L-SC-09",
+    "명령": "MAV_CMD_DO_FLIGHTTERMINATION",
+    "실행": true,
+    "사슬": true,
+    "결과일치": true,
+    "관측결과": "destroy",
+    "기대": "destroy",
+    "실패": []
+   }
+  ]
+ },
+ "T": {
+  "생성": 10,
+  "정적통과": 10,
+  "실행": 10,
+  "재현": 8,
+  "상세": [
+   {
+    "id": "T-SC-01",
+    "명령": "MAV_CMD_DO_SET_MODE(STABILIZE)",
+    "실행": true,
+    "사슬": true,
+    "결과일치": true,
+    "관측결과": "destroy",
+    "기대": "destroy",
+    "실패": []
+   },
+   {
+    "id": "T-SC-02",
+    "명령": "MAV_CMD_DO_SET_MODE(ALT_HOLD)",
+    "실행": true,
+    "사슬": true,
+    "결과일치": true,
+    "관측결과": "recover",
+    "기대": "recover",
+    "실패": []
+   },
+   {
+    "id": "T-SC-03",
+    "명령": "MAV_CMD_DO_SET_MODE(GUIDED_NOGPS)",
+    "실행": true,
+    "사슬": false,
+    "결과일치": false,
+    "관측결과": null,
+    "기대": "extend",
+    "실패": [
+     "비행 종료 미관측 (160s)"
+    ]
+   },
+   {
+    "id": "T-SC-04",
+    "명령": "MAV_CMD_DO_FLIGHTTERMINATION",
+    "실행": true,
+    "사슬": true,
+    "결과일치": true,
+    "관측결과": "destroy",
+    "기대": "destroy",
+    "실패": []
+   },
+   {
+    "id": "T-SC-05",
+    "명령": "MAV_CMD_COMPONENT_ARM_DISARM",
+    "실행": true,
+    "사슬": true,
+    "결과일치": true,
+    "관측결과": "destroy",
+    "기대": "destroy",
+    "실패": []
+   },
+   {
+    "id": "T-SC-06",
+    "명령": "MAV_CMD_DO_SET_MODE(STABILIZE)",
+    "실행": true,
+    "사슬": true,
+    "결과일치": true,
+    "관측결과": "destroy",
+    "기대": "destroy",
+    "실패": []
+   },
+   {
+    "id": "T-SC-07",
+    "명령": "MAV_CMD_DO_SET_MODE(ALT_HOLD)",
+    "실행": true,
+    "사슬": true,
+    "결과일치": true,
+    "관측결과": "recover",
+    "기대": "recover",
+    "실패": []
+   },
+   {
+    "id": "T-SC-08",
+    "명령": "MAV_CMD_DO_SET_MODE(GUIDED_NOGPS)",
+    "실행": true,
+    "사슬": false,
+    "결과일치": false,
+    "관측결과": null,
+    "기대": "extend",
+    "실패": [
+     "비행 종료 미관측 (160s)"
+    ]
+   },
+   {
+    "id": "T-SC-09",
+    "명령": "MAV_CMD_DO_FLIGHTTERMINATION",
+    "실행": true,
+    "사슬": true,
+    "결과일치": true,
+    "관측결과": "destroy",
+    "기대": "destroy",
+    "실패": []
+   },
+   {
+    "id": "T-SC-10",
+    "명령": "MAV_CMD_COMPONENT_ARM_DISARM",
+    "실행": true,
+    "사슬": true,
+    "결과일치": true,
+    "관측결과": "destroy",
+    "기대": "destroy",
+    "실패": []
+   }
+  ]
+ },
+ "fisher_two_sided_p": 1.0
+}

@@ -4,7 +4,7 @@ set -u
 P="$(cd "$(dirname "$0")" && pwd)"
 AP="${ARDUPILOT_PATH:-$HOME/ardupilot}"
 export PYMAVLINK_PATH="${PYMAVLINK_PATH:-$AP/modules/mavlink}"
-LOG="$P/signing4_progress.log"
+LOG="$P/signing4b_progress.log"
 : > "$LOG"
 cd "$AP" || exit 1
 
@@ -16,7 +16,7 @@ sitl() {
   sleep 6
 }
 
-for R in 1 2 3 4 5; do
+for R in $(seq 6 30); do
   for C in OFF ON; do
     sitl
     echo "[$C $R/5] $(date +%H:%M:%S)" >> "$LOG"

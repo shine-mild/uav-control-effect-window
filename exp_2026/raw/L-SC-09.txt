@@ -1,0 +1,30 @@
+```
+{
+  "id": "PT-EX-0016.03",
+  "path": "EX-0016.03 -> gnssArtifact -> navBranch(variance) -> fsLand -> injectWindow -> attemptInject -> injectSucceeded",
+  "precondition": ["reachable", "posIndependent", "noSigning"],
+  "steps": [
+    "set SIM_GPS1_ENABLE=1",
+    "set SIM_GPS1_JAM=1",
+    "observe GPS_RAW_INT.fix_type",
+    "wait gnssLost",
+    "observe GLOBAL_POSITION_INT",
+    "wait navBranch",
+    "observe STATUSTEXT",
+    "wait fsLand",
+    "wait injectWindow",
+    "send MAV_CMD_DO_FLIGHTTERMINATION(1)",
+    "observe COMMAND_ACK.result",
+    "wait injectSucceeded"
+  ],
+  "observable": [
+    "GPS_RAW_INT.fix_type",
+    "GLOBAL_POSITION_INT.lat",
+    "STATUSTEXT.text",
+    "COMMAND_ACK.result",
+    "HEARTBEAT.system_status"
+  ],
+  "success": "injectSucceeded",
+  "abort": ["!linkAlive", "landed", "motorsDisarmed"]
+}
+```

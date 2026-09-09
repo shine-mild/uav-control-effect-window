@@ -1,0 +1,226 @@
+{
+ "id": "T-SC-01",
+ "branch": "posLost",
+ "meta": {
+  "run_at": "2026-09-08T20:24:49",
+  "ardupilot_commit": "c2b898a",
+  "model": "claude-sonnet-5",
+  "graph_sha": "49bc1449547c",
+  "gates_sha": "e01b1ce646e9",
+  "runtime_sha": "eb6a0b6a0347",
+  "script_sha": null
+ },
+ "chain": [
+  [
+   "gnssLost",
+   101399
+  ],
+  [
+   "fsLand",
+   109099
+  ],
+  [
+   "injectWindow",
+   109099
+  ],
+  [
+   "ekfPosLost",
+   109099
+  ],
+  [
+   "navBranch",
+   109099
+  ],
+  [
+   "modeChanged",
+   109699
+  ],
+  [
+   "injectSucceeded",
+   109699
+  ],
+  [
+   "cmdAccepted",
+   111199
+  ],
+  [
+   "landed",
+   115449
+  ],
+  [
+   "flightEnd",
+   115699
+  ]
+ ],
+ "chain_seq": [
+  "gnssLost",
+  "fsLand",
+  "injectWindow",
+  "navBranch",
+  "injectSucceeded",
+  "flightEnd"
+ ],
+ "chain_present": true,
+ "chain_ordered": true,
+ "link_alive": true,
+ "hb_gap_max_s": 1.0,
+ "acks": [
+  {
+   "cmd": "DO_SET_MODE(STABILIZE)",
+   "ack": "ACCEPTED",
+   "mode_after": "STABILIZE",
+   "sim_ms": 109649
+  }
+ ],
+ "t_land_ms": 109099,
+ "t_disarm_ms": null,
+ "t_onground_ms": 115449,
+ "terminated_in_air": null,
+ "window_s": 6.35,
+ "impact_mps": 16.12608,
+ "alt_at_disarm": null,
+ "outcome": "destroy",
+ "expected_outcome": "destroy",
+ "outcome_match": true,
+ "chain_reproduced": true,
+ "failures": [],
+ "ok": true,
+ "events": [
+  {
+   "stage": "STATUSTEXT",
+   "simms": 0,
+   "detail": "Barometer 1 calibration complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 0,
+   "detail": "Barometer 2 calibration complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 0,
+   "detail": "ArduPilot Ready"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 2699,
+   "detail": "RC7: SaveWaypoint LOW"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 4399,
+   "detail": "EKF3 IMU0 initialised"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 4399,
+   "detail": "EKF3 IMU1 initialised"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 4399,
+   "detail": "AHRS: EKF3 active"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 5749,
+   "detail": "EKF3 IMU1 tilt alignment complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 5749,
+   "detail": "EKF3 IMU0 tilt alignment complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 5849,
+   "detail": "EKF3 IMU1 MAG0 initial yaw alignment complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 5849,
+   "detail": "EKF3 IMU0 MAG0 initial yaw alignment complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 9799,
+   "detail": "GPS 1: probing for u-blox at 230400 baud"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 9799,
+   "detail": "GPS 1: detected u-blox"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 15399,
+   "detail": "Arm: AHRS: waiting for home"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 19999,
+   "detail": "EKF3 IMU1 origin set"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 19999,
+   "detail": "Field Elevation Set: 0m"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 20199,
+   "detail": "EKF3 IMU0 origin set"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 30399,
+   "detail": "PreArm: Need Position Estimate"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 38849,
+   "detail": "Arm: Need Position Estimate"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 41399,
+   "detail": "EKF3 IMU0 is using GPS"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 41599,
+   "detail": "EKF3 IMU1 is using GPS"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 61999,
+   "detail": "Arming motors"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 69549,
+   "detail": "EKF3 IMU1 MAG0 in-flight yaw alignment complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 69549,
+   "detail": "EKF3 IMU0 MAG0 in-flight yaw alignment complete"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 109099,
+   "detail": "EKF variance: position lost"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 109099,
+   "detail": "EKF Failsafe: changed to Land Mode"
+  },
+  {
+   "stage": "STATUSTEXT",
+   "simms": 113249,
+   "detail": "SIM Hit ground at 16.12608 m/s"
+  }
+ ],
+ "tlog": "/home/shine/uav-control-effect-window/exp_2026/tlogs/T-SC-01.tlog"
+}

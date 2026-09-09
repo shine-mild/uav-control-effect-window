@@ -59,7 +59,10 @@ class Runner:
         self.tlog_path = None             # 원시 MAVLink tlog 경로
 
     # ------------------------------------------------ 연결
-    def connect(self, dev='tcp:127.0.0.1:5760'):
+    def connect(self, dev=None):
+        # 중계기(tools/sitl_relay.py)를 끼워 Mission Planner 와 함께 볼 때는
+        # SITL_DEV 로 접속 주소를 바꾼다. 지정하지 않으면 SITL 기본 포트다.
+        dev = dev or os.environ.get('SITL_DEV', 'tcp:127.0.0.1:5760')
         self.m = mavutil.mavlink_connection(dev, source_system=255)
         _here = os.path.dirname(os.path.abspath(__file__))
         _ld = os.path.join(_here, 'tlogs'); os.makedirs(_ld, exist_ok=True)

@@ -1,0 +1,22 @@
+```json
+{
+  "id": "EX-0016.03",
+  "path": "EX-0016.03 -> gnssArtifact -> navBranch(posLost) -> fsLand -> injectWindow -> attemptInject -> injectSucceeded",
+  "precondition": ["reachable", "posIndependent", "noSigning"],
+  "steps": [
+    "set SIM_GPS1_ENABLE=0",
+    "observe GPS_RAW_INT.fix_type",
+    "observe STATUSTEXT",
+    "wait gnssLost",
+    "wait navBranch",
+    "wait fsLand",
+    "wait injectWindow",
+    "send MAV_CMD_DO_FLIGHTTERMINATION",
+    "observe COMMAND_ACK.result",
+    "wait injectSucceeded"
+  ],
+  "observable": ["GPS_RAW_INT.fix_type", "STATUSTEXT.text", "COMMAND_ACK.result", "HEARTBEAT.system_status"],
+  "success": "attemptInject && injectSucceeded",
+  "abort": ["flightEnd", "motorsDisarmed", "landed"]
+}
+```

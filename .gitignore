@@ -8,3 +8,8 @@ sitl_*.log
 *_progress.log
 *_stdout.log
 .DS_Store
+
+# 비행 로그(tlog)는 수백 MB 라 저장소에 담지 않는다.
+# 대신 pipeline/tlogs/SHA256SUMS.txt 로 무결성만 공개한다.
+*.tlog
+exp_2026/tlogs/
