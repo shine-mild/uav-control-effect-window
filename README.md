@@ -80,17 +80,20 @@ ALT_HOLD와 STABILIZE가 각 30/30 종료되었고, 중립(1500 PWM)에서는 �
 
 ```bash
 # 1) ArduPilot SITL 준비 (커밋 c2b898a7f7bb1802db2b70cfafb04f5eb98d8636)
+#    ~/ardupilot 이 아닌 곳에 빌드했다면 export ARDUPILOT_PATH=<그 경로>
 cd ~/ardupilot && ./waf configure --board sitl && ./waf copter
 
-# 2) 한 조건 실행 (예: ALT_HOLD, 1회)
-python3 pipeline/repeat.py ALT_HOLD 1
+# 2) 한 조건 실행 (예: ALT_HOLD). 두 번째 인자는 반복 번호다.
+#    1~30번은 논문 기록(pipeline/runs/R-*-NN.json)이라 같은 번호로 돌리면 덮어쓴다.
+#    재현 시험은 기록에 없는 번호(예: 99)로 돌린다. 이 번호는 집계에도 섞이지 않는다.
+python3 pipeline/repeat.py ALT_HOLD 99
 
-# 3) 집계
-python3 pipeline/analyze_repeat.py
+# 3) 집계 — 논문 표 3 (조건당 30회). 인자를 빼면 사전 등록 범위(rep 1~5)만 집계한다
+python3 pipeline/analyze_repeat.py 30
 
-# 4) 시나리오 생성 대조
-python3 exp_2026/gen_T.py && python3 exp_2026/build_scripts.py
-bash exp_2026/run_scripts.sh && python3 exp_2026/analyze.py
+# 4) 시나리오 생성 대조 — 인자 T(템플릿) 또는 L(언어모델). 기록이 있는 시나리오는 건너뛴다
+python3 exp_2026/gen_T.py && python3 exp_2026/build_scripts.py T
+bash exp_2026/run_scripts.sh T && python3 exp_2026/analyze.py
 
 # 5) 보관 로그의 조종 입력 확인 (SITL 접속 없음)
 PYTHONPATH=~/ardupilot/modules/mavlink python3 tools/check_rc_input.py
